@@ -159,11 +159,13 @@ nav{
     align-self:center;
 }
 
+/* ALTERADO: somente tamanho e cor do nome */
+
 .hero h1{
-    font-size:clamp(3.2rem,6vw,5.3rem);
+    font-size:clamp(3rem,5.5vw,4.9rem);
     font-weight:400;
     letter-spacing:-.045em;
-    color:var(--verde);
+    color:var(--verde-profundo);
     margin-bottom:10px;
 }
 
@@ -556,6 +558,7 @@ nav{
 
 /* =====================================================
    DETETIVE DO CÉREBRO
+   ALTERADO APENAS O VISUAL
 ===================================================== */
 
 .detetive{
@@ -566,12 +569,11 @@ nav{
 .detetive-box{
     background:white;
     border-radius:28px;
-
     padding:45px 50px;
 
     display:grid;
-    grid-template-columns:.38fr 1fr;
-    gap:48px;
+    grid-template-columns:.48fr 1fr;
+    gap:42px;
 
     align-items:center;
 
@@ -579,19 +581,30 @@ nav{
 }
 
 
-/* LADO ESQUERDO */
+/* ÁREA VISUAL DAS PISTAS */
 
 .detetive-ilustracao{
+    min-height:370px;
+    position:relative;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
+    background:var(--verde-claro);
+    border-radius:34px 90px 34px 90px;
+
+    overflow:hidden;
 }
 
-.lupa{
-    width:175px;
-    height:175px;
 
-    border:6px solid var(--verde-vivo);
+/* LUPA */
+
+.lupa{
+    width:145px;
+    height:145px;
+
+    border:5px solid var(--verde);
     border-radius:50%;
 
     display:flex;
@@ -599,33 +612,120 @@ nav{
     justify-content:center;
 
     position:relative;
+    z-index:3;
 
     color:var(--verde-escuro);
-
     text-align:center;
 
-    font-size:1rem;
+    font-size:.95rem;
     font-weight:600;
 
-    background:var(--verde-suave);
+    background:white;
 }
 
 .lupa::after{
     content:"";
 
-    width:65px;
-    height:10px;
+    width:55px;
+    height:9px;
 
-    background:var(--verde-vivo);
+    background:var(--verde);
 
     border-radius:10px;
 
     position:absolute;
 
-    right:-50px;
+    right:-42px;
     bottom:2px;
 
     transform:rotate(38deg);
+}
+
+
+/* PEQUENAS PISTAS */
+
+.pista-visual{
+    position:absolute;
+
+    padding:8px 13px;
+
+    border-radius:100px;
+
+    background:white;
+
+    color:var(--verde-escuro);
+
+    font-size:.69rem;
+    font-weight:600;
+
+    box-shadow:0 5px 15px rgba(40,81,62,.08);
+
+    z-index:2;
+}
+
+.pista-atencao{
+    top:32px;
+    left:27px;
+    transform:rotate(-4deg);
+}
+
+.pista-memoria{
+    top:62px;
+    right:24px;
+    transform:rotate(4deg);
+}
+
+.pista-aprendizagem{
+    bottom:42px;
+    left:25px;
+    transform:rotate(3deg);
+}
+
+.pista-emocoes{
+    bottom:78px;
+    right:24px;
+    transform:rotate(-4deg);
+}
+
+.pista-problemas{
+    top:24px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+
+/* CÍRCULOS DECORATIVOS DISCRETOS */
+
+.detetive-ilustracao::before{
+    content:"";
+
+    width:70px;
+    height:70px;
+
+    border:2px solid var(--verde-vivo);
+    border-radius:50%;
+
+    position:absolute;
+
+    left:-25px;
+    top:115px;
+
+    opacity:.35;
+}
+
+.detetive-ilustracao::after{
+    content:"";
+
+    width:95px;
+    height:95px;
+
+    background:rgba(104,169,117,.13);
+    border-radius:50%;
+
+    position:absolute;
+
+    right:-28px;
+    bottom:-20px;
 }
 
 
@@ -974,7 +1074,7 @@ footer{
     }
 
     .hero h1{
-        font-size:3.5rem;
+        font-size:3.25rem;
     }
 
     .hero-visual{
@@ -995,12 +1095,11 @@ footer{
     }
 
     .detetive-box{
-        padding:35px 30px;
+        padding:30px;
     }
 
     .detetive-ilustracao{
-        justify-content:flex-start;
-        padding-left:20px;
+        min-height:330px;
     }
 
     .foto-placeholder{
@@ -1021,12 +1120,21 @@ footer{
     }
 
     .detetive-box{
-        gap:35px;
+        gap:30px;
+    }
+
+    .detetive-ilustracao{
+        min-height:300px;
     }
 
     .lupa{
-        width:145px;
-        height:145px;
+        width:130px;
+        height:130px;
+    }
+
+    .pista-visual{
+        font-size:.62rem;
+        padding:7px 10px;
     }
 
 }
@@ -1522,6 +1630,27 @@ laudo com enfoque na avaliação neuropsicológica.
 
 
 <div class="detetive-ilustracao">
+
+<span class="pista-visual pista-atencao">
+Atenção
+</span>
+
+<span class="pista-visual pista-memoria">
+Memória
+</span>
+
+<span class="pista-visual pista-aprendizagem">
+Aprendizagem
+</span>
+
+<span class="pista-visual pista-emocoes">
+Emoções
+</span>
+
+<span class="pista-visual pista-problemas">
+Resolver problemas
+</span>
+
 
 <div class="lupa">
 
