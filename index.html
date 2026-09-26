@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Nubia Fernandes | Psicóloga e Neuropsicóloga</title>
@@ -21,23 +24,29 @@
 }
 
 :root{
+
+  /* verde principal */
   --verde:#397052;
-  --verde-vivo:#4f8767;
+
+  /* verde grama */
+  --verde-grama:#69a35f;
+
+  /* verde escuro */
   --verde-escuro:#285440;
-  --verde-claro:#dfece3;
-  --verde-suave:#f0f6f1;
 
+  /* verdes bem claros */
+  --verde-claro:#e4efe6;
+  --verde-suave:#f3f7f3;
+
+  /* terracota */
   --terracota:#c76643;
-  --terracota-claro:#f1d6c8;
+  --terracota-claro:#f3ddd3;
 
-  --mostarda:#dfa936;
-  --mostarda-claro:#f5e5b5;
-
+  /* neutros */
   --branco:#ffffff;
-  --creme:#fbf7ef;
-
   --texto:#28352f;
   --texto-suave:#5c6762;
+  --linha:#e3e9e4;
 }
 
 html{
@@ -46,12 +55,14 @@ html{
 
 body{
   font-family:Arial, Helvetica, sans-serif;
-  background:var(--branco);
+  background:#ffffff;
   color:var(--texto);
   line-height:1.65;
 }
 
-h1,h2,h3{
+h1,
+h2,
+h3{
   font-family:Georgia,"Times New Roman",serif;
   font-weight:normal;
   line-height:1.1;
@@ -75,7 +86,7 @@ section{
   letter-spacing:.22em;
   font-size:.7rem;
   font-weight:bold;
-  color:var(--verde-vivo);
+  color:var(--verde-grama);
   margin-bottom:14px;
 }
 
@@ -88,16 +99,41 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:rgba(255,255,255,.97);
-  border-bottom:1px solid #e9ece9;
+  background:rgba(255,255,255,.98);
+  border-bottom:1px solid var(--linha);
 }
 
 nav{
-  min-height:72px;
+  min-height:76px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:30px;
+}
+
+
+/* ESPAÇO DO LOGOTIPO */
+
+.logo-area{
+  display:flex;
+  align-items:center;
+  gap:13px;
+}
+
+.logo-imagem{
+  width:52px;
+  height:52px;
+  border:1.5px dashed var(--verde-grama);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--verde);
+  font-size:.55rem;
+  text-align:center;
+  line-height:1.15;
+  padding:5px;
+  background:white;
 }
 
 .logo{
@@ -112,7 +148,7 @@ nav{
   font-size:.48rem;
   letter-spacing:.18em;
   margin-top:2px;
-  color:var(--verde-vivo);
+  color:var(--verde);
 }
 
 .menu{
@@ -143,7 +179,7 @@ nav{
 ========================= */
 
 .hero{
-  background:#fff;
+  background:#ffffff;
   padding:65px 0 75px;
   overflow:hidden;
 }
@@ -224,12 +260,12 @@ nav{
 .botao-servico span{
   display:block;
   font-size:.72rem;
-  opacity:.9;
+  opacity:.92;
   margin-top:2px;
 }
 
 
-/* FOTO HERO */
+/* FOTO */
 
 .hero-foto{
   height:520px;
@@ -245,17 +281,17 @@ nav{
   height:93%;
   right:4%;
   bottom:0;
-  background:var(--verde-vivo);
+  background:var(--verde);
   border-radius:48% 48% 16% 16% / 32% 32% 12% 12%;
 }
 
-.forma-mostarda{
+.forma-verde-grama{
   position:absolute;
-  width:150px;
+  width:145px;
   height:260px;
   left:1%;
   top:95px;
-  background:var(--mostarda);
+  background:var(--verde-grama);
   border-radius:100px;
   transform:rotate(-5deg);
 }
@@ -275,7 +311,7 @@ nav{
   height:90%;
   position:relative;
   z-index:2;
-  background:#e9eee9;
+  background:#edf1ee;
   border-radius:46% 46% 13% 13% / 27% 27% 10% 10%;
   display:flex;
   align-items:center;
@@ -287,11 +323,11 @@ nav{
 
 
 /* =========================
-   FAIXA DE APRESENTAÇÃO
+   APRESENTAÇÃO
 ========================= */
 
 .apresentacao{
-  background:var(--verde-suave);
+  background:#f4f8f4;
   padding:40px 0;
   border-top:1px solid #e2ebe4;
   border-bottom:1px solid #e2ebe4;
@@ -318,7 +354,7 @@ nav{
 }
 
 .apresentacao-item:nth-child(even) .icone{
-  color:var(--verde);
+  color:var(--verde-grama);
 }
 
 .apresentacao-item h3{
@@ -338,7 +374,7 @@ nav{
 ========================= */
 
 .identidade{
-  background:white;
+  background:#ffffff;
   padding:90px 0 75px;
 }
 
@@ -364,7 +400,7 @@ nav{
 ========================= */
 
 .avaliacao{
-  background:#fff;
+  background:#ffffff;
 }
 
 .avaliacao-grid{
@@ -372,10 +408,6 @@ nav{
   grid-template-columns:.88fr 1.12fr;
   gap:55px;
   align-items:start;
-}
-
-.avaliacao-esquerda{
-  position:relative;
 }
 
 .avaliacao h2{
@@ -400,7 +432,7 @@ nav{
   width:85px;
   height:85px;
   border-radius:50%;
-  background:var(--mostarda);
+  background:var(--verde-grama);
   right:-30px;
   bottom:-32px;
 }
@@ -410,12 +442,12 @@ nav{
   letter-spacing:.16em;
   font-size:.65rem;
   font-weight:bold;
-  color:var(--mostarda-claro);
+  color:#dceedd;
   margin-bottom:13px;
 }
 
 .avaliacao-resumo p{
-  color:#f2f7f3;
+  color:white;
   font-family:Georgia,"Times New Roman",serif;
   font-size:1.2rem;
   line-height:1.5;
@@ -433,7 +465,7 @@ nav{
   padding:24px 28px;
   background:var(--verde-claro);
   border-radius:8px 28px 28px 8px;
-  border-left:5px solid var(--verde-vivo);
+  border-left:5px solid var(--verde-grama);
   color:var(--verde-escuro)!important;
   font-family:Georgia,"Times New Roman",serif;
   font-size:1.25rem;
@@ -464,19 +496,24 @@ nav{
   border:none;
 }
 
-.tag:nth-child(3n+1){
+.tag:nth-child(4n+1){
   background:var(--verde);
   color:white;
 }
 
-.tag:nth-child(3n+2){
+.tag:nth-child(4n+2){
   background:var(--terracota);
   color:white;
 }
 
-.tag:nth-child(3n+3){
-  background:var(--mostarda);
-  color:#493b18;
+.tag:nth-child(4n+3){
+  background:var(--verde-grama);
+  color:white;
+}
+
+.tag:nth-child(4n+4){
+  background:var(--verde-claro);
+  color:var(--verde-escuro);
 }
 
 
@@ -485,7 +522,7 @@ nav{
 ========================= */
 
 .processo{
-  background:var(--creme);
+  background:#ffffff;
 }
 
 .titulo-secao{
@@ -510,11 +547,12 @@ nav{
 }
 
 .etapa{
-  min-height:255px;
+  min-height:275px;
   padding:28px;
   border-radius:18px;
-  background:white;
-  border-top:5px solid var(--verde-vivo);
+  background:#f8faf8;
+  border:1px solid #e3eae4;
+  border-top:5px solid var(--verde);
 }
 
 .etapa:nth-child(2){
@@ -522,7 +560,7 @@ nav{
 }
 
 .etapa:nth-child(3){
-  border-top-color:var(--mostarda);
+  border-top-color:var(--verde-grama);
 }
 
 .etapa:nth-child(4){
@@ -534,6 +572,11 @@ nav{
   font-size:2.1rem;
   color:var(--terracota);
   margin-bottom:18px;
+}
+
+.etapa:nth-child(2) .etapa-numero,
+.etapa:nth-child(3) .etapa-numero{
+  color:var(--verde-grama);
 }
 
 .etapa h3{
@@ -553,191 +596,114 @@ nav{
 ========================= */
 
 .detetive{
-  background:#fff;
+  background:#ffffff;
   padding:85px 0;
 }
 
 .detetive-box{
   display:grid;
-  grid-template-columns:.72fr 1.28fr;
+  grid-template-columns:.65fr 1.35fr;
   gap:55px;
   align-items:center;
-  background:#e7f0e8;
+  background:#edf5ee;
   padding:55px;
   border-radius:34px;
   position:relative;
   overflow:hidden;
 }
 
-.detetive-box::before{
-  content:"";
-  position:absolute;
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  background:var(--mostarda-claro);
-  left:-45px;
-  top:-45px;
-}
-
 .detetive-box::after{
   content:"";
   position:absolute;
-  width:190px;
-  height:120px;
-  border-radius:60% 40% 0 0;
+  width:170px;
+  height:170px;
   background:var(--terracota-claro);
-  right:-45px;
-  bottom:-55px;
+  border-radius:50%;
+  right:-70px;
+  bottom:-85px;
 }
 
 
-/* ILUSTRAÇÃO DETETIVE */
+/* LUPA SIMPLES */
 
 .detetive-ilustracao{
-  min-height:370px;
+  min-height:330px;
   position:relative;
   z-index:2;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
 }
 
-.lupa-grande{
-  width:235px;
-  height:235px;
-  border:16px solid var(--terracota);
-  border-radius:50%;
+.lupa{
   position:relative;
-  background:#fffaf2;
-  transform:rotate(-7deg);
-  box-shadow:0 9px 0 rgba(40,84,64,.08);
+  width:205px;
+  height:205px;
+  border:13px solid var(--verde);
+  border-radius:50%;
+  background:#ffffff;
+  transform:rotate(-8deg);
 }
 
-.lupa-grande::after{
+.lupa::after{
   content:"";
   position:absolute;
-  width:150px;
-  height:28px;
+  width:120px;
+  height:25px;
   background:var(--terracota);
   border-radius:30px;
-  right:-120px;
-  bottom:-68px;
-  transform:rotate(47deg);
+  right:-92px;
+  bottom:-53px;
+  transform:rotate(48deg);
 }
 
 
-/* cérebro dentro da lupa */
+/* desenho simples dentro da lupa */
 
-.cerebro-desenho{
+.cerebro-simples{
   position:absolute;
-  width:145px;
-  height:112px;
-  left:29px;
-  top:52px;
-  background:#fff;
+  width:115px;
+  height:88px;
+  left:32px;
+  top:45px;
   border:4px solid var(--verde-escuro);
-  border-radius:48% 52% 46% 54% / 56% 48% 52% 44%;
+  border-radius:50% 46% 50% 45%;
+  background:#f7faf7;
 }
 
-.cerebro-desenho::before{
+.cerebro-simples::before{
   content:"";
   position:absolute;
-  width:48px;
-  height:75px;
-  left:46px;
-  top:16px;
+  height:68px;
+  left:53px;
+  top:7px;
   border-left:3px solid var(--terracota);
-  border-radius:50%;
 }
 
-.cerebro-desenho::after{
+.cerebro-simples::after{
   content:"";
   position:absolute;
-  width:28px;
-  height:28px;
-  left:23px;
-  top:26px;
-  border-top:3px solid var(--terracota);
-  border-right:3px solid var(--terracota);
+  width:26px;
+  height:21px;
+  left:19px;
+  top:19px;
+  border-top:3px solid var(--verde-grama);
+  border-right:3px solid var(--verde-grama);
   border-radius:50%;
   box-shadow:
-    51px 4px 0 -12px var(--mostarda),
-    58px 42px 0 -12px var(--verde-vivo),
-    8px 46px 0 -12px var(--mostarda);
+  46px 5px 0 -9px var(--terracota),
+  9px 39px 0 -9px var(--terracota),
+  54px 40px 0 -9px var(--verde-grama);
 }
 
-.detalhe-cerebro{
+.pista{
   position:absolute;
-  width:28px;
-  height:22px;
-  border-bottom:3px solid var(--terracota);
-  border-radius:50%;
+  width:100px;
+  border-top:3px dashed var(--terracota);
+  bottom:30px;
+  left:5px;
+  transform:rotate(10deg);
 }
-
-.dc1{
-  top:31px;
-  right:20px;
-  transform:rotate(-25deg);
-}
-
-.dc2{
-  bottom:23px;
-  left:25px;
-  transform:rotate(20deg);
-}
-
-.dc3{
-  bottom:21px;
-  right:25px;
-  transform:rotate(-15deg);
-}
-
-
-/* pequenos elementos ao redor */
-
-.pontinho{
-  position:absolute;
-  border-radius:50%;
-}
-
-.ponto1{
-  width:31px;
-  height:31px;
-  background:var(--mostarda);
-  top:38px;
-  right:18px;
-}
-
-.ponto2{
-  width:17px;
-  height:17px;
-  background:var(--terracota);
-  bottom:52px;
-  left:25px;
-}
-
-.ponto3{
-  width:23px;
-  height:23px;
-  background:var(--verde-vivo);
-  top:70px;
-  left:20px;
-}
-
-.caminho-detetive{
-  position:absolute;
-  width:130px;
-  height:55px;
-  border-bottom:3px dashed var(--verde-escuro);
-  border-radius:50%;
-  left:10px;
-  bottom:18px;
-  transform:rotate(7deg);
-}
-
-
-/* TEXTO DETETIVE */
 
 .detetive-texto{
   position:relative;
@@ -763,6 +729,15 @@ nav{
   color:var(--verde-escuro);
 }
 
+.trabalho-equipe{
+  margin:22px 0;
+  padding:18px 22px;
+  background:white;
+  border-left:5px solid var(--verde-grama);
+  border-radius:6px 16px 16px 6px;
+  color:var(--verde-escuro)!important;
+}
+
 .frase-pista{
   margin-top:25px!important;
   padding:18px 22px;
@@ -779,7 +754,7 @@ nav{
 ========================= */
 
 .psicoterapia{
-  background:white;
+  background:#ffffff;
 }
 
 .psico-grid{
@@ -826,13 +801,13 @@ nav{
 }
 
 .comportamento{
-  background:var(--mostarda-claro);
-  color:#765b1d;
+  background:#dcebd9;
+  color:var(--verde-escuro);
 }
 
 .seta{
   background:none!important;
-  color:var(--terracota)!important;
+  color:var(--verde)!important;
   padding:0!important;
 }
 
@@ -870,7 +845,7 @@ nav{
 ========================= */
 
 .sobre{
-  background:var(--verde-suave);
+  background:#f4f8f4;
 }
 
 .sobre-grid{
@@ -882,7 +857,7 @@ nav{
 
 .sobre-foto{
   min-height:520px;
-  background:var(--verde-vivo);
+  background:var(--verde);
   border-radius:40% 40% 18px 18px;
   display:flex;
   align-items:center;
@@ -914,22 +889,18 @@ nav{
   color:var(--terracota);
 }
 
-
-/* TEAAM MAIS DISCRETO */
-
 .teaam{
   margin-top:24px;
   padding:16px 19px;
   background:var(--verde-claro);
   border-radius:14px;
-  border-left:4px solid var(--verde);
+  border-left:4px solid var(--verde-grama);
 }
 
 .teaam strong{
   display:block;
   font-family:Arial,Helvetica,sans-serif;
   font-size:.92rem;
-  font-weight:bold;
   color:var(--verde-escuro);
 }
 
@@ -957,7 +928,7 @@ nav{
 ========================= */
 
 .atendimento{
-  background:white;
+  background:#ffffff;
 }
 
 .atendimento-grid{
@@ -970,10 +941,11 @@ nav{
   padding:30px;
   border-radius:18px;
   border:1px solid #dce8df;
+  background:#ffffff;
 }
 
 .local-card:nth-child(1){
-  border-top:5px solid var(--verde-vivo);
+  border-top:5px solid var(--verde);
 }
 
 .local-card:nth-child(2){
@@ -981,7 +953,7 @@ nav{
 }
 
 .local-card:nth-child(3){
-  border-top:5px solid var(--mostarda);
+  border-top:5px solid var(--verde-grama);
 }
 
 .local-card h3{
@@ -1006,7 +978,7 @@ nav{
 }
 
 .contato .mini-titulo{
-  color:var(--mostarda-claro);
+  color:white;
 }
 
 .contato h2{
@@ -1060,7 +1032,7 @@ footer{
   }
 
   nav{
-    min-height:65px;
+    min-height:68px;
   }
 
   section{
@@ -1113,33 +1085,31 @@ footer{
   }
 
   .detetive-box{
-    padding:32px 25px;
+    padding:32px 25px 45px;
   }
 
   .detetive-ilustracao{
-    min-height:340px;
+    min-height:300px;
   }
 
-  .lupa-grande{
-    width:205px;
-    height:205px;
-  }
-
-  .cerebro-desenho{
-    width:125px;
-    height:100px;
-    left:25px;
-    top:45px;
+  .logo-imagem{
+    width:44px;
+    height:44px;
   }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
+
+<!-- =========================
+     MENU
+========================= -->
 
 <header>
 
@@ -1147,23 +1117,54 @@ footer{
 
 <nav>
 
+<div class="logo-area">
+
+<div class="logo-imagem">
+SEU<br>LOGO
+</div>
+
 <a class="logo" href="#inicio">
+
 Nubia Fernandes
-<small>PSICOLOGIA • NEUROPSICOLOGIA</small>
+
+<small>
+PSICOLOGIA • NEUROPSICOLOGIA
+</small>
+
 </a>
+
+</div>
+
 
 <div class="menu">
 
-<a href="#avaliacao">Avaliação</a>
-<a href="#psicoterapia">Psicoterapia</a>
-<a href="#sobre">Sobre mim</a>
-<a href="#atendimento">Atendimento</a>
-<a href="#contato">Contato</a>
+<a href="#avaliacao">
+Avaliação
+</a>
 
-<a class="menu-contato"
+<a href="#psicoterapia">
+Psicoterapia
+</a>
+
+<a href="#sobre">
+Sobre mim
+</a>
+
+<a href="#atendimento">
+Atendimento
+</a>
+
+<a href="#contato">
+Contato
+</a>
+
+<a
+class="menu-contato"
 href="https://wa.me/5511953235907"
 target="_blank">
+
 Agendar atendimento
+
 </a>
 
 </div>
@@ -1173,6 +1174,7 @@ Agendar atendimento
 </div>
 
 </header>
+
 
 
 <main>
@@ -1206,10 +1208,12 @@ CRP 06/162951
 </div>
 
 <p class="hero-texto">
+
 Psicoterapia on-line para adultos e avaliação neuropsicológica
 para crianças, adolescentes, adultos e idosos.
 Um trabalho baseado em evidências, com atenção à história,
 ao contexto e às necessidades de cada pessoa.
+
 </p>
 
 <div class="hero-local">
@@ -1219,7 +1223,8 @@ Avaliação presencial em Moema e Tatuapé • São Paulo
 
 <div class="botoes-principais">
 
-<a href="#psicoterapia"
+<a
+href="#psicoterapia"
 class="botao-servico botao-terapia">
 
 <strong>
@@ -1233,7 +1238,8 @@ para adultos
 </a>
 
 
-<a href="#avaliacao"
+<a
+href="#avaliacao"
 class="botao-servico botao-avaliacao">
 
 <strong>
@@ -1251,9 +1257,10 @@ crianças, adolescentes, adultos e idosos
 </div>
 
 
+
 <div class="hero-foto">
 
-<div class="forma-mostarda"></div>
+<div class="forma-verde-grama"></div>
 
 <div class="forma-verde"></div>
 
@@ -1312,8 +1319,8 @@ Psicoterapia on-line
 
 <p>
 Um espaço para compreender dificuldades,
-desenvolver recursos e construir formas
-mais possíveis de lidar com o dia a dia.
+desenvolver recursos e também ampliar
+o autoconhecimento.
 </p>
 
 </div>
@@ -1376,14 +1383,18 @@ Meu trabalho
 </div>
 
 <h2>
+
 Psicologia com
 <span>conhecimento científico</span>,
 cuidado e contexto.
+
 </h2>
 
 <p>
+
 Meu trabalho acontece principalmente em duas frentes:
 avaliação neuropsicológica e psicoterapia.
+
 </p>
 
 </div>
@@ -1419,10 +1430,12 @@ Olhar para o conjunto
 </div>
 
 <p>
+
 Testes trazem informações importantes.
 Mas é a integração entre os resultados, a história,
 o contexto e a observação clínica que permite
 compreender cada caso.
+
 </p>
 
 </div>
@@ -1434,24 +1447,33 @@ compreender cada caso.
 <div class="avaliacao-texto">
 
 <p>
+
 A avaliação neuropsicológica é um processo clínico de investigação
-que busca compreender diferentes aspectos do funcionamento e cada pessoa.
+que busca compreender diferentes aspectos do funcionamento
+cognitivo, emocional e comportamental.
+
 </p>
 
+
 <p>
+
 A avaliação neuropsicológica possibilita investigar diferentes domínios
 do funcionamento, como atenção, memória, linguagem, aprendizagem,
 raciocínio, funções executivas e habilidades visuoespaciais, além de
 aspectos emocionais e comportamentais importantes para a compreensão
 do funcionamento da pessoa.
+
 </p>
 
+
 <p>
-Os instrumentos são uma parte importante da avaliação,
+
+Os instrumentos padronizados são uma parte importante da avaliação,
 mas seus resultados não são interpretados de forma isolada.
 História de desenvolvimento, contexto atual, entrevistas,
 observação clínica e, quando pertinente, informações da família,
-da escola e de outros profissionais também fazem parte do processo.
+da escola e de outros profissionais também fazem parte da investigação.
+
 </p>
 
 
@@ -1464,19 +1486,23 @@ para compreender como aquela pessoa funciona.
 
 
 <p>
+
 A avaliação pode contribuir para a investigação diagnóstica
 e para o diagnóstico diferencial, mas não se resume à busca
 por um diagnóstico. Também permite compreender potencialidades,
 dificuldades e o perfil de funcionamento da pessoa, oferecendo
 informações que podem auxiliar no direcionamento do tratamento,
 nas orientações e no autoconhecimento.
+
 </p>
 
 
 <div class="condicoes">
 
 <p class="condicoes-titulo">
+
 Algumas condições e demandas que podem fazer parte da investigação:
+
 </p>
 
 
@@ -1503,7 +1529,7 @@ Altas habilidades / Superdotação
 </span>
 
 <span class="tag">
-Trantorno do Desenvolvimento intelectual
+Desenvolvimento intelectual
 </span>
 
 <span class="tag">
@@ -1511,15 +1537,15 @@ Alterações de memória
 </span>
 
 <span class="tag">
-Funcionamento cognitivo
-</span>
-   
-<span class="tag">
-Trantornos de personalidades
+Transtornos do humor
 </span>
 
 <span class="tag">
-Trantornos de humor
+Transtornos de personalidade
+</span>
+
+<span class="tag">
+Funcionamento cognitivo
 </span>
 
 </div>
@@ -1536,12 +1562,13 @@ Trantornos de humor
 
 
 <!-- =========================
-     PROCESSO
+     ETAPAS
 ========================= -->
 
 <section class="processo">
 
 <div class="container">
+
 
 <div class="titulo-secao">
 
@@ -1554,12 +1581,15 @@ A avaliação acontece em algumas etapas.
 </h2>
 
 <p>
+
 O número de encontros pode variar de acordo com cada caso.
 Em média, são realizadas cerca de seis sessões de avaliação,
 além da entrevista inicial e da devolutiva.
+
 </p>
 
 </div>
+
 
 
 <div class="etapas">
@@ -1576,12 +1606,17 @@ Primeiro, conversamos.
 </h3>
 
 <p>
-A avaliação começa com uma entrevista para compreender
-a história, o desenvolvimento, as dificuldades atuais
-e o motivo da avaliação.
+
+A investigação começa desde a entrevista inicial.
+A anamnese é uma parte fundamental da avaliação,
+porque permite compreender a história, o desenvolvimento,
+o contexto atual, as dificuldades percebidas e o motivo
+que levou à busca pela avaliação.
+
 </p>
 
 </div>
+
 
 
 <div class="etapa">
@@ -1591,16 +1626,20 @@ e o motivo da avaliação.
 </div>
 
 <h3>
-Depois, investigamos.
+Seguimos reunindo pistas.
 </h3>
 
 <p>
-Ao longo dos encontros são utilizados instrumentos padronizados,
-atividades clínicas e observação para investigar
-as habilidades relevantes para aquele caso.
+
+Ao longo dos encontros, são utilizados instrumentos padronizados,
+atividades clínicas e observação. Cada recurso acrescenta informações
+importantes para a compreensão dos diferentes aspectos do funcionamento
+da pessoa.
+
 </p>
 
 </div>
+
 
 
 <div class="etapa">
@@ -1610,16 +1649,20 @@ as habilidades relevantes para aquele caso.
 </div>
 
 <h3>
-Juntamos as informações.
+Integramos as informações.
 </h3>
 
 <p>
-Os resultados são analisados junto à história,
-ao comportamento observado e às demais fontes
-de informação.
+
+Os resultados dos instrumentos são analisados em conjunto
+com a anamnese, a observação clínica, o comportamento ao longo
+da avaliação e, quando necessário, informações da família,
+da escola e de outros profissionais.
+
 </p>
 
 </div>
+
 
 
 <div class="etapa">
@@ -1633,9 +1676,12 @@ Conversamos sobre o que encontramos.
 </h3>
 
 <p>
-Na devolutiva, entrego o laudo, explico os resultados,
-esclarecemos dúvidas e conversamos sobre
-orientações e possíveis próximos passos.
+
+Na devolutiva, explico os principais resultados,
+esclarecemos dúvidas e conversamos sobre orientações
+e possíveis próximos passos. Nesse momento,
+também é realizada a entrega do laudo neuropsicológico.
+
 </p>
 
 </div>
@@ -1650,35 +1696,26 @@ orientações e possíveis próximos passos.
 
 
 <!-- =========================
-     DETETIVES DO CÉREBRO
+     CRIANÇAS
 ========================= -->
 
 <section class="detetive">
 
 <div class="container">
 
+
 <div class="detetive-box">
 
 
 <div class="detetive-ilustracao">
 
-<span class="pontinho ponto1"></span>
-<span class="pontinho ponto2"></span>
-<span class="pontinho ponto3"></span>
+<div class="lupa">
 
-<div class="lupa-grande">
-
-<div class="cerebro-desenho">
-
-<span class="detalhe-cerebro dc1"></span>
-<span class="detalhe-cerebro dc2"></span>
-<span class="detalhe-cerebro dc3"></span>
+<div class="cerebro-simples"></div>
 
 </div>
 
-</div>
-
-<div class="caminho-detetive"></div>
+<div class="pista"></div>
 
 </div>
 
@@ -1695,32 +1732,46 @@ Com as crianças,<br>
 somos detetives do cérebro.
 </h2>
 
+
 <p>
+
 Para as crianças, costumo explicar que durante a avaliação
 viro uma espécie de <strong>“detetive do cérebro”</strong>.
 Só que essa investigação não é feita sozinha:
 <strong>a criança também vira detetive comigo.</strong>
+
 </p>
 
+
 <p>
-Durante os encontros, fazemos atividades e testes padronizados, 
-conversamos e resolvemos alguns desafios. Cada um deles pode trazer
+
+Durante os encontros, fazemos atividades, conversamos
+e resolvemos alguns desafios. Cada um deles pode trazer
 uma pista sobre como a criança aprende, presta atenção,
 lembra das coisas, resolve problemas e lida com diferentes situações.
+
 </p>
 
-<p>
-A família também faz parte da investigação e traz pistas importantes.
-Afinal, é um trabalho em equipe. Quando necessário, professores e outros profissionais 
-que acompanham a criança também ajudam a enxergar outras partes dessa história.
+
+<p class="trabalho-equipe">
+
+<strong>Nosso trabalho acontece em equipe.</strong>
+A criança participa da investigação comigo, a família traz
+informações importantes e, quando necessário, professores
+e outros profissionais que a acompanham também ajudam
+a completar essa história.
+
 </p>
 
+
 <p>
+
 No final, juntamos todas essas pistas.
 A criança também tem sua própria devolutiva,
 em uma linguagem adequada à sua idade.
 Afinal, se ela participou da investigação,
 também merece saber o que os detetives descobriram.
+
 </p>
 
 
@@ -1761,32 +1812,45 @@ Psicoterapia on-line
 Psicoterapia baseada em evidências.
 </h2>
 
-<p>
-Trabalho com psicoterapia baseada em evidências,
-principalmente a partir da Terapia Cognitivo-Comportamental (TCC),
-considerando a história e as necessidades de cada pessoa.
-</p>
 
 <p>
+
+Trabalho com psicoterapia baseada em evidências,
+principalmente a partir da Terapia Cognitivo-Comportamental (TCC),
+considerando a história, o contexto e as necessidades de cada pessoa.
+
+</p>
+
+
+<p>
+
 Na TCC, buscamos compreender como pensamentos, emoções e comportamentos
 se relacionam, mas o trabalho não se limita a isso. Também olhamos para
 padrões que foram sendo construídos ao longo da vida, para a forma como
 a pessoa lida com diferentes situações, seus relacionamentos, seu contexto
 e as dificuldades que enfrenta atualmente.
+
 </p>
 
+
 <p>
+
 Na psicoterapia, acompanho adultos com diferentes demandas, como ansiedade,
-depressão, dificuldades nos relacionamentos, autoestima, estresse,
-sobrecarga emocional e dificuldades para lidar com mudanças e momentos
-desafiadores da vida. A terapia também pode ser um espaço de autoconhecimento,
+depressão, estresse, sobrecarga emocional, dificuldades nos relacionamentos,
+autoestima e momentos de mudança ou dificuldades ao longo da vida.
+A psicoterapia também pode ser um espaço de <strong>autoconhecimento</strong>,
 mesmo quando não existe um diagnóstico ou transtorno psicológico.
+
 </p>
 
+
 <p>
-A partir dessa compreensão, trabalhamos de forma colaborativa para
-desenvolver recursos, experimentar novas formas de lidar com as dificuldades
-e construir mudanças que façam sentido para a vida de cada pessoa.
+
+A partir dessa compreensão, trabalhamos de forma colaborativa
+para desenvolver recursos, experimentar novas formas de lidar
+com as dificuldades e construir mudanças que façam sentido
+para a vida de cada pessoa.
+
 </p>
 
 
@@ -1826,22 +1890,28 @@ Como funcionam as sessões?
 </h3>
 
 <p>
+
 As sessões têm duração de aproximadamente
 <strong>50 minutos</strong>.
+
 </p>
 
 <p>
+
 Inicialmente, acontecem
 <strong>uma vez por semana</strong>,
 de acordo com a necessidade avaliada
 ao longo do processo.
+
 </p>
 
 <p>
 Os atendimentos são realizados on-line para adultos.
 </p>
 
-<a href="https://wa.me/5511953235907"
+
+<a
+href="https://wa.me/5511953235907"
 target="_blank"
 class="botao-claro">
 
@@ -1859,7 +1929,7 @@ Agendar psicoterapia
 
 
 <!-- =========================
-     SOBRE MIM
+     SOBRE
 ========================= -->
 
 <section class="sobre" id="sobre">
@@ -1885,20 +1955,27 @@ Sobre mim
 Oi, eu sou a Nubia.
 </h2>
 
-<p>
-Sou psicóloga há <strong>7 anos</strong> e minha trajetória profissional
-passou pela área hospitalar, pela clínica e pela neuropsicologia.
-</p>
 
 <p>
+
+Sou psicóloga há <strong>7 anos</strong> e minha trajetória profissional
+passou pela área hospitalar, pela clínica e pela neuropsicologia.
+
+</p>
+
+
+<p>
+
 Hoje trabalho com psicoterapia e avaliação neuropsicológica
 de crianças, adolescentes, adultos e idosos.
+
 </p>
 
 
 <p class="sobre-frase">
 
-Acredito em uma psicologia com conhecimento científico, cuidado e contexto. Cada pessoa traz uma história.
+Acredito em uma psicologia que una conhecimento científico
+e cuidado. Cada pessoa traz uma história e um contexto próprios.
 Por isso, <strong>me dedico a estar presente com meus pacientes</strong>
 e a compreender cada caso para além dos sintomas.
 
@@ -1912,8 +1989,10 @@ Neuropsicóloga voluntária no TEAAM • UNIFESP
 </strong>
 
 <p>
+
 Atuação no ambulatório especializado em Transtorno do Espectro Autista
 da Universidade Federal de São Paulo.
+
 </p>
 
 </div>
@@ -1968,6 +2047,7 @@ e Psicopatologia
 
 <div class="container">
 
+
 <div class="titulo-secao">
 
 <div class="mini-titulo">
@@ -1991,8 +2071,10 @@ Moema
 </h3>
 
 <p>
+
 Avaliação neuropsicológica presencial
 para crianças, adolescentes, adultos e idosos.
+
 </p>
 
 </div>
@@ -2005,7 +2087,10 @@ Tatuapé
 </h3>
 
 <p>
-Avaliação neuropsicológica presencial.
+
+Avaliação neuropsicológica presencial
+para crianças, adolescentes, adultos e idosos.
+
 </p>
 
 </div>
@@ -2049,12 +2134,16 @@ Vamos conversar?
 </h2>
 
 <p>
+
 Para informações sobre psicoterapia ou avaliação neuropsicológica,
 entre em contato para saber mais sobre o atendimento
 e verificar a disponibilidade de horários.
+
 </p>
 
-<a href="https://wa.me/5511953235907"
+
+<a
+href="https://wa.me/5511953235907"
 target="_blank"
 class="whatsapp">
 
@@ -2070,6 +2159,10 @@ Falar comigo pelo WhatsApp
 </main>
 
 
+
+<!-- =========================
+     RODAPÉ
+========================= -->
 
 <footer>
 
