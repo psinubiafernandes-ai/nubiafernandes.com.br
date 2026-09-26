@@ -12,7 +12,7 @@
 <style>
 
 /* =========================================================
-   CONFIGURAÇÕES
+   CONFIGURAÇÕES GERAIS
 ========================================================= */
 
 *{
@@ -22,22 +22,22 @@
 }
 
 :root{
+
     --verde:#3F7D55;
     --verde-vivo:#65A66F;
     --verde-escuro:#315B43;
     --verde-claro:#EAF3EC;
-    --verde-muito-claro:#F7FAF7;
+    --verde-suave:#F5F9F6;
 
     --terracota:#C76A4B;
     --terracota-claro:#F7E8E1;
 
     --azul:#344F65;
-    --azul-claro:#EEF3F6;
 
     --branco:#FFFFFF;
     --texto:#37413D;
     --texto-suave:#66706C;
-    --linha:#E4E9E5;
+    --linha:#E3EAE5;
 }
 
 html{
@@ -56,7 +56,7 @@ h2,
 h3{
     font-family:Georgia, "Times New Roman", serif;
     font-weight:normal;
-    line-height:1.15;
+    line-height:1.18;
 }
 
 a{
@@ -127,12 +127,13 @@ nav{
 .logo img{
     display:block;
     max-width:260px;
-    max-height:56px;
+    max-height:55px;
     object-fit:contain;
 }
 
 .logo-fallback{
     color:var(--verde-escuro);
+
     font-family:Georgia, "Times New Roman", serif;
     font-size:1.25rem;
 }
@@ -140,14 +141,14 @@ nav{
 .logo-fallback small{
     display:block;
 
+    margin-top:2px;
+
+    color:var(--texto-suave);
+
     font-family:Arial, Helvetica, sans-serif;
     font-size:.52rem;
 
     letter-spacing:.15em;
-
-    color:var(--texto-suave);
-
-    margin-top:2px;
 }
 
 
@@ -186,7 +187,7 @@ nav{
 .hero{
     padding:78px 0 90px;
 
-    background:#FFFFFF;
+    background:white;
 
     overflow:hidden;
 }
@@ -196,7 +197,7 @@ nav{
 
     grid-template-columns:1fr .92fr;
 
-    gap:75px;
+    gap:72px;
 
     align-items:center;
 }
@@ -207,19 +208,19 @@ nav{
 .hero h1{
     color:var(--verde-escuro);
 
-    font-size:clamp(2.9rem,5vw,4.6rem);
+    font-size:clamp(3.2rem,5.5vw,5rem);
 
     letter-spacing:-.035em;
 
-    margin-bottom:13px;
+    margin-bottom:12px;
 }
 
 .hero-profissao{
-    color:var(--azul);
+    color:var(--texto);
 
     font-family:Georgia, "Times New Roman", serif;
 
-    font-size:1.25rem;
+    font-size:1.3rem;
 
     margin-bottom:3px;
 }
@@ -227,35 +228,23 @@ nav{
 .hero-crp{
     color:var(--texto-suave);
 
-    font-size:.82rem;
+    font-size:.83rem;
 
-    margin-bottom:27px;
-}
-
-.hero-frase{
-    color:var(--verde);
-
-    font-family:Georgia, "Times New Roman", serif;
-
-    font-size:1.42rem;
-
-    line-height:1.45;
-
-    max-width:550px;
-
-    margin-bottom:19px;
+    margin-bottom:29px;
 }
 
 .hero-texto{
     color:var(--texto-suave);
 
-    max-width:570px;
+    max-width:565px;
 
-    margin-bottom:17px;
+    font-size:1rem;
+
+    margin-bottom:18px;
 }
 
 .hero-local{
-    color:var(--azul);
+    color:var(--verde-escuro);
 
     font-size:.84rem;
 
@@ -291,17 +280,18 @@ nav{
 
 .botao-servico strong{
     display:block;
+
     font-size:.88rem;
 }
 
 .botao-servico span{
     display:block;
 
-    font-size:.69rem;
-
     margin-top:1px;
 
-    opacity:.92;
+    font-size:.69rem;
+
+    opacity:.93;
 }
 
 .botao-terapia{
@@ -318,7 +308,7 @@ nav{
 ========================================================= */
 
 .hero-foto{
-    min-height:530px;
+    min-height:520px;
 
     position:relative;
 
@@ -328,13 +318,13 @@ nav{
 }
 
 
-/* FUNDO SUAVE */
+/* MOLDURA VERDE */
 
 .foto-fundo{
     position:absolute;
 
-    width:83%;
-    height:89%;
+    width:84%;
+    height:90%;
 
     background:var(--verde-claro);
 
@@ -347,32 +337,34 @@ nav{
 }
 
 
-/* DETALHE TERRACOTA */
+/* DETALHE VERDE MAIS VIVO */
 
 .foto-detalhe{
     position:absolute;
 
-    width:105px;
-    height:105px;
+    width:92px;
+    height:92px;
 
     border-radius:50%;
 
-    background:var(--terracota-claro);
+    background:var(--verde-vivo);
 
-    left:4%;
-    bottom:6%;
+    opacity:.20;
+
+    left:5%;
+    bottom:7%;
 }
 
 
-/* LINHA AZUL */
+/* PEQUENO DETALHE TERRACOTA */
 
 .foto-linha{
     position:absolute;
 
-    width:75px;
-    height:7px;
+    width:70px;
+    height:6px;
 
-    background:var(--azul);
+    background:var(--terracota);
 
     border-radius:30px;
 
@@ -391,11 +383,11 @@ nav{
     z-index:2;
 
     width:76%;
-    height:475px;
+    height:470px;
 
-    background:#F4F6F4;
+    background:white;
 
-    border-radius:190px 190px 25px 25px;
+    border-radius:175px 175px 25px 25px;
 
     overflow:hidden;
 
@@ -409,7 +401,9 @@ nav{
 
     color:var(--verde);
 
-    box-shadow:0 16px 40px rgba(49,91,67,.08);
+    border:1px solid #DDE8E0;
+
+    box-shadow:0 16px 38px rgba(49,91,67,.08);
 }
 
 .foto-principal img{
@@ -420,13 +414,13 @@ nav{
 
 
 /* =========================================================
-   SERVIÇOS RESUMIDOS
+   RESUMO DOS SERVIÇOS
 ========================================================= */
 
 .resumo{
-    padding:25px 0 55px;
+    padding:25px 0 60px;
 
-    background:#FFFFFF;
+    background:white;
 }
 
 .resumo-grid{
@@ -440,44 +434,11 @@ nav{
 .resumo-card{
     padding:24px;
 
-    background:var(--verde-muito-claro);
+    background:var(--verde-suave);
 
     border-radius:18px;
-}
 
-.resumo-card:nth-child(2){
-    background:#FDF8F5;
-}
-
-.resumo-card:nth-child(3){
-    background:#F6FAF7;
-}
-
-.resumo-card:nth-child(4){
-    background:#F5F8FA;
-}
-
-.resumo-marca{
-    width:25px;
-    height:4px;
-
-    border-radius:20px;
-
-    background:var(--verde);
-
-    margin-bottom:15px;
-}
-
-.resumo-card:nth-child(2) .resumo-marca{
-    background:var(--terracota);
-}
-
-.resumo-card:nth-child(3) .resumo-marca{
-    background:var(--verde-vivo);
-}
-
-.resumo-card:nth-child(4) .resumo-marca{
-    background:var(--azul);
+    border:1px solid #E7EEE9;
 }
 
 .resumo-card h3{
@@ -496,29 +457,50 @@ nav{
     line-height:1.55;
 }
 
+.resumo-marca{
+    width:26px;
+    height:4px;
+
+    background:var(--verde);
+
+    border-radius:30px;
+
+    margin-bottom:15px;
+}
+
+.resumo-card:nth-child(2) .resumo-marca{
+    background:var(--terracota);
+}
+
+.resumo-card:nth-child(3) .resumo-marca{
+    background:var(--verde-vivo);
+}
+
+.resumo-card:nth-child(4) .resumo-marca{
+    background:var(--verde-escuro);
+}
+
 
 /* =========================================================
-   INTRODUÇÃO
+   IDENTIDADE
 ========================================================= */
 
 .introducao{
-    background:#FFFFFF;
+    background:white;
 
-    padding:85px 0 95px;
+    padding:80px 0 95px;
 }
 
 .introducao-conteudo{
-    max-width:790px;
+    max-width:780px;
 }
 
 .introducao h2{
     color:var(--verde-escuro);
 
-    font-size:clamp(2.2rem,4vw,3.35rem);
+    font-size:clamp(2.2rem,4vw,3.3rem);
 
-    line-height:1.2;
-
-    margin-bottom:21px;
+    margin-bottom:22px;
 }
 
 .introducao h2 span{
@@ -528,7 +510,7 @@ nav{
 .introducao p{
     color:var(--texto-suave);
 
-    max-width:670px;
+    max-width:680px;
 }
 
 
@@ -537,7 +519,7 @@ nav{
 ========================================================= */
 
 .avaliacao{
-    background:var(--verde-muito-claro);
+    background:var(--verde-suave);
 }
 
 .avaliacao-grid{
@@ -553,7 +535,7 @@ nav{
 .avaliacao h2{
     color:var(--verde-escuro);
 
-    font-size:clamp(2.3rem,4.5vw,3.6rem);
+    font-size:clamp(2.3rem,4.5vw,3.55rem);
 
     margin-bottom:29px;
 }
@@ -568,7 +550,7 @@ nav{
 
     border-radius:18px;
 
-    border-left:4px solid var(--terracota);
+    border-left:4px solid var(--verde);
 
     box-shadow:0 10px 30px rgba(49,91,67,.05);
 }
@@ -583,7 +565,6 @@ nav{
     letter-spacing:.13em;
 
     font-size:.62rem;
-
     font-weight:bold;
 
     margin-bottom:10px;
@@ -650,35 +631,23 @@ nav{
 }
 
 .tag{
-    padding:7px 12px;
+    padding:8px 13px;
 
     border-radius:100px;
 
-    background:white;
+    background:var(--verde);
 
-    border:1px solid #DCE6DE;
+    border:1px solid var(--verde);
 
-    color:var(--verde-escuro);
+    color:white;
 
     font-size:.76rem;
 }
 
-.tag-destaque-verde{
-    background:var(--verde);
-    color:white;
-    border-color:var(--verde);
-}
+.tag:nth-child(even){
+    background:var(--verde-escuro);
 
-.tag-destaque-terra{
-    background:var(--terracota);
-    color:white;
-    border-color:var(--terracota);
-}
-
-.tag-destaque-azul{
-    background:var(--azul);
-    color:white;
-    border-color:var(--azul);
+    border-color:var(--verde-escuro);
 }
 
 
@@ -699,7 +668,7 @@ nav{
 .secao-intro h2{
     color:var(--verde-escuro);
 
-    font-size:clamp(2.2rem,4.5vw,3.45rem);
+    font-size:clamp(2.2rem,4.5vw,3.4rem);
 
     margin-bottom:16px;
 }
@@ -708,22 +677,31 @@ nav{
     color:var(--texto-suave);
 }
 
+
+/* CARDS DELICADOS */
+
 .etapas{
     display:grid;
 
     grid-template-columns:repeat(2,1fr);
 
-    gap:16px;
+    gap:18px;
 }
 
 .etapa{
-    padding:27px;
+    padding:29px;
+
+    background:white;
 
     border:1px solid var(--linha);
 
     border-radius:18px;
 
-    background:white;
+    transition:.2s;
+}
+
+.etapa:hover{
+    box-shadow:0 10px 30px rgba(49,91,67,.05);
 }
 
 .numero{
@@ -731,35 +709,19 @@ nav{
     height:38px;
 
     display:flex;
-    justify-content:center;
     align-items:center;
-
-    border-radius:50%;
+    justify-content:center;
 
     background:var(--verde-claro);
 
     color:var(--verde);
 
-    font-size:.78rem;
+    border-radius:50%;
 
+    font-size:.75rem;
     font-weight:bold;
 
     margin-bottom:18px;
-}
-
-.etapa:nth-child(2) .numero{
-    background:var(--terracota-claro);
-    color:var(--terracota);
-}
-
-.etapa:nth-child(3) .numero{
-    background:var(--azul-claro);
-    color:var(--azul);
-}
-
-.etapa:nth-child(4) .numero{
-    background:var(--verde-claro);
-    color:var(--verde-vivo);
 }
 
 .etapa h3{
@@ -786,188 +748,81 @@ nav{
 }
 
 .detetive-box{
+    position:relative;
+
     background:var(--verde-claro);
 
-    border-radius:30px;
+    border-radius:28px;
 
-    padding:55px;
+    padding:58px 65px;
 
-    display:grid;
+    max-width:1000px;
 
-    grid-template-columns:.68fr 1.32fr;
-
-    gap:55px;
-
-    align-items:center;
-
-    overflow:hidden;
-
-    position:relative;
+    margin:0 auto;
 }
 
 
-/* ILUSTRAÇÃO */
+/* PEQUENA LUPA */
 
-.ilustracao{
-    min-height:330px;
+.lupa-pequena{
+    position:absolute;
 
-    position:relative;
+    top:47px;
+    right:58px;
 
-    display:flex;
+    width:54px;
+    height:54px;
 
-    align-items:center;
-
-    justify-content:center;
-}
-
-
-/* GRANDE LUPA */
-
-.lupa{
-    position:relative;
-
-    width:175px;
-    height:175px;
-
-    border:9px solid var(--terracota);
+    border:5px solid var(--terracota);
 
     border-radius:50%;
 
-    background:rgba(255,255,255,.75);
-
-    transform:rotate(-13deg);
-
-    box-shadow:0 10px 25px rgba(49,91,67,.08);
+    transform:rotate(-12deg);
 }
 
-.lupa::after{
+.lupa-pequena::after{
     content:"";
 
     position:absolute;
 
-    width:112px;
-    height:24px;
+    width:39px;
+    height:9px;
 
     background:var(--verde);
 
-    border-radius:30px;
-
-    right:-87px;
-    bottom:-43px;
-
-    transform:rotate(49deg);
-}
-
-
-/* BRILHO */
-
-.lupa::before{
-    content:"";
-
-    position:absolute;
-
-    width:45px;
-    height:17px;
-
-    border-top:4px solid white;
-
-    border-radius:50%;
-
-    top:25px;
-    left:27px;
-
-    transform:rotate(-30deg);
-}
-
-
-/* ELEMENTOS DIVERTIDOS */
-
-.desenho{
-    position:absolute;
-
-    font-family:Georgia, "Times New Roman", serif;
-
-    font-weight:bold;
-}
-
-.interrogacao{
-    color:var(--azul);
-
-    font-size:2.8rem;
-
-    top:17px;
-    left:34px;
-
-    transform:rotate(-10deg);
-}
-
-.estrela1{
-    color:var(--terracota);
-
-    font-size:2rem;
-
-    right:31px;
-    top:43px;
-
-    transform:rotate(10deg);
-}
-
-.estrela2{
-    color:var(--verde-vivo);
-
-    font-size:2.6rem;
-
-    bottom:24px;
-    left:28px;
-}
-
-.traco1{
-    width:35px;
-    height:5px;
-
-    background:var(--azul);
-
     border-radius:20px;
 
-    right:13px;
-    bottom:68px;
+    right:-31px;
+    bottom:-17px;
 
-    transform:rotate(-18deg);
-}
-
-.traco2{
-    width:24px;
-    height:5px;
-
-    background:var(--terracota);
-
-    border-radius:20px;
-
-    left:8px;
-    top:110px;
-
-    transform:rotate(22deg);
+    transform:rotate(47deg);
 }
 
 
 /* TEXTO */
 
-.detetive-texto .mini-titulo{
+.detetive-conteudo{
+    max-width:760px;
+}
+
+.detetive .mini-titulo{
     color:var(--terracota);
 }
 
 .detetive-texto h2{
     color:var(--verde-escuro);
 
-    font-size:clamp(2.4rem,4.5vw,3.6rem);
+    font-size:clamp(2.35rem,4.5vw,3.55rem);
 
-    margin-bottom:22px;
+    max-width:680px;
+
+    margin-bottom:24px;
 }
 
 .detetive-texto p{
     color:var(--texto-suave);
 
-    margin-bottom:14px;
+    margin-bottom:15px;
 }
 
 .detetive-texto strong{
@@ -975,13 +830,15 @@ nav{
 }
 
 .equipe{
-    margin:21px 0 !important;
+    margin:23px 0 !important;
 
-    padding:17px 19px;
+    padding:18px 20px;
 
     background:white;
 
     border-radius:15px;
+
+    border-left:4px solid var(--verde);
 }
 
 .frase-final{
@@ -991,7 +848,7 @@ nav{
 
     font-size:1.08rem;
 
-    margin-top:21px !important;
+    margin-top:23px !important;
 }
 
 
@@ -1016,7 +873,7 @@ nav{
 .psico-texto h2{
     color:var(--verde-escuro);
 
-    font-size:clamp(2.3rem,4.5vw,3.55rem);
+    font-size:clamp(2.3rem,4.5vw,3.5rem);
 
     margin-bottom:23px;
 }
@@ -1026,6 +883,9 @@ nav{
 
     margin-bottom:16px;
 }
+
+
+/* MODELO TCC */
 
 .modelo{
     display:flex;
@@ -1047,29 +907,24 @@ nav{
     font-size:.76rem;
 }
 
-.pensamento{
-    background:var(--verde-claro);
-    color:var(--verde);
-}
-
-.emocao{
-    background:var(--terracota-claro);
-    color:var(--terracota);
-}
-
+.pensamento,
+.emocao,
 .comportamento{
-    background:var(--azul-claro);
-    color:var(--azul);
+    background:var(--verde-claro);
+
+    color:var(--verde-escuro);
 }
 
 .modelo .seta{
     background:none;
+
     padding:0;
-    color:#A0A8A3;
+
+    color:var(--verde);
 }
 
 
-/* CARD */
+/* SESSÕES */
 
 .sessoes{
     padding:37px;
@@ -1107,7 +962,6 @@ nav{
     border-radius:100px;
 
     font-size:.82rem;
-
     font-weight:bold;
 }
 
@@ -1117,7 +971,7 @@ nav{
 ========================================================= */
 
 .sobre{
-    background:var(--verde-muito-claro);
+    background:var(--verde-suave);
 }
 
 .sobre-grid{
@@ -1141,9 +995,11 @@ nav{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 }
+
+
+/* MOLDURA VERDE */
 
 .sobre-fundo{
     position:absolute;
@@ -1151,7 +1007,7 @@ nav{
     width:90%;
     height:90%;
 
-    background:var(--terracota-claro);
+    background:var(--verde-claro);
 
     border-radius:
     52% 48% 42% 58%
@@ -1175,14 +1031,15 @@ nav{
     display:flex;
 
     justify-content:center;
-
     align-items:center;
 
     text-align:center;
 
     padding:25px;
 
-    color:var(--terracota);
+    color:var(--verde);
+
+    border:1px solid #DDE8E0;
 
     box-shadow:0 13px 35px rgba(49,91,67,.07);
 }
@@ -1190,6 +1047,7 @@ nav{
 .sobre-foto img{
     width:100%;
     height:100%;
+
     object-fit:cover;
 }
 
@@ -1199,9 +1057,9 @@ nav{
 .sobre-texto h2{
     color:var(--verde-escuro);
 
-    font-size:clamp(2.3rem,4.5vw,3.5rem);
+    font-size:clamp(2.5rem,4.5vw,3.6rem);
 
-    margin-bottom:22px;
+    margin-bottom:25px;
 }
 
 .sobre-texto p{
@@ -1219,7 +1077,7 @@ nav{
 }
 
 .sobre-frase strong{
-    color:var(--terracota);
+    color:var(--verde);
 }
 
 
@@ -1228,7 +1086,7 @@ nav{
 .teaam{
     margin-top:23px;
 
-    padding:15px 17px;
+    padding:16px 18px;
 
     background:white;
 
@@ -1265,7 +1123,7 @@ nav{
 }
 
 .formacao-titulo{
-    color:var(--azul);
+    color:var(--verde-escuro);
 
     font-weight:bold;
 
@@ -1304,22 +1162,39 @@ nav{
 
     grid-template-columns:repeat(3,1fr);
 
-    gap:15px;
+    gap:17px;
 }
 
+
+/* MOEMA */
+
 .local{
-    padding:27px;
+    padding:29px;
 
-    border-radius:18px;
+    border-radius:19px;
 
-    border:1px solid var(--linha);
+    background:var(--verde-claro);
+
+    border:1px solid #DCE9DF;
+}
+
+.local:nth-child(2){
+    background:var(--terracota-claro);
+
+    border-color:#F0D8CF;
+}
+
+.local:nth-child(3){
+    background:#E3F1E6;
+
+    border-color:#D5E8D9;
 }
 
 .local-marca{
-    width:28px;
+    width:29px;
     height:4px;
 
-    border-radius:20px;
+    border-radius:30px;
 
     background:var(--verde);
 
@@ -1331,7 +1206,7 @@ nav{
 }
 
 .local:nth-child(3) .local-marca{
-    background:var(--azul);
+    background:var(--verde-vivo);
 }
 
 .local h3{
@@ -1368,7 +1243,7 @@ nav{
 }
 
 .contato .mini-titulo::before{
-    background:#F0C7B8;
+    background:white;
 }
 
 .contato h2{
@@ -1447,7 +1322,6 @@ footer{
 
     .hero-grid,
     .avaliacao-grid,
-    .detetive-box,
     .psico-grid,
     .sobre-grid{
         grid-template-columns:1fr;
@@ -1458,7 +1332,7 @@ footer{
     }
 
     .hero h1{
-        font-size:3.1rem;
+        font-size:3.15rem;
     }
 
     .hero-foto{
@@ -1478,13 +1352,25 @@ footer{
     }
 
     .detetive-box{
-        padding:38px 27px 45px;
-
-        gap:25px;
+        padding:45px 28px;
     }
 
-    .ilustracao{
-        min-height:275px;
+    .lupa-pequena{
+        top:28px;
+        right:28px;
+
+        width:43px;
+        height:43px;
+
+        border-width:4px;
+    }
+
+    .lupa-pequena::after{
+        width:31px;
+        height:8px;
+
+        right:-25px;
+        bottom:-14px;
     }
 
     .locais{
@@ -1505,11 +1391,7 @@ footer{
     }
 
     .hero h1{
-        font-size:2.75rem;
-    }
-
-    .hero-frase{
-        font-size:1.25rem;
+        font-size:2.8rem;
     }
 
     .hero-botoes{
@@ -1533,14 +1415,10 @@ footer{
         border-radius:22px;
     }
 
-    .lupa{
-        width:150px;
-        height:150px;
-    }
-
 }
 
 </style>
+
 </head>
 
 
@@ -1646,7 +1524,7 @@ Psicologia • Neuropsicologia
 
 
 <h1>
-Oi, eu sou a Nubia.
+Nubia Fernandes
 </h1>
 
 
@@ -1660,19 +1538,10 @@ CRP 06/162951
 </div>
 
 
-<div class="hero-frase">
-
-Psicologia com conhecimento científico,
-cuidado e contexto.
-
-</div>
-
-
 <p class="hero-texto">
 
-Meu trabalho acontece por meio da psicoterapia on-line
-para adultos e da avaliação neuropsicológica para crianças,
-adolescentes, adultos e idosos.
+Psicoterapia on-line para adultos e avaliação neuropsicológica
+para crianças, adolescentes, adultos e idosos.
 
 </p>
 
@@ -1843,7 +1712,7 @@ ao raciocínio clínico e à individualidade.
 
 
 <!-- =========================================================
-     INTRODUÇÃO
+     IDENTIDADE
 ========================================================= -->
 
 <section class="introducao">
@@ -1858,18 +1727,19 @@ Meu trabalho
 
 <h2>
 
-Conhecimento científico é importante.
-<span>Mas cada pessoa também traz uma história.</span>
+Psicologia com conhecimento científico,
+<span>cuidado e contexto.</span>
 
 </h2>
 
 
 <p>
 
+Cada pessoa traz uma história, um contexto e necessidades próprias.
 Por isso, tanto na avaliação quanto na psicoterapia,
-procuro compreender cada pessoa considerando seus sintomas,
-mas também sua história, seu contexto, suas experiências
-e a forma como vive suas dificuldades.
+procuro compreender cada pessoa para além dos sintomas,
+integrando conhecimento científico, raciocínio clínico
+e aquilo que faz sentido para sua realidade.
 
 </p>
 
@@ -1989,45 +1859,25 @@ Algumas condições e demandas que podem fazer parte da investigação:
 
 <div class="tags">
 
-<span class="tag tag-destaque-verde">
-TDAH
-</span>
+<span class="tag">TDAH</span>
 
-<span class="tag tag-destaque-terra">
-Autismo • TEA
-</span>
+<span class="tag">Autismo • TEA</span>
 
-<span class="tag tag-destaque-azul">
-Dificuldades de aprendizagem
-</span>
+<span class="tag">Dificuldades de aprendizagem</span>
 
-<span class="tag">
-Transtornos de aprendizagem
-</span>
+<span class="tag">Transtornos de aprendizagem</span>
 
-<span class="tag tag-destaque-verde">
-Altas habilidades / Superdotação
-</span>
+<span class="tag">Altas habilidades / Superdotação</span>
 
-<span class="tag">
-Desenvolvimento intelectual
-</span>
+<span class="tag">Desenvolvimento intelectual</span>
 
-<span class="tag tag-destaque-terra">
-Alterações de memória
-</span>
+<span class="tag">Alterações de memória</span>
 
-<span class="tag">
-Transtornos do humor
-</span>
+<span class="tag">Transtornos do humor</span>
 
-<span class="tag tag-destaque-azul">
-Transtornos de personalidade
-</span>
+<span class="tag">Transtornos de personalidade</span>
 
-<span class="tag">
-Funcionamento cognitivo
-</span>
+<span class="tag">Funcionamento cognitivo</span>
 
 </div>
 
@@ -2183,7 +2033,7 @@ também é realizada a entrega do laudo neuropsicológico.
 
 
 <!-- =========================================================
-     DETETIVES DO CÉREBRO
+     CRIANÇAS
 ========================================================= -->
 
 <section class="detetive">
@@ -2194,38 +2044,10 @@ também é realizada a entrega do laudo neuropsicológico.
 <div class="detetive-box">
 
 
-
-<div class="ilustracao">
-
-
-<div class="lupa"></div>
+<div class="lupa-pequena"></div>
 
 
-<div class="desenho interrogacao">
-?
-</div>
-
-
-<div class="desenho estrela1">
-✦
-</div>
-
-
-<div class="desenho estrela2">
-✧
-</div>
-
-
-<div class="desenho traco1"></div>
-
-<div class="desenho traco2"></div>
-
-
-</div>
-
-
-
-<div class="detetive-texto">
+<div class="detetive-conteudo detetive-texto">
 
 
 <div class="mini-titulo">
@@ -2351,6 +2173,11 @@ como ansiedade, depressão, estresse, sobrecarga emocional,
 dificuldades nos relacionamentos, autoestima e momentos
 de mudança ou dificuldades ao longo da vida.
 
+</p>
+
+
+<p>
+
 A psicoterapia também pode ser um espaço de
 <strong>autoconhecimento</strong>, mesmo quando não existe
 um diagnóstico ou transtorno psicológico.
@@ -2425,7 +2252,9 @@ ao longo do processo.
 
 
 <p>
+
 Os atendimentos são realizados on-line para adultos.
+
 </p>
 
 
@@ -2476,12 +2305,12 @@ Aqui entra outra foto sua.
 
 
 <div class="mini-titulo">
-Sobre mim
+Psicóloga e Neuropsicóloga
 </div>
 
 
 <h2>
-Um pouco sobre a minha trajetória.
+Sobre mim
 </h2>
 
 
@@ -2715,6 +2544,10 @@ Falar comigo pelo WhatsApp
 
 
 
+<!-- =========================================================
+     RODAPÉ
+========================================================= -->
+
 <footer>
 
 <div class="container footer-grid">
@@ -2744,4 +2577,5 @@ Moema • Tatuapé • Psicoterapia on-line
 
 
 </body>
+
 </html>
