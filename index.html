@@ -145,12 +145,12 @@ nav{
 }
 
 .hero-grid{
-    min-height:590px;
+    min-height:650px;
     display:grid;
-    grid-template-columns:1.04fr .96fr;
-    gap:65px;
+    grid-template-columns:.9fr 1.1fr;
+    gap:55px;
     align-items:center;
-    padding:45px 0 50px;
+    padding:40px 0 45px;
 }
 
 .hero-conteudo{
@@ -217,7 +217,7 @@ nav{
 
 
 /* FOTO PRINCIPAL
-   Sem moldura e sem corte */
+   MAIOR E SEM CORTAR */
 
 .hero-visual{
     width:100%;
@@ -228,9 +228,9 @@ nav{
 
 .hero-visual img{
     display:block;
-    width:100%;
+    width:115%;
+    max-width:650px;
     height:auto;
-    max-height:560px;
     object-fit:contain;
 }
 
@@ -361,8 +361,23 @@ nav{
 }
 
 
+/* CENTRALIZA TÍTULO COM A FOTO */
+
+.avaliacao-foto-coluna{
+    text-align:center;
+}
+
+.avaliacao-foto-coluna .mini-titulo{
+    text-align:center;
+}
+
+.avaliacao-foto-coluna h2{
+    text-align:center;
+}
+
+
 /* FOTO AVALIAÇÃO
-   Inteira e sem moldura */
+   INTEIRA E SEM BORDA */
 
 .foto-avaliacao{
     width:100%;
@@ -544,7 +559,7 @@ nav{
 
 
 /* FOTO DETETIVE
-   Inteira, sem moldura e sem corte */
+   INTEIRA E SEM BORDA */
 
 .detetive-ilustracao{
     width:100%;
@@ -560,10 +575,6 @@ nav{
     max-height:570px;
     object-fit:contain;
 }
-
-
-/* Os antigos rótulos ficam escondidos
-   para não ficarem sobre a sua foto */
 
 .pista-visual{
     display:none;
@@ -704,7 +715,7 @@ nav{
 
 
 /* FOTO SOBRE
-   Sem moldura e mostrando a imagem inteira */
+   INTEIRA E SEM BORDA */
 
 .foto-placeholder{
     width:100%;
@@ -913,6 +924,11 @@ footer{
 
     .hero h1{
         font-size:3.25rem;
+    }
+
+    .hero-visual img{
+        width:100%;
+        max-width:600px;
     }
 
     section{
@@ -1211,7 +1227,7 @@ Psicoterapia on-line para adultos.
 <div class="container avaliacao-grid">
 
 
-<div>
+<div class="avaliacao-foto-coluna">
 
 <div class="mini-titulo">
 Avaliação neuropsicológica
@@ -1461,7 +1477,7 @@ Quando explico para as crianças
 </div>
 
 <h2>
-A criança também faz parte da investigação.
+Detetives do cérebro
 </h2>
 
 <p>
@@ -1847,7 +1863,7 @@ Contato
 </div>
 
 <h2>
-Quer conversar sobre um atendimento?
+Vamos conversar?
 </h2>
 
 <p>
