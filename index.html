@@ -91,7 +91,7 @@ header{
 }
 
 nav{
-    min-height:72px;
+    min-height:92px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -101,13 +101,13 @@ nav{
 .logo{
     display:flex;
     align-items:center;
+    flex-shrink:0;
 }
 
 .logo-imagem{
     display:block;
-    width:230px;
-    max-width:28vw;
-    height:54px;
+    width:360px;
+    height:82px;
     object-fit:contain;
     object-position:left center;
 }
@@ -216,30 +216,22 @@ nav{
 }
 
 
-/* FOTO PRINCIPAL */
+/* FOTO PRINCIPAL
+   Sem moldura e sem corte */
 
 .hero-visual{
-    height:470px;
-    align-self:center;
-
-    border-radius:170px 170px 28px 28px;
-    background:var(--verde-claro);
-    border:5px solid var(--marrom);
-
+    width:100%;
     display:flex;
     align-items:center;
     justify-content:center;
-
-    position:relative;
-    overflow:hidden;
 }
 
 .hero-visual img{
-    position:absolute;
-    inset:0;
+    display:block;
     width:100%;
-    height:100%;
-    object-fit:cover;
+    height:auto;
+    max-height:560px;
+    object-fit:contain;
 }
 
 
@@ -368,27 +360,25 @@ nav{
     margin-bottom:23px;
 }
 
-.foto-avaliacao{
-    height:410px;
-    background:var(--verde);
-    border:5px solid var(--marrom);
-    border-radius:22px 90px 22px 22px;
 
+/* FOTO AVALIAÇÃO
+   Inteira e sem moldura */
+
+.foto-avaliacao{
+    width:100%;
     display:flex;
     align-items:center;
     justify-content:center;
-
-    position:relative;
-    overflow:hidden;
 }
 
 .foto-avaliacao img{
-    position:absolute;
-    inset:0;
+    display:block;
     width:100%;
-    height:100%;
-    object-fit:cover;
+    height:auto;
+    max-height:570px;
+    object-fit:contain;
 }
+
 
 .avaliacao-texto p{
     color:#E5EEE8;
@@ -552,77 +542,31 @@ nav{
     box-shadow:0 12px 35px rgba(40,81,62,.06);
 }
 
-.detetive-ilustracao{
-    min-height:370px;
-    position:relative;
 
+/* FOTO DETETIVE
+   Inteira, sem moldura e sem corte */
+
+.detetive-ilustracao{
+    width:100%;
     display:flex;
     align-items:center;
     justify-content:center;
-
-    background:var(--verde-claro);
-    border:5px solid var(--marrom);
-    border-radius:34px 90px 34px 90px;
-
-    overflow:hidden;
 }
 
 .detetive-ilustracao img{
-    position:absolute;
-    inset:0;
+    display:block;
     width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:1;
+    height:auto;
+    max-height:570px;
+    object-fit:contain;
 }
+
+
+/* Os antigos rótulos ficam escondidos
+   para não ficarem sobre a sua foto */
 
 .pista-visual{
-    position:absolute;
-
-    padding:8px 13px;
-
-    border-radius:100px;
-
-    background:white;
-
-    color:var(--verde-escuro);
-
-    font-size:.69rem;
-    font-weight:600;
-
-    box-shadow:0 5px 15px rgba(40,81,62,.08);
-
-    z-index:2;
-}
-
-.pista-atencao{
-    top:32px;
-    left:27px;
-    transform:rotate(-4deg);
-}
-
-.pista-memoria{
-    top:62px;
-    right:24px;
-    transform:rotate(4deg);
-}
-
-.pista-aprendizagem{
-    bottom:42px;
-    left:25px;
-    transform:rotate(3deg);
-}
-
-.pista-emocoes{
-    bottom:78px;
-    right:24px;
-    transform:rotate(-4deg);
-}
-
-.pista-problemas{
-    top:24px;
-    left:50%;
-    transform:translateX(-50%);
+    display:none;
 }
 
 .detetive-conteudo .mini-titulo{
@@ -758,29 +702,25 @@ nav{
     align-items:start;
 }
 
+
+/* FOTO SOBRE
+   Sem moldura e mostrando a imagem inteira */
+
 .foto-placeholder{
-    height:500px;
-
-    background:var(--verde-claro);
-    border:5px solid var(--marrom);
-
-    border-radius:22px 120px 22px 22px;
-
+    width:100%;
     display:flex;
-    align-items:center;
+    align-items:flex-start;
     justify-content:center;
-
-    position:relative;
-    overflow:hidden;
 }
 
 .foto-placeholder img{
-    position:absolute;
-    inset:0;
+    display:block;
     width:100%;
-    height:100%;
-    object-fit:cover;
+    height:auto;
+    max-height:650px;
+    object-fit:contain;
 }
+
 
 .sobre h2{
     color:var(--verde-escuro);
@@ -948,13 +888,13 @@ footer{
     }
 
     nav{
-        min-height:65px;
+        min-height:80px;
     }
 
     .logo-imagem{
-        width:190px;
-        max-width:60vw;
-        height:48px;
+        width:280px;
+        height:68px;
+        max-width:75vw;
     }
 
     .hero-grid,
@@ -975,10 +915,6 @@ footer{
         font-size:3.25rem;
     }
 
-    .hero-visual{
-        height:410px;
-    }
-
     section{
         padding:58px 0;
     }
@@ -994,14 +930,6 @@ footer{
 
     .detetive-box{
         padding:30px;
-    }
-
-    .detetive-ilustracao{
-        min-height:330px;
-    }
-
-    .foto-placeholder{
-        height:430px;
     }
 
 }
@@ -1020,8 +948,9 @@ footer{
         gap:30px;
     }
 
-    .detetive-ilustracao{
-        min-height:300px;
+    .logo-imagem{
+        width:240px;
+        height:62px;
     }
 
 }
@@ -1424,7 +1353,7 @@ Primeiro, conversamos.
 <p>
 
 A investigação começa na entrevista inicial.
-Nesse momento, buscamos compreender a história,
+Nesse momento, busco compreender a história,
 o desenvolvimento, o contexto atual,
 as dificuldades percebidas e o motivo que levou
 à busca pela avaliação.
@@ -1445,7 +1374,7 @@ Seguimos reunindo informações.
 
 <p>
 
-Ao longo dos encontros, utilizamos instrumentos padronizados,
+Ao longo dos encontros, utilizo instrumentos padronizados,
 atividades clínicas e observação para investigar
 as habilidades relevantes para aquele caso.
 
@@ -1521,8 +1450,6 @@ laudo com enfoque na avaliação neuropsicológica.
 src="calibradocerebro.png"
 alt="Nubia Fernandes com uma lupa">
 
-
-
 </div>
 
 
@@ -1540,18 +1467,18 @@ A criança também faz parte da investigação.
 <p>
 
 Para as crianças, costumo explicar que durante a avaliação
-viramos uma espécie de <strong>“detetives do cérebro”</strong>.
-Essa investigação não é feita sozinha:
+viro uma espécie de <strong>“detetive do cérebro”</strong>.
+Só que essa investigação não é feita sozinha:
 <strong>a criança também vira detetive comigo.</strong>
 
 </p>
 
 <p>
 
-Ao longo dos encontros, fazemos atividades, testes padronizados, 
-conversamos e resolvemos alguns desafios.
+Ao longo dos encontros, fazemos atividades, conversamos
+e resolvemos alguns desafios.
 
-Cada um deles pode trazer pistas sobre como a criança
+Cada um deles pode trazer pistas sobre como aquela criança
 aprende, presta atenção, lembra das coisas,
 resolve problemas e lida com diferentes situações.
 
@@ -1566,7 +1493,7 @@ Somos uma equipe.
 
 <p>
 
-A criança participa da investigação,
+A criança participa da investigação comigo,
 a família traz informações importantes e,
 quando necessário, professores e outros profissionais
 que a acompanham também ajudam a completar essa história.
@@ -1920,7 +1847,7 @@ Contato
 </div>
 
 <h2>
-Vamos conversar?
+Quer conversar sobre um atendimento?
 </h2>
 
 <p>
