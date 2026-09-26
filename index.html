@@ -11,1052 +11,1113 @@
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-:root{
-    --verde:#3F7D55;
-    --verde-vivo:#65A66F;
-    --verde-escuro:#315B43;
-    --verde-claro:#EAF3EC;
-    --verde-suave:#F5F9F6;
+:root {
+    --verde: #36784d;
+    --verde-escuro: #285b3c;
+    --verde-vivo: #62a86d;
+    --verde-medio: #6f9679;
+    --verde-claro: #dfeee2;
+    --verde-suave: #f2f7f3;
 
-    --terracota:#C76A4B;
+    --terracota: #b9684c;
 
-    --branco:#FFFFFF;
-    --texto:#37413D;
-    --texto-suave:#66706C;
-    --linha:#E3EAE5;
+    --texto: #34413b;
+    --texto-suave: #626e68;
+
+    --branco: #ffffff;
+    --linha: #e1e9e3;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#FFFFFF;
-    color:var(--texto);
-    line-height:1.7;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--texto);
+    background: var(--branco);
+    line-height: 1.7;
 }
 
-h1,h2,h3{
-    font-family:Georgia, "Times New Roman", serif;
-    font-weight:normal;
-    line-height:1.18;
+h1,
+h2,
+h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+    line-height: 1.12;
 }
 
-a{
-    text-decoration:none;
+a {
+    text-decoration: none;
 }
 
-.container{
-    width:min(1120px,90%);
-    margin:0 auto;
+.container {
+    width: min(1120px, 88%);
+    margin: auto;
 }
 
-section{
-    padding:88px 0;
+section {
+    padding: 100px 0;
 }
 
-.mini-titulo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    color:var(--verde);
-    text-transform:uppercase;
-    letter-spacing:.15em;
-    font-size:.68rem;
-    font-weight:bold;
-    margin-bottom:15px;
-}
-
-.mini-titulo::before{
-    content:"";
-    width:20px;
-    height:2px;
-    background:var(--verde);
-    border-radius:20px;
+.mini-titulo {
+    text-transform: uppercase;
+    letter-spacing: .20em;
+    font-size: .70rem;
+    color: var(--verde);
+    font-weight: bold;
+    margin-bottom: 18px;
 }
 
 
-/* CABEÇALHO */
+/* =========================================================
+   MENU
+========================================================= */
 
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(255,255,255,.97);
-    border-bottom:1px solid var(--linha);
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255,255,255,.96);
+
+    border-bottom: 1px solid var(--linha);
+
+    backdrop-filter: blur(10px);
 }
 
-nav{
-    min-height:76px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:30px;
+nav {
+    min-height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
 }
 
-.logo img{
-    display:block;
-    max-width:260px;
-    max-height:55px;
-    object-fit:contain;
+.logo {
+    color: var(--verde-escuro);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1.3rem;
 }
 
-.logo-fallback{
-    color:var(--verde-escuro);
-    font-family:Georgia, "Times New Roman", serif;
-    font-size:1.25rem;
+.logo small {
+    display: block;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: .52rem;
+
+    letter-spacing: .16em;
+
+    color: var(--texto-suave);
+
+    margin-top: 2px;
 }
 
-.logo-fallback small{
-    display:block;
-    margin-top:2px;
-    color:var(--texto-suave);
-    font-family:Arial, Helvetica, sans-serif;
-    font-size:.52rem;
-    letter-spacing:.15em;
+.menu {
+    display: flex;
+    align-items: center;
+
+    gap: 27px;
 }
 
-.menu{
-    display:flex;
-    align-items:center;
-    gap:24px;
+.menu a {
+    color: var(--texto);
+
+    font-size: .88rem;
+
+    transition: .2s;
 }
 
-.menu a{
-    color:var(--texto);
-    font-size:.85rem;
+.menu a:hover {
+    color: var(--verde);
 }
 
-.menu a:hover{
-    color:var(--verde);
+.menu .agendar {
+    padding: 11px 18px;
+
+    border-radius: 100px;
+
+    background: var(--terracota);
+
+    color: white;
 }
 
-.menu .agendar{
-    padding:11px 18px;
-    background:var(--terracota);
-    color:white;
-    border-radius:100px;
+
+/* =========================================================
+   ABERTURA
+========================================================= */
+
+.hero {
+    min-height: calc(100vh - 76px);
+
+    display: flex;
+    align-items: center;
+
+    background: white;
+
+    overflow: hidden;
+}
+
+.hero-grid {
+    display: grid;
+
+    grid-template-columns: 1.1fr .9fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    padding: 75px 0;
+}
+
+.hero h1 {
+    font-size: clamp(3.8rem, 8vw, 6.8rem);
+
+    color: var(--verde);
+
+    margin-bottom: 13px;
+
+    letter-spacing: -.035em;
+}
+
+.subtitulo {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1.28rem;
+
+    color: var(--verde-escuro);
+
+    margin-bottom: 25px;
+}
+
+.hero p {
+    max-width: 610px;
+
+    font-size: 1.04rem;
+
+    color: var(--texto-suave);
+
+    margin-bottom: 30px;
+}
+
+.hero-local {
+    color: var(--verde-escuro);
+
+    font-size: .84rem;
+
+    font-weight: bold;
+
+    margin-bottom: 27px;
 }
 
 
-/* INÍCIO */
+/* BOTÕES */
 
-.hero{
-    padding:78px 0 90px;
-    background:white;
-    overflow:hidden;
+.botoes {
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
 }
 
-.hero-grid{
-    display:grid;
-    grid-template-columns:1fr .92fr;
-    gap:72px;
-    align-items:center;
+.botao {
+    display: inline-block;
+
+    padding: 13px 21px;
+
+    border-radius: 100px;
+
+    font-size: .87rem;
+
+    font-weight: bold;
+
+    transition: .2s;
 }
 
-.hero h1{
-    color:var(--verde-escuro);
-    font-size:clamp(3.2rem,5.5vw,5rem);
-    letter-spacing:-.035em;
-    margin-bottom:12px;
+.botao:hover {
+    transform: translateY(-2px);
 }
 
-.hero-profissao{
-    color:var(--texto);
-    font-family:Georgia, "Times New Roman", serif;
-    font-size:1.3rem;
-    margin-bottom:3px;
+.botao-terapia {
+    background: var(--terracota);
+
+    color: white;
 }
 
-.hero-crp{
-    color:var(--texto-suave);
-    font-size:.83rem;
-    margin-bottom:29px;
-}
+.botao-avaliacao {
+    background: var(--verde);
 
-.hero-texto{
-    color:var(--texto-suave);
-    max-width:565px;
-    font-size:1rem;
-    margin-bottom:18px;
-}
-
-.hero-local{
-    color:var(--verde-escuro);
-    font-size:.84rem;
-    font-weight:bold;
-    margin-bottom:28px;
-}
-
-.hero-botoes{
-    display:flex;
-    flex-wrap:wrap;
-    gap:11px;
-}
-
-.botao-servico{
-    padding:14px 18px;
-    min-width:225px;
-    border-radius:13px;
-    color:white;
-    transition:.2s;
-}
-
-.botao-servico:hover{
-    transform:translateY(-2px);
-}
-
-.botao-servico strong{
-    display:block;
-    font-size:.88rem;
-}
-
-.botao-servico span{
-    display:block;
-    margin-top:1px;
-    font-size:.69rem;
-    opacity:.93;
-}
-
-.botao-terapia{
-    background:var(--terracota);
-}
-
-.botao-avaliacao{
-    background:var(--verde);
+    color: white;
 }
 
 
 /* FOTO PRINCIPAL */
 
-.hero-foto{
-    min-height:520px;
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
+.hero-visual {
+    min-height: 510px;
 
-.foto-fundo{
-    position:absolute;
-    width:84%;
-    height:90%;
-    background:var(--verde-claro);
-    border-radius:48% 52% 44% 56% / 42% 44% 56% 58%;
-    right:0;
-    top:3%;
-}
+    border-radius: 220px 220px 30px 30px;
 
-.foto-detalhe{
-    position:absolute;
-    width:92px;
-    height:92px;
-    border-radius:50%;
-    background:var(--verde-vivo);
-    opacity:.18;
-    left:5%;
-    bottom:7%;
-}
+    background: var(--verde-claro);
 
-/* detalhe terracota retirado */
-.foto-linha{
-    display:none;
-}
+    display: flex;
 
-.foto-principal{
-    position:relative;
-    z-index:2;
-    width:76%;
-    height:470px;
-    background:white;
-    border-radius:175px 175px 25px 25px;
-    overflow:hidden;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:25px;
-    color:var(--verde);
-    border:2px solid var(--verde-claro);
-    box-shadow:0 16px 38px rgba(49,91,67,.08);
-}
+    align-items: center;
+    justify-content: center;
 
-.foto-principal img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
+    text-align: center;
 
+    color: var(--verde);
 
-/* RESUMO */
+    padding: 40px;
 
-.resumo{
-    padding:25px 0 60px;
-    background:white;
-}
+    position: relative;
 
-.resumo-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
+    overflow: hidden;
 }
 
-.resumo-card{
-    padding:24px;
-    background:var(--verde-suave);
-    border-radius:18px;
-    border:1px solid #E7EEE9;
-}
+/* detalhe somente verde */
 
-.resumo-card h3{
-    color:var(--verde-escuro);
-    font-size:1.08rem;
-    margin-bottom:8px;
-}
+.hero-visual::before {
+    content: "";
 
-.resumo-card p{
-    color:var(--texto-suave);
-    font-size:.82rem;
-    line-height:1.55;
-}
+    width: 100px;
+    height: 100px;
 
-.resumo-marca{
-    width:26px;
-    height:4px;
-    background:var(--verde);
-    border-radius:30px;
-    margin-bottom:15px;
-}
+    border: 2px solid var(--verde-vivo);
 
-.resumo-card:nth-child(2) .resumo-marca{
-    background:var(--verde-vivo);
-}
+    border-radius: 50%;
 
-.resumo-card:nth-child(3) .resumo-marca{
-    background:var(--verde);
-}
+    position: absolute;
+
+    top: 38px;
+    right: -28px;
 
-.resumo-card:nth-child(4) .resumo-marca{
-    background:var(--verde-escuro);
+    opacity: .38;
 }
 
+.hero-visual::after {
+    content: "";
 
-/* IDENTIDADE */
+    width: 75px;
+    height: 75px;
 
-.introducao{
-    background:white;
-    padding:80px 0 95px;
-}
+    background: var(--verde-vivo);
 
-.introducao-conteudo{
-    max-width:780px;
-}
+    border-radius: 50%;
 
-.introducao h2{
-    color:var(--verde-escuro);
-    font-size:clamp(2.2rem,4vw,3.3rem);
-    margin-bottom:22px;
-}
+    position: absolute;
 
-.introducao h2 span{
-    color:var(--verde);
+    left: -24px;
+    bottom: 45px;
+
+    opacity: .13;
 }
 
-.introducao p{
-    color:var(--texto-suave);
-    max-width:680px;
+.hero-visual span {
+    max-width: 230px;
 }
 
 
-/* AVALIAÇÃO */
+/* =========================================================
+   INTRODUÇÃO
+========================================================= */
 
-.avaliacao{
-    background:var(--verde-suave);
-}
+.introducao {
+    background: var(--verde-suave);
 
-.avaliacao-grid{
-    display:grid;
-    grid-template-columns:.85fr 1.15fr;
-    gap:65px;
-    align-items:start;
+    padding: 75px 0;
 }
 
-.avaliacao h2{
-    color:var(--verde-escuro);
-    font-size:clamp(2.3rem,4.5vw,3.55rem);
-    margin-bottom:29px;
+.introducao-conteudo {
+    max-width: 790px;
 }
 
+.introducao h2 {
+    color: var(--verde-escuro);
 
-/* FOTO NA AVALIAÇÃO */
+    font-size: clamp(2.5rem, 5vw, 4rem);
 
-.avaliacao-visual{
-    position:relative;
+    margin-bottom: 20px;
 }
 
-.avaliacao-foto-area{
-    position:relative;
-    min-height:450px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-top:30px;
+.introducao h2 span {
+    color: var(--verde-vivo);
 }
 
-.avaliacao-foto-fundo{
-    position:absolute;
-    width:88%;
-    height:92%;
-    background:var(--verde-claro);
-    border-radius:48% 52% 45% 55% / 43% 45% 55% 57%;
-}
+.introducao p {
+    color: var(--texto-suave);
 
-.avaliacao-foto{
-    position:relative;
-    z-index:2;
-    width:76%;
-    height:390px;
-    background:white;
-    border:2px solid var(--verde-claro);
-    border-radius:155px 155px 24px 24px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:25px;
-    color:var(--verde);
-    overflow:hidden;
-    box-shadow:0 13px 35px rgba(49,91,67,.07);
+    max-width: 700px;
 }
 
-.avaliacao-foto img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+
+/* =========================================================
+   SERVIÇOS
+========================================================= */
+
+.servicos {
+    background: white;
 }
+
+.titulo-secao {
+    max-width: 720px;
 
-.avaliacao-texto p{
-    color:var(--texto-suave);
-    margin-bottom:17px;
+    margin-bottom: 48px;
 }
 
-.avaliacao-destaque{
-    padding:20px 23px;
-    margin:26px 0;
-    background:var(--verde-claro);
-    border-radius:15px;
-    color:var(--verde-escuro);
-    font-family:Georgia, "Times New Roman", serif;
-    font-size:1.08rem;
+.titulo-secao h2 {
+    color: var(--verde-escuro);
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
+
+    margin-bottom: 18px;
 }
+
+.titulo-secao p {
+    color: var(--texto-suave);
 
-.condicoes{
-    margin-top:32px;
+    font-size: 1.03rem;
 }
 
-.condicoes h3{
-    color:var(--verde-escuro);
-    font-size:1.08rem;
-    line-height:1.45;
-    margin-bottom:15px;
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
 }
+
+.card {
+    padding: 42px;
 
-.tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
+    border-radius: 24px;
+
+    background: var(--verde-suave);
+
+    border-top: 5px solid var(--verde);
 }
 
-.tag{
-    padding:8px 13px;
-    border-radius:100px;
-    background:var(--verde);
-    border:1px solid var(--verde);
-    color:white;
-    font-size:.76rem;
+.card:nth-child(2) {
+    border-top-color: var(--verde-vivo);
 }
+
+.numero {
+    font-family: Georgia, serif;
 
-.tag:nth-child(even){
-    background:var(--verde-escuro);
-    border-color:var(--verde-escuro);
+    font-size: 1rem;
+
+    color: var(--verde);
+
+    margin-bottom: 20px;
 }
 
+.card h3 {
+    color: var(--verde-escuro);
 
-/* ETAPAS */
+    font-size: 2rem;
 
-.processo{
-    background:white;
+    margin-bottom: 18px;
 }
+
+.card p {
+    color: var(--texto-suave);
 
-.secao-intro{
-    max-width:720px;
-    margin-bottom:45px;
+    margin-bottom: 16px;
 }
 
-.secao-intro h2{
-    color:var(--verde-escuro);
-    font-size:clamp(2.2rem,4.5vw,3.4rem);
-    margin-bottom:16px;
+.local {
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #d7e2d9;
+
+    font-size: .92rem;
+
+    color: var(--verde);
+
+    font-weight: bold;
 }
+
 
-.secao-intro p{
-    color:var(--texto-suave);
+/* =========================================================
+   AVALIAÇÃO NEUROPSICOLÓGICA
+========================================================= */
+
+.avaliacao {
+    background: var(--verde-escuro);
+
+    color: white;
 }
+
+.avaliacao-grid {
+    display: grid;
 
-.etapas{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
+    grid-template-columns: .8fr 1.2fr;
+
+    gap: 80px;
+
+    align-items: start;
 }
 
-.etapa{
-    padding:29px;
-    background:white;
-    border:1px solid var(--linha);
-    border-radius:18px;
-    transition:.2s;
+.avaliacao .mini-titulo {
+    color: #b9d8c0;
 }
+
+.avaliacao h2 {
+    font-size: clamp(2.8rem, 5vw, 4.4rem);
 
-.etapa:hover{
-    box-shadow:0 10px 30px rgba(49,91,67,.05);
+    color: white;
 }
 
-.numero{
-    width:38px;
-    height:38px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:var(--verde-claro);
-    color:var(--verde);
-    border-radius:50%;
-    font-size:.75rem;
-    font-weight:bold;
-    margin-bottom:18px;
+.avaliacao-texto p {
+    color: #e2eee5;
+
+    font-size: 1.02rem;
+
+    margin-bottom: 18px;
 }
+
+.avaliacao-destaque {
+    color: white !important;
+
+    font-family: Georgia, serif;
+
+    font-size: 1.35rem !important;
+
+    line-height: 1.5;
 
-.etapa h3{
-    color:var(--verde-escuro);
-    font-size:1.22rem;
-    margin-bottom:10px;
+    margin: 30px 0 !important;
+
+    padding-left: 22px;
+
+    border-left: 3px solid var(--verde-vivo);
 }
+
 
-.etapa p{
-    color:var(--texto-suave);
-    font-size:.88rem;
+/* CONDIÇÕES */
+
+.condicoes {
+    margin-top: 32px;
 }
 
+.condicoes h3 {
+    color: white;
 
-/* DETETIVES DO CÉREBRO */
+    font-size: 1.12rem;
 
-.detetive{
-    background:white;
+    margin-bottom: 17px;
 }
+
+.tags {
+    display: flex;
+
+    flex-wrap: wrap;
 
-.detetive-box{
-    position:relative;
-    background:var(--verde-claro);
-    border-radius:28px;
-    padding:58px 65px;
-    max-width:1000px;
-    margin:0 auto;
+    gap: 8px;
 }
 
-/* lupa pequena e discreta */
-.lupa-pequena{
-    position:absolute;
-    top:48px;
-    right:62px;
-    width:38px;
-    height:38px;
-    border:4px solid var(--verde);
-    border-radius:50%;
-    transform:rotate(-12deg);
-    opacity:.85;
+.tag {
+    padding: 8px 13px;
+
+    border-radius: 100px;
+
+    background: rgba(255,255,255,.10);
+
+    border: 1px solid rgba(255,255,255,.22);
+
+    color: white;
+
+    font-size: .75rem;
 }
+
 
-.lupa-pequena::after{
-    content:"";
-    position:absolute;
-    width:25px;
-    height:6px;
-    background:var(--verde-vivo);
-    border-radius:20px;
-    right:-20px;
-    bottom:-11px;
-    transform:rotate(47deg);
+/* =========================================================
+   COMO FUNCIONA
+========================================================= */
+
+.processo {
+    background: white;
 }
+
+.etapas {
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
 
-.detetive-conteudo{
-    max-width:760px;
+    gap: 18px;
 }
+
+.etapa {
+    padding: 30px;
+
+    border: 1px solid var(--linha);
+
+    border-radius: 20px;
 
-.detetive .mini-titulo{
-    color:var(--verde);
+    background: white;
 }
 
-.detetive-texto h2{
-    color:var(--verde-escuro);
-    font-size:clamp(2.35rem,4.5vw,3.55rem);
-    max-width:680px;
-    margin-bottom:24px;
+.etapa-numero {
+    width: 39px;
+    height: 39px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--verde-claro);
+
+    color: var(--verde);
+
+    font-size: .75rem;
+
+    font-weight: bold;
+
+    margin-bottom: 18px;
 }
+
+.etapa h3 {
+    color: var(--verde-escuro);
+
+    font-size: 1.25rem;
 
-.detetive-texto p{
-    color:var(--texto-suave);
-    margin-bottom:15px;
+    margin-bottom: 10px;
 }
 
-.detetive-texto strong{
-    color:var(--verde-escuro);
+.etapa p {
+    color: var(--texto-suave);
+
+    font-size: .89rem;
 }
+
+
+/* =========================================================
+   DETETIVE DO CÉREBRO
+========================================================= */
 
-.equipe{
-    margin:23px 0 !important;
-    padding:18px 20px;
-    background:white;
-    border-radius:15px;
-    border-left:4px solid var(--verde);
+.detetive {
+    background: var(--verde-claro);
 }
 
-.frase-final{
-    color:var(--verde-escuro) !important;
-    font-family:Georgia, "Times New Roman", serif;
-    font-size:1.08rem;
-    margin-top:23px !important;
+.detetive-box {
+    display: grid;
+
+    grid-template-columns: .72fr 1.28fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+    background: white;
+
+    padding: 60px;
+
+    border-radius: 30px;
+
+    box-shadow: 0 15px 45px rgba(37,51,45,.07);
 }
+
+
+/* LUPA */
 
+.detetive-chamada {
+    position: relative;
 
-/* PSICOTERAPIA */
+    min-height: 260px;
 
-.psicoterapia{
-    background:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.lupa {
+    position: relative;
+
+    width: 190px;
+    height: 190px;
+
+    border: 12px solid var(--verde);
 
-.psico-grid{
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:70px;
-    align-items:center;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: var(--verde-escuro);
+
+    font-family: Georgia, serif;
+
+    font-size: 1.55rem;
+
+    line-height: 1.15;
+
+    background: var(--verde-suave);
+
+    transform: rotate(-5deg);
 }
+
+.lupa::after {
+    content: "";
+
+    position: absolute;
+
+    width: 95px;
+    height: 18px;
 
-.psico-texto h2{
-    color:var(--verde-escuro);
-    font-size:clamp(2.3rem,4.5vw,3.5rem);
-    margin-bottom:23px;
+    border-radius: 20px;
+
+    background: var(--verde-vivo);
+
+    right: -72px;
+    bottom: -34px;
+
+    transform: rotate(47deg);
 }
 
-.psico-texto p{
-    color:var(--texto-suave);
-    margin-bottom:16px;
+.detetive-texto h2 {
+    font-size: 2.15rem;
+
+    color: var(--verde-escuro);
+
+    margin-bottom: 20px;
 }
+
+.detetive-texto p {
+    color: var(--texto-suave);
 
-.modelo{
-    display:flex;
-    flex-wrap:wrap;
-    gap:7px;
-    align-items:center;
-    margin-top:25px;
+    margin-bottom: 15px;
 }
 
-.modelo span{
-    padding:7px 12px;
-    border-radius:100px;
-    font-size:.76rem;
+.detetive-texto strong {
+    color: var(--verde-escuro);
 }
 
-.pensamento,
-.emocao,
-.comportamento{
-    background:var(--verde-claro);
-    color:var(--verde-escuro);
+.equipe {
+    margin: 24px 0;
+
+    padding: 19px 21px;
+
+    background: var(--verde-suave);
+
+    border-left: 4px solid var(--verde);
+
+    border-radius: 13px;
 }
+
+.pista {
+    color: var(--verde) !important;
+
+    font-family: Georgia, serif;
 
-.modelo .seta{
-    background:none;
-    padding:0;
-    color:var(--verde);
+    font-size: 1.08rem;
+
+    margin-top: 22px;
 }
+
+
+/* =========================================================
+   PSICOTERAPIA
+========================================================= */
 
-.sessoes{
-    padding:37px;
-    background:var(--verde-claro);
-    border-radius:25px;
+.psicoterapia {
+    background: white;
 }
+
+.psicoterapia-grid {
+    display: grid;
+
+    grid-template-columns: 1.15fr .85fr;
+
+    gap: 70px;
 
-.sessoes h3{
-    color:var(--verde-escuro);
-    font-size:1.7rem;
-    margin-bottom:18px;
+    align-items: center;
 }
 
-.sessoes p{
-    color:var(--texto-suave);
-    margin-bottom:13px;
+.psicoterapia h2 {
+    color: var(--verde-escuro);
+
+    font-size: clamp(2.7rem,5vw,4rem);
+
+    margin-bottom: 24px;
 }
+
+.psicoterapia-texto p {
+    color: var(--texto-suave);
 
-.sessoes a{
-    display:inline-block;
-    margin-top:10px;
-    padding:11px 18px;
-    background:var(--verde);
-    color:white;
-    border-radius:100px;
-    font-size:.82rem;
-    font-weight:bold;
+    margin-bottom: 16px;
 }
 
+.demandas {
+    margin-top: 25px;
 
-/* SOBRE MIM */
+    display: flex;
 
-.sobre{
-    background:var(--verde-suave);
+    flex-wrap: wrap;
+
+    gap: 8px;
 }
+
+.demanda {
+    padding: 8px 13px;
+
+    border-radius: 100px;
 
-.sobre-grid{
-    display:grid;
-    grid-template-columns:.8fr 1.2fr;
-    gap:70px;
-    align-items:center;
+    background: var(--verde-claro);
+
+    color: var(--verde-escuro);
+
+    font-size: .76rem;
 }
+
+.psico-info {
+    padding: 38px;
 
-.sobre-visual{
-    min-height:500px;
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    background: var(--verde-suave);
+
+    border-radius: 26px;
 }
+
+.psico-info h3 {
+    color: var(--verde-escuro);
+
+    font-size: 1.7rem;
 
-.sobre-fundo{
-    position:absolute;
-    width:90%;
-    height:90%;
-    background:var(--verde-claro);
-    border-radius:52% 48% 42% 58% / 44% 42% 58% 56%;
+    margin-bottom: 18px;
 }
 
-.sobre-foto{
-    position:relative;
-    z-index:2;
-    width:78%;
-    height:445px;
-    background:white;
-    border-radius:170px 170px 22px 22px;
-    overflow:hidden;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:25px;
-    color:var(--verde);
-    border:2px solid var(--verde-claro);
-    box-shadow:0 13px 35px rgba(49,91,67,.07);
+.psico-info p {
+    color: var(--texto-suave);
+
+    margin-bottom: 13px;
 }
+
+.psico-info .botao {
+    margin-top: 10px;
+
+    background: var(--verde);
 
-.sobre-foto img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+    color: white;
 }
 
-.sobre-texto h2{
-    color:var(--verde-escuro);
-    font-size:clamp(2.5rem,4.5vw,3.6rem);
-    margin-bottom:25px;
+
+/* =========================================================
+   SOBRE
+========================================================= */
+
+.sobre {
+    background: var(--verde-suave);
 }
+
+.sobre-grid {
+    display: grid;
 
-.sobre-texto p{
-    color:var(--texto-suave);
-    margin-bottom:15px;
+    grid-template-columns: .9fr 1.1fr;
+
+    gap: 75px;
+
+    align-items: center;
 }
+
+.foto-placeholder {
+    min-height: 570px;
+
+    background: var(--verde-claro);
+
+    border-radius: 25px 180px 25px 25px;
+
+    display: flex;
 
-.sobre-frase{
-    color:var(--verde-escuro) !important;
-    font-family:Georgia, "Times New Roman", serif;
-    font-size:1.07rem;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--verde);
+
+    text-align: center;
+
+    padding: 30px;
 }
 
-.sobre-frase strong{
-    color:var(--verde);
+.sobre h2 {
+    font-size: clamp(2.7rem,5vw,4rem);
+
+    color: var(--verde-escuro);
+
+    margin-bottom: 25px;
 }
+
+.sobre p {
+    color: var(--texto-suave);
 
-.teaam{
-    margin-top:23px;
-    padding:16px 18px;
-    background:white;
-    border-left:4px solid var(--verde);
-    border-radius:12px;
+    margin-bottom: 17px;
 }
 
-.teaam strong{
-    display:block;
-    color:var(--verde-escuro);
-    font-size:.86rem;
+.sobre-frase {
+    color: var(--verde-escuro) !important;
+
+    font-family: Georgia, serif;
+
+    font-size: 1.08rem;
 }
+
+.teaam {
+    margin-top: 25px;
+
+    padding: 18px 20px;
+
+    background: white;
+
+    border-left: 4px solid var(--verde);
 
-.teaam p{
-    margin:4px 0 0;
-    font-size:.8rem;
+    border-radius: 13px;
 }
 
-.formacao{
-    margin-top:16px;
-    background:white;
-    padding:21px;
-    border-radius:14px;
+.teaam strong {
+    display: block;
+
+    color: var(--verde-escuro);
+
+    margin-bottom: 4px;
 }
+
+.teaam p {
+    margin: 0;
 
-.formacao-titulo{
-    color:var(--verde-escuro);
-    font-weight:bold;
-    margin-bottom:11px;
+    font-size: .85rem;
 }
+
+.formacao {
+    margin-top: 18px;
+
+    padding: 24px;
+
+    background: white;
 
-.formacao ul{
-    list-style:none;
+    border-radius: 18px;
 }
 
-.formacao li{
-    color:var(--texto-suave);
-    font-size:.84rem;
-    padding:7px 0;
-    border-bottom:1px solid #EEF1EF;
+.formacao strong {
+    color: var(--verde-escuro);
 }
 
-.formacao li:last-child{
-    border-bottom:0;
+.formacao ul {
+    list-style: none;
+
+    margin-top: 12px;
 }
 
+.formacao li {
+    padding: 7px 0;
 
-/* ATENDIMENTO */
+    color: var(--texto-suave);
 
-.atendimento{
-    background:white;
+    font-size: .84rem;
+
+    border-bottom: 1px solid #edf1ee;
 }
 
-.locais{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:17px;
+.formacao li:last-child {
+    border-bottom: 0;
 }
+
 
-.local{
-    padding:29px;
-    border-radius:19px;
-    background:var(--verde-claro);
-    border:1px solid #DCE9DF;
+/* =========================================================
+   ATENDIMENTO
+========================================================= */
+
+.atendimento {
+    background: white;
 }
+
+.atendimento-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
 
-.local:nth-child(2){
-    background:#F1F7F2;
-    border-color:#DCE9DF;
+    gap: 22px;
 }
 
-.local:nth-child(3){
-    background:#E3F1E6;
-    border-color:#D5E8D9;
+.info {
+    padding: 30px;
+
+    border: 1px solid #dce6de;
+
+    border-radius: 18px;
+
+    background: white;
 }
 
-.local-marca{
-    width:29px;
-    height:4px;
-    border-radius:30px;
-    background:var(--verde);
-    margin-bottom:16px;
+.info:nth-child(1) {
+    background: var(--verde-claro);
 }
 
-.local:nth-child(2) .local-marca{
-    background:var(--verde-escuro);
+.info:nth-child(2) {
+    background: #f4f8f5;
 }
 
-.local:nth-child(3) .local-marca{
-    background:var(--verde-vivo);
+.info:nth-child(3) {
+    background: #e9f3eb;
 }
 
-.local h3{
-    color:var(--verde-escuro);
-    font-size:1.3rem;
-    margin-bottom:8px;
+.info h3 {
+    color: var(--verde-escuro);
+
+    font-size: 1.45rem;
+
+    margin-bottom: 10px;
 }
 
-.local p{
-    color:var(--texto-suave);
-    font-size:.86rem;
+.info p {
+    color: var(--texto-suave);
 }
 
 
-/* CONTATO */
+/* =========================================================
+   CONTATO
+========================================================= */
 
-.contato{
-    background:var(--verde);
-    text-align:center;
-    color:white;
-}
+.contato {
+    background: var(--verde);
 
-.contato .mini-titulo{
-    justify-content:center;
-    color:#E3F0E6;
+    color: white;
+
+    text-align: center;
 }
 
-.contato .mini-titulo::before{
-    background:white;
+.contato .mini-titulo {
+    color: #d8eadc;
 }
+
+.contato h2 {
+    color: white;
+
+    font-size: clamp(2.7rem,5vw,4rem);
 
-.contato h2{
-    font-size:clamp(2.4rem,4.5vw,3.5rem);
-    margin-bottom:15px;
+    margin-bottom: 20px;
 }
 
-.contato p{
-    max-width:620px;
-    margin:0 auto 25px;
-    color:#EEF6F0;
+.contato p {
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    color: #edf6ef;
 }
+
+.contato .botao {
+    background: white;
 
-.whatsapp{
-    display:inline-block;
-    padding:12px 20px;
-    background:white;
-    color:var(--verde);
-    border-radius:100px;
-    font-size:.84rem;
-    font-weight:bold;
+    color: var(--verde-escuro);
 }
 
 
-/* RODAPÉ */
+/* =========================================================
+   RODAPÉ
+========================================================= */
 
-footer{
-    padding:32px 0;
-    background:var(--verde-escuro);
-    color:#DFE9E2;
-    font-size:.82rem;
+footer {
+    background: var(--verde-escuro);
+
+    color: #dbe6df;
+
+    padding: 38px 0;
+
+    font-size: .9rem;
 }
+
+.footer-grid {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
 
-.footer-grid{
-    display:flex;
-    justify-content:space-between;
-    gap:25px;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
 
 
-/* CELULAR */
+/* =========================================================
+   CELULAR
+========================================================= */
 
-@media(max-width:850px){
+@media(max-width:800px) {
 
-    .menu{
-        display:none;
+    .menu {
+        display: none;
     }
 
-    nav{
-        min-height:68px;
+    nav {
+        min-height: 65px;
     }
 
-    section{
-        padding:68px 0;
+    .hero {
+        min-height: auto;
     }
 
     .hero-grid,
     .avaliacao-grid,
-    .psico-grid,
-    .sobre-grid{
-        grid-template-columns:1fr;
+    .detetive-box,
+    .psicoterapia-grid,
+    .sobre-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 
-    .hero-grid{
-        gap:40px;
+    .hero-grid {
+        padding: 65px 0;
     }
 
-    .hero h1{
-        font-size:3.15rem;
+    .hero h1 {
+        font-size: 3.7rem;
     }
 
-    .hero-foto{
-        min-height:455px;
+    .hero-visual {
+        min-height: 400px;
     }
 
-    .foto-principal{
-        height:410px;
+    section {
+        padding: 75px 0;
     }
 
-    .resumo-grid{
-        grid-template-columns:1fr 1fr;
+    .cards,
+    .etapas,
+    .atendimento-grid {
+        grid-template-columns: 1fr;
     }
 
-    .etapas{
-        grid-template-columns:1fr;
+    .card,
+    .detetive-box {
+        padding: 30px;
     }
 
-    .avaliacao-foto-area{
-        min-height:420px;
+    .detetive-chamada {
+        min-height: 230px;
     }
 
-    .avaliacao-foto{
-        height:370px;
-        width:72%;
-    }
-
-    .detetive-box{
-        padding:45px 28px;
-    }
-
-    .lupa-pequena{
-        top:25px;
-        right:28px;
-    }
-
-    .locais{
-        grid-template-columns:1fr;
-    }
-}
-
-@media(max-width:520px){
-
-    .container{
-        width:88%;
-    }
-
-    .hero{
-        padding-top:55px;
-    }
-
-    .hero h1{
-        font-size:2.8rem;
-    }
-
-    .hero-botoes{
-        flex-direction:column;
-    }
-
-    .botao-servico{
-        width:100%;
-    }
-
-    .resumo-grid{
-        grid-template-columns:1fr;
-    }
-
-    .foto-principal{
-        width:82%;
-        height:380px;
-    }
-
-    .avaliacao-foto{
-        width:82%;
-        height:350px;
-    }
-
-    .detetive-box{
-        border-radius:22px;
+    .foto-placeholder {
+        min-height: 430px;
     }
 }
 
@@ -1066,26 +1127,18 @@ footer{
 
 <body>
 
+
+<!-- =========================================================
+     MENU
+========================================================= -->
+
 <header>
 
 <div class="container">
 
 <nav>
 
-<div class="logo">
-
-<img
-src="logo-nubia.png"
-alt="Nubia Fernandes Psicóloga e Neuropsicóloga"
-onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block';"
->
-
-<a
-href="#inicio"
-class="logo-fallback"
-id="logoFallback"
-style="display:none;"
->
+<a class="logo" href="#inicio">
 
 Nubia Fernandes
 
@@ -1095,20 +1148,28 @@ PSICOLOGIA • NEUROPSICOLOGIA
 
 </a>
 
-</div>
-
 
 <div class="menu">
 
-<a href="#avaliacao">Avaliação</a>
+<a href="#avaliacao">
+Avaliação
+</a>
 
-<a href="#psicoterapia">Psicoterapia</a>
+<a href="#psicoterapia">
+Psicoterapia
+</a>
 
-<a href="#sobre">Sobre mim</a>
+<a href="#sobre">
+Sobre mim
+</a>
 
-<a href="#atendimento">Atendimento</a>
+<a href="#atendimento">
+Atendimento
+</a>
 
-<a href="#contato">Contato</a>
+<a href="#contato">
+Contato
+</a>
 
 <a
 href="https://wa.me/5511953235907"
@@ -1127,14 +1188,18 @@ Agendar atendimento
 </header>
 
 
+
 <main>
 
 
-<!-- INÍCIO -->
+<!-- =========================================================
+     INÍCIO
+========================================================= -->
 
 <section class="hero" id="inicio">
 
 <div class="container hero-grid">
+
 
 <div>
 
@@ -1142,269 +1207,347 @@ Agendar atendimento
 Psicologia • Neuropsicologia
 </div>
 
+
 <h1>
-Nubia Fernandes
+Nubia<br>Fernandes
 </h1>
 
-<div class="hero-profissao">
-Psicóloga e Neuropsicóloga
+
+<div class="subtitulo">
+Psicóloga e Neuropsicóloga • CRP 06/162951
 </div>
 
-<div class="hero-crp">
-CRP 06/162951
-</div>
 
-<p class="hero-texto">
+<p>
+
 Psicoterapia on-line para adultos e avaliação neuropsicológica
 para crianças, adolescentes, adultos e idosos.
+
+Um trabalho baseado em evidências, mas que começa pela história,
+pelo contexto e pelas necessidades de cada pessoa.
+
 </p>
+
 
 <div class="hero-local">
+
 Avaliação presencial em Moema e Tatuapé • São Paulo
+
 </div>
 
-<div class="hero-botoes">
 
-<a href="#psicoterapia" class="botao-servico botao-terapia">
+<div class="botoes">
 
-<strong>
+
+<a
+href="#psicoterapia"
+class="botao botao-terapia"
+>
 Psicoterapia on-line
-</strong>
-
-<span>
-para adultos
-</span>
-
 </a>
 
-<a href="#avaliacao" class="botao-servico botao-avaliacao">
 
-<strong>
+<a
+href="#avaliacao"
+class="botao botao-avaliacao"
+>
 Avaliação neuropsicológica
-</strong>
-
-<span>
-crianças, adolescentes, adultos e idosos
-</span>
-
 </a>
 
-</div>
 
 </div>
 
-
-<div class="hero-foto">
-
-<div class="foto-fundo"></div>
-
-<div class="foto-detalhe"></div>
-
-<div class="foto-principal">
-Aqui entra sua foto profissional.
 </div>
 
+
+
+<div class="hero-visual">
+
+<span>
+Aqui entra uma das suas fotos profissionais.
+</span>
+
 </div>
+
 
 </div>
 
 </section>
 
 
-<!-- RESUMO -->
 
-<section class="resumo">
-
-<div class="container resumo-grid">
-
-<div class="resumo-card">
-
-<div class="resumo-marca"></div>
-
-<h3>
-Avaliação neuropsicológica
-</h3>
-
-<p>
-Compreensão do funcionamento cognitivo,
-emocional e comportamental de forma individualizada.
-</p>
-
-</div>
-
-
-<div class="resumo-card">
-
-<div class="resumo-marca"></div>
-
-<h3>
-Psicoterapia on-line
-</h3>
-
-<p>
-Atendimento para adultos, considerando
-a história, o contexto e as necessidades de cada pessoa.
-</p>
-
-</div>
-
-
-<div class="resumo-card">
-
-<div class="resumo-marca"></div>
-
-<h3>
-Diferentes fases da vida
-</h3>
-
-<p>
-Avaliação neuropsicológica de crianças,
-adolescentes, adultos e idosos.
-</p>
-
-</div>
-
-
-<div class="resumo-card">
-
-<div class="resumo-marca"></div>
-
-<h3>
-Prática baseada em evidências
-</h3>
-
-<p>
-Conhecimento científico integrado
-ao raciocínio clínico e à individualidade.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- IDENTIDADE -->
+<!-- =========================================================
+     IDENTIDADE
+========================================================= -->
 
 <section class="introducao">
 
 <div class="container introducao-conteudo">
 
+
 <div class="mini-titulo">
 Meu trabalho
 </div>
 
+
 <h2>
+
 Psicologia com conhecimento científico,
 <span>cuidado e contexto.</span>
+
 </h2>
 
+
 <p>
+
 Cada pessoa traz uma história, um contexto e necessidades próprias.
 Por isso, tanto na avaliação quanto na psicoterapia,
 procuro compreender cada pessoa para além dos sintomas,
 integrando conhecimento científico, raciocínio clínico
 e aquilo que faz sentido para sua realidade.
+
 </p>
+
 
 </div>
 
 </section>
 
 
-<!-- AVALIAÇÃO -->
+
+<!-- =========================================================
+     SERVIÇOS
+========================================================= -->
+
+<section class="servicos">
+
+<div class="container">
+
+
+<div class="titulo-secao">
+
+<div class="mini-titulo">
+Como posso ajudar
+</div>
+
+
+<h2>
+Duas formas de cuidado, com objetivos diferentes.
+</h2>
+
+
+<p>
+
+Meu trabalho acontece principalmente em duas frentes:
+avaliação neuropsicológica e psicoterapia.
+
+</p>
+
+</div>
+
+
+
+<div class="cards">
+
+
+<article class="card">
+
+<div class="numero">
+01
+</div>
+
+
+<h3>
+Avaliação neuropsicológica
+</h3>
+
+
+<p>
+
+A avaliação neuropsicológica é um processo clínico de investigação
+que busca compreender diferentes aspectos do funcionamento cognitivo,
+emocional e comportamental.
+
+</p>
+
+
+<p>
+
+Pode contribuir para a investigação de hipóteses diagnósticas,
+para o diagnóstico diferencial e para a compreensão das
+potencialidades, dificuldades e características do funcionamento
+de cada pessoa.
+
+</p>
+
+
+<div class="local">
+Avaliação presencial em Moema e Tatuapé, São Paulo.
+</div>
+
+
+</article>
+
+
+
+<article class="card">
+
+<div class="numero">
+02
+</div>
+
+
+<h3>
+Psicoterapia
+</h3>
+
+
+<p>
+
+Atendo adultos de forma on-line, com psicoterapia baseada em evidências,
+principalmente a partir da Terapia Cognitivo-Comportamental (TCC).
+
+</p>
+
+
+<p>
+
+O trabalho é construído de acordo com a história,
+o contexto, as dificuldades e as necessidades
+de cada pessoa, sem fórmulas prontas.
+
+</p>
+
+
+<div class="local">
+Psicoterapia on-line para adultos.
+</div>
+
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     AVALIAÇÃO
+========================================================= -->
 
 <section class="avaliacao" id="avaliacao">
 
 <div class="container avaliacao-grid">
 
 
-<div class="avaliacao-visual">
+<div>
 
 <div class="mini-titulo">
 Avaliação neuropsicológica
 </div>
 
+
 <h2>
-Compreender como aquela pessoa funciona.
+Avaliar é investigar.
 </h2>
 
-
-<div class="avaliacao-foto-area">
-
-<div class="avaliacao-foto-fundo"></div>
-
-<div class="avaliacao-foto">
-Aqui entra uma foto sua.
 </div>
 
-</div>
-
-</div>
 
 
 <div class="avaliacao-texto">
 
+
 <p>
+
 A avaliação neuropsicológica é um processo clínico de investigação
 que busca compreender diferentes aspectos do funcionamento cognitivo,
 emocional e comportamental.
+
 </p>
+
 
 <p>
-A avaliação neuropsicológica possibilita investigar diferentes
-domínios do funcionamento, como atenção, memória, linguagem,
-aprendizagem, raciocínio, funções executivas e habilidades
-visuoespaciais, além de aspectos emocionais e comportamentais
-importantes para a compreensão da pessoa.
+
+De acordo com a demanda de cada pessoa, podem ser investigadas
+habilidades como atenção, memória, linguagem, aprendizagem,
+raciocínio, funções executivas e habilidades visuoespaciais,
+além de aspectos emocionais e comportamentais importantes
+para a compreensão do caso.
+
 </p>
+
 
 <p>
-Os instrumentos padronizados são uma parte importante da avaliação,
-mas seus resultados não são interpretados de forma isolada.
-História de desenvolvimento, contexto atual, entrevistas,
-observação clínica e, quando pertinente, informações da família,
-da escola e de outros profissionais também fazem parte da investigação.
+
+Os testes e outros instrumentos padronizados são uma parte importante
+desse processo, mas seus resultados não são interpretados de forma isolada.
+Eles são integrados à história de desenvolvimento, às entrevistas,
+à observação clínica e, quando necessário, às informações da família,
+da escola e de outros profissionais.
+
 </p>
 
-<div class="avaliacao-destaque">
-Mais do que reunir resultados, avaliar é integrar informações
+
+<p class="avaliacao-destaque">
+
+Mais do que reunir resultados, avaliar é juntar diferentes informações
 para compreender como aquela pessoa funciona.
-</div>
+
+</p>
+
 
 <p>
-A avaliação pode contribuir para a investigação diagnóstica
-e para o diagnóstico diferencial, mas não se resume à busca
-por um diagnóstico. Também permite compreender potencialidades,
-dificuldades e o perfil de funcionamento da pessoa,
-oferecendo informações que podem auxiliar no direcionamento
-do tratamento, nas orientações e no autoconhecimento.
+
+A avaliação pode contribuir para a investigação de hipóteses diagnósticas
+e para o diagnóstico diferencial, mas não se resume à busca por um diagnóstico.
+Ela também permite compreender potencialidades, dificuldades e características
+do funcionamento da pessoa, ajudando a direcionar orientações,
+intervenções e próximos passos.
+
 </p>
+
 
 
 <div class="condicoes">
+
 
 <h3>
 Algumas condições e demandas que podem fazer parte da investigação:
 </h3>
 
+
 <div class="tags">
 
 <span class="tag">TDAH</span>
+
 <span class="tag">Autismo • TEA</span>
+
 <span class="tag">Dificuldades de aprendizagem</span>
+
 <span class="tag">Transtornos de aprendizagem</span>
+
 <span class="tag">Altas habilidades / Superdotação</span>
+
 <span class="tag">Desenvolvimento intelectual</span>
+
 <span class="tag">Alterações de memória</span>
+
 <span class="tag">Transtornos do humor</span>
+
 <span class="tag">Transtornos de personalidade</span>
+
 <span class="tag">Funcionamento cognitivo</span>
 
 </div>
 
+
 </div>
+
 
 </div>
 
@@ -1413,103 +1556,139 @@ Algumas condições e demandas que podem fazer parte da investigação:
 </section>
 
 
-<!-- ETAPAS -->
+
+<!-- =========================================================
+     COMO FUNCIONA A AVALIAÇÃO
+========================================================= -->
 
 <section class="processo">
 
 <div class="container">
 
-<div class="secao-intro">
+
+<div class="titulo-secao">
 
 <div class="mini-titulo">
 Como funciona
 </div>
 
+
 <h2>
 A avaliação acontece em algumas etapas.
 </h2>
 
+
 <p>
+
 O número de encontros pode variar de acordo com cada caso.
 Em média, são realizadas cerca de seis sessões de avaliação,
 além da entrevista inicial e da devolutiva.
+
 </p>
 
 </div>
 
 
+
 <div class="etapas">
+
 
 <div class="etapa">
 
-<div class="numero">01</div>
+<div class="etapa-numero">
+01
+</div>
+
 
 <h3>
 Primeiro, conversamos.
 </h3>
 
+
 <p>
-A investigação começa desde a entrevista inicial.
-A anamnese é uma parte fundamental da avaliação,
-porque permite compreender a história, o desenvolvimento,
-o contexto atual, as dificuldades percebidas
+
+A investigação começa na entrevista inicial.
+Nesse momento, busco compreender a história,
+o desenvolvimento, o contexto atual, as dificuldades percebidas
 e o motivo que levou à busca pela avaliação.
+
 </p>
 
 </div>
 
 
+
 <div class="etapa">
 
-<div class="numero">02</div>
+<div class="etapa-numero">
+02
+</div>
+
 
 <h3>
 Seguimos reunindo informações.
 </h3>
 
+
 <p>
-Ao longo dos encontros, são utilizados instrumentos padronizados,
+
+Ao longo dos encontros, utilizo instrumentos padronizados,
 atividades clínicas e observação para investigar
 as habilidades relevantes para aquele caso.
+
 </p>
 
 </div>
 
 
+
 <div class="etapa">
 
-<div class="numero">03</div>
+<div class="etapa-numero">
+03
+</div>
+
 
 <h3>
-Integramos as informações.
+Juntamos as pistas.
 </h3>
 
+
 <p>
-Os resultados dos instrumentos são analisados em conjunto
-com a anamnese, a observação clínica, o comportamento
-ao longo da avaliação e, quando necessário,
+
+Os resultados são analisados em conjunto com a história,
+as entrevistas, a observação clínica e, quando necessário,
 informações da família, da escola e de outros profissionais.
+
 </p>
 
 </div>
 
 
+
 <div class="etapa">
 
-<div class="numero">04</div>
+<div class="etapa-numero">
+04
+</div>
+
 
 <h3>
 Conversamos sobre o que encontramos.
 </h3>
 
+
 <p>
+
 Na devolutiva, explico os principais resultados,
 esclarecemos dúvidas e conversamos sobre orientações
 e possíveis próximos passos. Nesse momento,
 também é realizada a entrega do laudo neuropsicológico.
+
 </p>
 
 </div>
+
 
 </div>
 
@@ -1518,241 +1697,351 @@ também é realizada a entrega do laudo neuropsicológico.
 </section>
 
 
-<!-- CRIANÇAS -->
+
+<!-- =========================================================
+     DETETIVE DO CÉREBRO
+========================================================= -->
 
 <section class="detetive">
 
 <div class="container">
 
+
 <div class="detetive-box">
 
-<div class="lupa-pequena"></div>
 
-<div class="detetive-conteudo detetive-texto">
+<div class="detetive-chamada">
 
-<div class="mini-titulo">
-Com as crianças
+
+<div class="lupa">
+
+Detetive<br>
+do cérebro
+
 </div>
 
+
+</div>
+
+
+
+<div class="detetive-texto">
+
+
+<div class="mini-titulo">
+Quando explico para as crianças
+</div>
+
+
 <h2>
-Somos detetives do cérebro.
+A criança também faz parte da investigação.
 </h2>
 
+
 <p>
+
 Para as crianças, costumo explicar que durante a avaliação
 viro uma espécie de <strong>“detetive do cérebro”</strong>.
 Só que essa investigação não é feita sozinha:
 <strong>a criança também vira detetive comigo.</strong>
+
 </p>
+
 
 <p>
-Durante os encontros, fazemos atividades, conversamos
+
+Ao longo dos encontros, fazemos atividades, conversamos
 e resolvemos alguns desafios. Cada um deles pode trazer
-uma pista sobre como a criança aprende, presta atenção,
+pistas sobre como aquela criança aprende, presta atenção,
 lembra das coisas, resolve problemas e lida
 com diferentes situações.
+
 </p>
 
-<p class="equipe">
-<strong>Nosso trabalho acontece em equipe.</strong>
+
+
+<div class="equipe">
+
+<strong>
+Somos uma equipe.
+</strong>
+
+<br>
+
 A criança participa da investigação comigo,
 a família traz informações importantes e,
 quando necessário, professores e outros profissionais
 que a acompanham também ajudam a completar essa história.
-</p>
+
+</div>
+
+
 
 <p>
+
 No final, juntamos todas essas pistas.
 A criança também tem sua própria devolutiva,
 em uma linguagem adequada à sua idade.
 Afinal, se ela participou da investigação,
 também merece saber o que os detetives descobriram.
+
 </p>
 
-<p class="frase-final">
-Porque, como em toda boa investigação,
+
+<p class="pista">
+
+E, como em toda investigação,
 uma pista sozinha não conta a história inteira.
+
 </p>
 
-</div>
 
 </div>
+
+
+</div>
+
 
 </div>
 
 </section>
 
 
-<!-- PSICOTERAPIA -->
+
+<!-- =========================================================
+     PSICOTERAPIA
+========================================================= -->
 
 <section class="psicoterapia" id="psicoterapia">
 
-<div class="container psico-grid">
+<div class="container psicoterapia-grid">
 
-<div class="psico-texto">
+
+<div class="psicoterapia-texto">
+
 
 <div class="mini-titulo">
 Psicoterapia on-line
 </div>
 
+
 <h2>
 Psicoterapia
 </h2>
 
-<p>
-Trabalho com psicoterapia baseada em evidências,
-principalmente a partir da Terapia Cognitivo-Comportamental (TCC),
-considerando a história, o contexto e as necessidades de cada pessoa.
-</p>
 
 <p>
-Na TCC, buscamos compreender como pensamentos, emoções
-e comportamentos se relacionam, mas o trabalho não se limita a isso.
-Também olhamos para padrões que foram sendo construídos ao longo da vida,
-para a forma como a pessoa lida com diferentes situações,
-seus relacionamentos, seu contexto e as dificuldades
-que enfrenta atualmente.
+
+Atendo adultos de forma on-line, com psicoterapia baseada
+em evidências, principalmente a partir da
+Terapia Cognitivo-Comportamental (TCC).
+
 </p>
 
+
 <p>
-Na psicoterapia, acompanho adultos com diferentes demandas,
+
+Na psicoterapia, acompanho diferentes demandas,
 como ansiedade, depressão, estresse, sobrecarga emocional,
-dificuldades nos relacionamentos, autoestima e momentos
-de mudança ou dificuldades ao longo da vida.
+dificuldades nos relacionamentos, autoestima
+e momentos de mudança ou dificuldades ao longo da vida.
+
 </p>
+
 
 <p>
-A psicoterapia também pode ser um espaço de
-<strong>autoconhecimento</strong>, mesmo quando não existe
-um diagnóstico ou transtorno psicológico.
+
+Na TCC, buscamos compreender como pensamentos,
+emoções e comportamentos se relacionam,
+mas o trabalho não se limita a isso.
+Também olhamos para a história da pessoa,
+para padrões que foram sendo construídos ao longo da vida,
+seus relacionamentos, seu contexto e a forma como
+ela tem lidado com diferentes situações.
+
 </p>
+
 
 <p>
-A partir dessa compreensão, trabalhamos de forma colaborativa
-para desenvolver recursos, experimentar novas formas de lidar
-com as dificuldades e construir mudanças que façam sentido
-para a vida de cada pessoa.
+
+A psicoterapia também pode ser um espaço de autoconhecimento,
+mesmo quando não existe um diagnóstico ou transtorno psicológico.
+
 </p>
 
 
-<div class="modelo">
+<p>
 
-<span class="pensamento">Pensamentos</span>
+O trabalho é construído de forma colaborativa,
+considerando a história, o contexto e as necessidades
+de cada pessoa, sem fórmulas prontas.
 
-<span class="seta">↔</span>
+</p>
 
-<span class="emocao">Emoções</span>
 
-<span class="seta">↔</span>
 
-<span class="comportamento">Comportamentos</span>
+<div class="demandas">
+
+<span class="demanda">Ansiedade</span>
+
+<span class="demanda">Depressão</span>
+
+<span class="demanda">Estresse</span>
+
+<span class="demanda">Sobrecarga emocional</span>
+
+<span class="demanda">Relacionamentos</span>
+
+<span class="demanda">Autoestima</span>
+
+<span class="demanda">Mudanças de vida</span>
+
+<span class="demanda">Autoconhecimento</span>
 
 </div>
 
+
 </div>
 
 
-<div class="sessoes">
+
+<div class="psico-info">
+
 
 <h3>
 Como funcionam as sessões?
 </h3>
 
-<p>
-As sessões têm duração de aproximadamente
-<strong>50 minutos.</strong>
-</p>
 
 <p>
+
+As sessões têm duração de aproximadamente
+<strong>50 minutos.</strong>
+
+</p>
+
+
+<p>
+
 Inicialmente, acontecem
 <strong>uma vez por semana</strong>,
 de acordo com a necessidade avaliada
 ao longo do processo.
+
 </p>
 
+
 <p>
-Os atendimentos são realizados on-line para adultos.
+
+O atendimento é realizado
+<strong>on-line para adultos.</strong>
+
 </p>
+
 
 <a
 href="https://wa.me/5511953235907"
 target="_blank"
+class="botao"
 >
 Agendar psicoterapia
 </a>
 
+
 </div>
+
 
 </div>
 
 </section>
 
 
-<!-- SOBRE MIM -->
+
+<!-- =========================================================
+     SOBRE MIM
+========================================================= -->
 
 <section class="sobre" id="sobre">
 
 <div class="container sobre-grid">
 
-<div class="sobre-visual">
 
-<div class="sobre-fundo"></div>
+<div class="foto-placeholder">
 
-<div class="sobre-foto">
 Aqui entra outra foto sua.
-</div>
 
 </div>
 
 
-<div class="sobre-texto">
+
+<div>
+
 
 <div class="mini-titulo">
 Psicóloga e Neuropsicóloga
 </div>
 
+
 <h2>
 Sobre mim
 </h2>
 
+
 <p>
+
 Sou psicóloga há <strong>7 anos</strong>
 e minha trajetória profissional passou pela área hospitalar,
 pela clínica e pela neuropsicologia.
+
 </p>
+
 
 <p>
+
 Hoje trabalho com psicoterapia e avaliação neuropsicológica
 de crianças, adolescentes, adultos e idosos.
+
 </p>
 
+
 <p class="sobre-frase">
+
 Acredito em uma psicologia que una conhecimento científico
 e cuidado. Cada pessoa traz uma história e um contexto próprios.
 Por isso, <strong>me dedico a estar presente com meus pacientes</strong>
 e a compreender cada caso para além dos sintomas.
+
 </p>
 
 
+
 <div class="teaam">
+
 
 <strong>
 Neuropsicóloga voluntária no TEAAM • UNIFESP
 </strong>
 
+
 <p>
+
 Atuação no ambulatório especializado em Transtorno
 do Espectro Autista da Universidade Federal de São Paulo.
+
 </p>
 
+
 </div>
+
 
 
 <div class="formacao">
 
-<div class="formacao-titulo">
+
+<strong>
 Formação
-</div>
+</strong>
+
 
 <ul>
 
@@ -1778,127 +2067,156 @@ Formação em Terapia Cognitivo-Comportamental e Psicopatologia
 
 </ul>
 
-</div>
 
 </div>
+
+
+</div>
+
 
 </div>
 
 </section>
 
 
-<!-- ATENDIMENTO -->
+
+<!-- =========================================================
+     ATENDIMENTO
+========================================================= -->
 
 <section class="atendimento" id="atendimento">
 
 <div class="container">
 
-<div class="secao-intro">
+
+<div class="titulo-secao">
+
 
 <div class="mini-titulo">
 Atendimento
 </div>
 
+
 <h2>
 Onde acontecem os atendimentos?
 </h2>
 
+
 </div>
 
 
-<div class="locais">
 
-<div class="local">
+<div class="atendimento-grid">
 
-<div class="local-marca"></div>
+
+<div class="info">
 
 <h3>
 Moema
 </h3>
 
 <p>
+
 Avaliação neuropsicológica presencial
 para crianças, adolescentes, adultos e idosos.
+
 </p>
 
 </div>
 
 
-<div class="local">
 
-<div class="local-marca"></div>
+<div class="info">
 
 <h3>
 Tatuapé
 </h3>
 
 <p>
+
 Avaliação neuropsicológica presencial
 para crianças, adolescentes, adultos e idosos.
+
 </p>
 
 </div>
 
 
-<div class="local">
 
-<div class="local-marca"></div>
+<div class="info">
 
 <h3>
 On-line
 </h3>
 
 <p>
+
 Psicoterapia on-line para adultos.
+
 </p>
 
 </div>
 
+
 </div>
+
 
 </div>
 
 </section>
 
 
-<!-- CONTATO -->
+
+<!-- =========================================================
+     CONTATO
+========================================================= -->
 
 <section class="contato" id="contato">
 
 <div class="container">
 
+
 <div class="mini-titulo">
 Contato
 </div>
 
+
 <h2>
-Vamos conversar?
+Quer conversar sobre um atendimento?
 </h2>
 
+
 <p>
-Para informações sobre psicoterapia ou avaliação neuropsicológica,
-entre em contato para saber mais sobre o atendimento
+
+Você pode entrar em contato para tirar dúvidas sobre
+psicoterapia ou avaliação neuropsicológica
 e verificar a disponibilidade de horários.
+
 </p>
+
 
 <a
 href="https://wa.me/5511953235907"
 target="_blank"
-class="whatsapp"
+class="botao"
 >
 Falar comigo pelo WhatsApp
 </a>
+
 
 </div>
 
 </section>
 
+
 </main>
+
 
 
 <footer>
 
 <div class="container footer-grid">
+
 
 <div>
 
@@ -1912,13 +2230,18 @@ Psicóloga e Neuropsicóloga • CRP 06/162951
 
 </div>
 
+
 <div>
+
 Moema • Tatuapé • Psicoterapia on-line
+
 </div>
+
 
 </div>
 
 </footer>
+
 
 </body>
 </html>
