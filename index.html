@@ -1,727 +1,886 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Nubia Fernandes | Psicóloga e Neuropsicóloga</title>
-
-<meta name="description" content="Psicoterapia on-line para adultos e avaliação neuropsicológica em São Paulo. Nubia Fernandes, Psicóloga e Neuropsicóloga, CRP 06/162951.">
-
-<style>
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #26352d;
-    background: #faf9f5;
-    line-height: 1.7;
-}
-
-h1, h2, h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: normal;
-    line-height: 1.2;
-}
-
-.container {
-    width: min(1120px, 88%);
-    margin: auto;
-}
-
-/* MENU */
-
-header {
-    background: rgba(250,249,245,.96);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid #e6e4dc;
-}
-
-nav {
-    min-height: 78px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-.logo {
-    font-family: Georgia, serif;
-    font-size: 21px;
-    color: #264b38;
-    text-decoration: none;
-}
-
-.menu {
-    display: flex;
-    gap: 28px;
-    align-items: center;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #39483f;
-    font-size: 14px;
-}
-
-/* BOTÕES */
-
-.botao {
-    display: inline-block;
-    padding: 13px 23px;
-    border-radius: 30px;
-    background: #315c43;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-    transition: .2s;
-}
-
-.botao:hover {
-    background: #234531;
-    transform: translateY(-1px);
-}
-
-.botao-claro {
-    background: transparent;
-    color: #315c43;
-    border: 1px solid #315c43;
-    margin-left: 10px;
-}
-
-/* INÍCIO */
-
-.hero {
-    min-height: 86vh;
-    display: flex;
-    align-items: center;
-    background:
-        radial-gradient(circle at 85% 20%, #dce5d8 0, transparent 34%),
-        #f4f1e9;
-}
-
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1.1fr .9fr;
-    gap: 70px;
-    align-items: center;
-}
-
-.eyebrow {
-    color: #52705d;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 18px;
-}
-
-.hero h1 {
-    font-size: clamp(46px, 6vw, 76px);
-    color: #234531;
-    margin-bottom: 14px;
-}
-
-.hero h2 {
-    font-family: Arial, sans-serif;
-    font-size: 20px;
-    color: #657068;
-    margin-bottom: 25px;
-}
-
-.hero p {
-    max-width: 620px;
-    font-size: 18px;
-    margin-bottom: 32px;
-}
-
-.hero-visual {
-    min-height: 540px;
-    border-radius: 180px 180px 20px 20px;
-    background: #d9e2d7;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-visual::after {
-    content: "Sua foto aqui";
-    position: absolute;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    color: #58705f;
-    font-family: Georgia, serif;
-    font-size: 24px;
-}
-
-/* SEÇÕES */
-
-section {
-    padding: 100px 0;
-}
-
-.titulo-secao {
-    font-size: clamp(35px, 5vw, 52px);
-    color: #264b38;
-    margin-bottom: 25px;
-}
-
-.intro {
-    max-width: 760px;
-    font-size: 18px;
-    color: #59655e;
-    margin-bottom: 50px;
-}
-
-/* SERVIÇOS */
-
-.servicos {
-    background: white;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-}
-
-.card {
-    padding: 45px;
-    border-radius: 22px;
-    background: #f4f1e9;
-    border: 1px solid #e2e2d9;
-}
-
-.card-numero {
-    font-family: Georgia, serif;
-    color: #718878;
-    font-size: 18px;
-}
-
-.card h3 {
-    color: #264b38;
-    font-size: 30px;
-    margin: 20px 0;
-}
-
-.card p {
-    margin-bottom: 22px;
-}
-
-.card a {
-    color: #315c43;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-/* AVALIAÇÃO */
-
-.avaliacao {
-    background: #315c43;
-    color: #f8f6f0;
-}
-
-.avaliacao .titulo-secao {
-    color: white;
-}
-
-.avaliacao-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 70px;
-}
-
-.avaliacao p {
-    margin-bottom: 20px;
-}
-
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 25px;
-}
-
-.tag {
-    border: 1px solid rgba(255,255,255,.35);
-    border-radius: 30px;
-    padding: 8px 14px;
-    font-size: 13px;
-}
-
-/* PSICOTERAPIA */
-
-.terapia-grid {
-    display: grid;
-    grid-template-columns: .85fr 1.15fr;
-    gap: 80px;
-    align-items: center;
-}
-
-.bloco-visual {
-    min-height: 450px;
-    border-radius: 20px;
-    background: #dce5d8;
-    display: grid;
-    place-items: center;
-    color: #58705f;
-    font-family: Georgia, serif;
-    font-size: 22px;
-}
-
-/* SOBRE */
-
-.sobre {
-    background: #ebe8df;
-}
-
-.sobre-grid {
-    display: grid;
-    grid-template-columns: .8fr 1.2fr;
-    gap: 80px;
-    align-items: center;
-}
-
-.sobre-foto {
-    min-height: 550px;
-    border-radius: 200px 200px 15px 15px;
-    background: #d4ded2;
-    display: grid;
-    place-items: center;
-    color: #58705f;
-    font-family: Georgia, serif;
-    font-size: 22px;
-}
-
-.sobre p {
-    margin-bottom: 18px;
-}
-
-/* FORMAÇÃO */
-
-.formacao {
-    margin-top: 35px;
-    border-top: 1px solid #cacbc4;
-    padding-top: 25px;
-}
-
-.formacao p {
-    margin-bottom: 9px;
-}
-
-/* CONTATO */
-
-.contato {
-    text-align: center;
-    background: #faf9f5;
-}
-
-.contato .intro {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.contato-box {
-    max-width: 800px;
-    margin: auto;
-    padding: 60px;
-    background: white;
-    border-radius: 25px;
-    border: 1px solid #e2e2da;
-}
-
-/* RODAPÉ */
-
-footer {
-    background: #203b2c;
-    color: #e8eee9;
-    padding: 45px 0;
-}
-
-.footer-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-footer p {
-    font-size: 13px;
-    opacity: .85;
-}
-
-/* CELULAR */
-
-@media (max-width: 800px) {
-
-    .menu {
-        display: none;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nubia Fernandes | Psicóloga e Neuropsicóloga</title>
+
+  <meta name="description" content="Psicoterapia on-line para adultos e avaliação neuropsicológica em São Paulo, com atendimento presencial em Moema e Tatuapé. Nubia Fernandes, Psicóloga e Neuropsicóloga.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --verde: #244d3d;
+      --verde-medio: #4f7663;
+      --verde-claro: #dfe9df;
+      --verde-suave: #edf3ed;
+      --creme: #f8f4ec;
+      --areia: #e8ddcb;
+      --terracota: #a96549;
+      --texto: #25332d;
+      --texto-suave: #5e6964;
+      --branco: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--texto);
+      background: var(--creme);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: normal;
+      line-height: 1.12;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 88%);
+      margin: auto;
+    }
+
+    /* MENU */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(248, 244, 236, 0.96);
+      border-bottom: 1px solid rgba(36, 77, 61, 0.12);
+      backdrop-filter: blur(10px);
     }
 
     nav {
-        min-height: 65px;
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
     }
+
+    .logo {
+      color: var(--verde);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.3rem;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .menu a {
+      color: var(--texto);
+      font-size: 0.94rem;
+    }
+
+    .menu a:hover {
+      color: var(--terracota);
+    }
+
+    /* ABERTURA */
 
     .hero {
-        min-height: auto;
-        padding: 70px 0;
+      min-height: calc(100vh - 76px);
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 90% 25%, #c8dacb 0, #c8dacb 13%, transparent 13.2%),
+        linear-gradient(135deg, var(--creme) 0%, #eef2e8 100%);
+      overflow: hidden;
     }
 
-    .hero-grid,
-    .cards,
-    .avaliacao-grid,
-    .terapia-grid,
-    .sobre-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 70px;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .mini-titulo {
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.72rem;
+      color: var(--verde-medio);
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(3.5rem, 8vw, 6.8rem);
+      color: var(--verde);
+      margin-bottom: 12px;
+    }
+
+    .subtitulo {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.35rem;
+      color: var(--terracota);
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      max-width: 610px;
+      font-size: 1.08rem;
+      color: var(--texto-suave);
+      margin-bottom: 32px;
+    }
+
+    .botoes {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .botao {
+      display: inline-block;
+      padding: 14px 23px;
+      border-radius: 100px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .botao-principal {
+      background: var(--verde);
+      color: white;
+    }
+
+    .botao-principal:hover {
+      background: #17372b;
+      transform: translateY(-2px);
+    }
+
+    .botao-secundario {
+      border: 1px solid var(--verde);
+      color: var(--verde);
     }
 
     .hero-visual {
-        min-height: 440px;
-        order: -1;
+      min-height: 510px;
+      border-radius: 220px 220px 30px 30px;
+      background:
+        linear-gradient(rgba(36,77,61,.05), rgba(36,77,61,.05)),
+        var(--verde-claro);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--verde-medio);
+      padding: 40px;
+      position: relative;
     }
 
+    .hero-visual::before {
+      content: "";
+      width: 90px;
+      height: 90px;
+      border: 1px solid var(--terracota);
+      border-radius: 50%;
+      position: absolute;
+      top: 38px;
+      right: -20px;
+      opacity: .55;
+    }
+
+    .hero-visual span {
+      max-width: 230px;
+    }
+
+    /* SEÇÕES */
+
     section {
-        padding: 70px 0;
+      padding: 105px 0;
+    }
+
+    .titulo-secao {
+      max-width: 700px;
+      margin-bottom: 50px;
+    }
+
+    .titulo-secao h2 {
+      color: var(--verde);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 18px;
+    }
+
+    .titulo-secao p {
+      color: var(--texto-suave);
+      font-size: 1.05rem;
+    }
+
+    /* SERVIÇOS */
+
+    .servicos {
+      background: var(--branco);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
     }
 
     .card {
-        padding: 30px;
+      padding: 42px;
+      border-radius: 24px;
+      background: var(--creme);
+      border-top: 5px solid var(--verde-medio);
     }
 
-    .sobre-foto {
-        min-height: 450px;
+    .card:nth-child(2) {
+      border-top-color: var(--terracota);
     }
 
-    .contato-box {
-        padding: 35px 22px;
+    .numero {
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      color: var(--terracota);
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      color: var(--verde);
+      font-size: 2rem;
+      margin-bottom: 18px;
+    }
+
+    .card p {
+      color: var(--texto-suave);
+      margin-bottom: 16px;
+    }
+
+    .local {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid #d7d7ce;
+      font-size: .95rem;
+      color: var(--verde);
+      font-weight: bold;
+    }
+
+    /* INVESTIGAÇÃO */
+
+    .investigacao {
+      background: var(--verde);
+      color: white;
+    }
+
+    .investigacao-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .investigacao h2 {
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      color: #f6f0e5;
+    }
+
+    .investigacao-texto p {
+      color: #e0e9e3;
+      font-size: 1.06rem;
+      margin-bottom: 18px;
+    }
+
+    .destaque-investigacao {
+      color: white !important;
+      font-family: Georgia, serif;
+      font-size: 1.45rem !important;
+      line-height: 1.5;
+      margin: 32px 0 !important;
+      padding-left: 22px;
+      border-left: 3px solid #d5a47e;
+    }
+
+    /* DETETIVE */
+
+    .detetive {
+      background: #e7eee4;
+    }
+
+    .detetive-box {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 60px;
+      align-items: center;
+      background: var(--creme);
+      padding: 60px;
+      border-radius: 30px;
+      box-shadow: 0 15px 45px rgba(37,51,45,.07);
+    }
+
+    .detetive-chamada {
+      font-family: Georgia, serif;
+      font-size: clamp(2.3rem, 5vw, 3.7rem);
+      color: var(--terracota);
+      line-height: 1.1;
+    }
+
+    .detetive-texto h2 {
+      font-size: 2rem;
+      color: var(--verde);
+      margin-bottom: 20px;
+    }
+
+    .detetive-texto p {
+      color: var(--texto-suave);
+      margin-bottom: 15px;
+    }
+
+    .pista {
+      color: var(--verde) !important;
+      font-weight: bold;
+    }
+
+    /* SOBRE */
+
+    .sobre {
+      background: var(--creme);
+    }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .foto-placeholder {
+      min-height: 570px;
+      background: var(--areia);
+      border-radius: 25px 180px 25px 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #7d776e;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .sobre h2 {
+      font-size: clamp(2.7rem, 5vw, 4rem);
+      color: var(--verde);
+      margin-bottom: 25px;
+    }
+
+    .sobre p {
+      color: var(--texto-suave);
+      margin-bottom: 17px;
+    }
+
+    .formacao {
+      margin-top: 28px;
+      padding: 25px;
+      background: var(--verde-suave);
+      border-radius: 18px;
+    }
+
+    .formacao strong {
+      color: var(--verde);
+    }
+
+    /* ATENDIMENTO */
+
+    .atendimento {
+      background: var(--branco);
+    }
+
+    .atendimento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .info {
+      padding: 30px;
+      border: 1px solid #dce3dd;
+      border-radius: 18px;
+    }
+
+    .info h3 {
+      color: var(--verde);
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+    }
+
+    .info p {
+      color: var(--texto-suave);
+    }
+
+    /* CONTATO */
+
+    .contato {
+      background: #b86f51;
+      color: white;
+      text-align: center;
+    }
+
+    .contato h2 {
+      color: white;
+      font-size: clamp(2.7rem, 5vw, 4rem);
+      margin-bottom: 20px;
+    }
+
+    .contato p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: #fff7f1;
+    }
+
+    .contato .botao {
+      background: var(--verde);
+      color: white;
+    }
+
+    footer {
+      background: #17372b;
+      color: #dbe6df;
+      padding: 38px 0;
+      font-size: .9rem;
     }
 
     .footer-grid {
-        flex-direction: column;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
     }
 
-    .botao-claro {
-        margin-left: 0;
-        margin-top: 10px;
-    }
-}
+    /* CELULAR */
 
-</style>
+    @media (max-width: 800px) {
+
+      .menu {
+        display: none;
+      }
+
+      nav {
+        min-height: 65px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid,
+      .investigacao-grid,
+      .detetive-box,
+      .sobre-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-grid {
+        padding: 65px 0;
+      }
+
+      h1 {
+        font-size: 3.7rem;
+      }
+
+      .hero-visual {
+        min-height: 400px;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .cards,
+      .atendimento-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card,
+      .detetive-box {
+        padding: 30px;
+      }
+
+      .foto-placeholder {
+        min-height: 430px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-    <nav class="container">
-        <a class="logo" href="#inicio">Nubia Fernandes</a>
+  <div class="container">
+    <nav>
+      <a class="logo" href="#inicio">Nubia Fernandes</a>
 
-        <div class="menu">
-            <a href="#servicos">Atuação</a>
-            <a href="#avaliacao">Avaliação</a>
-            <a href="#psicoterapia">Psicoterapia</a>
-            <a href="#sobre">Sobre mim</a>
-            <a href="#contato">Contato</a>
-        </div>
+      <div class="menu">
+        <a href="#avaliacao">Avaliação</a>
+        <a href="#psicoterapia">Psicoterapia</a>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#atendimento">Atendimento</a>
+        <a href="#contato">Contato</a>
+      </div>
     </nav>
+  </div>
 </header>
 
 
 <main>
 
-<section class="hero" id="inicio">
+  <!-- INÍCIO -->
+
+  <section class="hero" id="inicio">
     <div class="container hero-grid">
 
-        <div>
-            <div class="eyebrow">Psicologia • Neuropsicologia</div>
+      <div>
+        <div class="mini-titulo">Psicologia • Neuropsicologia</div>
 
-            <h1>Nubia Fernandes</h1>
+        <h1>Nubia<br>Fernandes</h1>
 
-            <h2>Psicóloga e Neuropsicóloga • CRP 06/162951</h2>
-
-            <p>
-                Psicoterapia on-line para adultos e avaliação neuropsicológica
-                para crianças, adolescentes, adultos e idosos.
-                Um trabalho baseado em evidências, escuta cuidadosa e compreensão
-                de cada pessoa para além de um diagnóstico.
-            </p>
-
-            <a class="botao" href="#contato">Entrar em contato</a>
-            <a class="botao botao-claro" href="#servicos">Conhecer meu trabalho</a>
+        <div class="subtitulo">
+          Psicóloga e Neuropsicóloga • CRP 06/162951
         </div>
 
-        <div class="hero-visual"></div>
+        <p>
+          Psicoterapia on-line para adultos e avaliação neuropsicológica
+          para crianças, adolescentes, adultos e idosos.
+          Um trabalho baseado em evidências, mas que começa pela história
+          e pelas necessidades de cada pessoa.
+        </p>
+
+        <div class="botoes">
+          <a href="#contato" class="botao botao-principal">
+            Entrar em contato
+          </a>
+
+          <a href="#avaliacao" class="botao botao-secundario">
+            Conhecer meu trabalho
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <span>
+          Aqui entra uma das suas fotos profissionais.
+        </span>
+      </div>
 
     </div>
-</section>
+  </section>
 
 
-<section class="servicos" id="servicos">
-<div class="container">
+  <!-- SERVIÇOS -->
 
-    <div class="eyebrow">Como posso ajudar</div>
-    <h2 class="titulo-secao">Meu trabalho</h2>
+  <section class="servicos" id="avaliacao">
+    <div class="container">
 
-    <p class="intro">
-        Atuo com psicoterapia e avaliação neuropsicológica, buscando compreender
-        não apenas sintomas isolados, mas a história, o contexto e o funcionamento
-        de cada pessoa.
-    </p>
+      <div class="titulo-secao">
+        <div class="mini-titulo">Como posso ajudar</div>
+        <h2>Psicologia com técnica, cuidado e contexto.</h2>
+        <p>
+          Meu trabalho acontece principalmente em duas frentes:
+          avaliação neuropsicológica e psicoterapia.
+        </p>
+      </div>
 
-    <div class="cards">
+      <div class="cards">
 
         <article class="card">
-            <div class="card-numero">01</div>
-            <h3>Psicoterapia</h3>
+          <div class="numero">01</div>
 
-            <p>
-                Psicoterapia on-line para adultos, orientada por práticas baseadas
-                em evidências, como a Terapia Cognitivo-Comportamental (TCC).
-            </p>
+          <h3>Avaliação neuropsicológica</h3>
 
-            <p>
-                O processo terapêutico é construído de forma individualizada,
-                considerando suas dificuldades, necessidades e objetivos.
-            </p>
+          <p>
+            A avaliação ajuda a compreender como diferentes aspectos
+            do funcionamento cognitivo, emocional e comportamental
+            aparecem na vida daquela pessoa.
+          </p>
 
-            <a href="#psicoterapia">Saiba mais ↓</a>
+          <p>
+            Atendo demandas relacionadas a autismo, TDAH, dificuldades
+            e transtornos de aprendizagem, desenvolvimento intelectual,
+            altas habilidades/superdotação, alterações de memória,
+            transtornos de humor e outras condições que podem precisar
+            de uma investigação mais aprofundada.
+          </p>
+
+          <p>
+            O objetivo não é simplesmente encontrar um diagnóstico.
+            É entender o que os dados significam quando colocados
+            junto da história e do funcionamento daquela pessoa.
+          </p>
+
+          <div class="local">
+            Avaliação presencial em Moema e Tatuapé, São Paulo.
+          </div>
         </article>
 
 
-        <article class="card">
-            <div class="card-numero">02</div>
-            <h3>Avaliação Neuropsicológica</h3>
+        <article class="card" id="psicoterapia">
+          <div class="numero">02</div>
 
-            <p>
-                Investigação aprofundada do funcionamento cognitivo, emocional
-                e comportamental, integrando história de vida, entrevistas,
-                observação clínica e instrumentos neuropsicológicos.
-            </p>
+          <h3>Psicoterapia</h3>
 
-            <a href="#avaliacao">Saiba mais ↓</a>
+          <p>
+            Atendo adultos de forma on-line, com psicoterapia baseada
+            em evidências, principalmente a Terapia Cognitivo-Comportamental
+            (TCC).
+          </p>
+
+          <p>
+            A terapia é um espaço para compreender padrões de pensamento,
+            emoções e comportamentos, mas também para construir formas
+            mais possíveis de lidar com aquilo que está acontecendo
+            na vida real.
+          </p>
+
+          <p>
+            O tratamento é pensado de acordo com a necessidade de cada
+            pessoa, sem fórmulas prontas.
+          </p>
+
+          <div class="local">
+            Psicoterapia on-line para adultos.
+          </div>
         </article>
 
+      </div>
     </div>
-</div>
-</section>
+  </section>
 
 
-<section class="avaliacao" id="avaliacao">
-<div class="container avaliacao-grid">
+  <!-- AVALIAÇÃO COMO INVESTIGAÇÃO -->
 
-    <div>
-        <div class="eyebrow" style="color:#cbd8ce;">Avaliação neuropsicológica</div>
+  <section class="investigacao">
+    <div class="container investigacao-grid">
 
-        <h2 class="titulo-secao">
-            Muito além dos testes
-        </h2>
-
-        <p>
-            A avaliação neuropsicológica busca compreender como diferentes
-            funções cognitivas, emocionais e comportamentais estão funcionando
-            e como isso aparece na vida da pessoa.
-        </p>
-
-        <p>
-            Os testes são ferramentas importantes, mas não são utilizados de
-            forma isolada. A interpretação considera a história de desenvolvimento,
-            entrevistas, observação clínica, informações de familiares ou escola,
-            quando necessário, e a integração de todos os dados obtidos.
-        </p>
-
-        <p>
-            O objetivo não é apenas investigar diagnósticos, mas compreender
-            potencialidades, dificuldades e caminhos possíveis para cuidado,
-            tratamento e adaptações.
-        </p>
-    </div>
-
-
-    <div>
-        <h3 style="font-size:28px;margin-bottom:20px;">
-            Algumas demandas investigadas
-        </h3>
-
-        <div class="tags">
-            <span class="tag">Autismo • TEA</span>
-            <span class="tag">TDAH</span>
-            <span class="tag">Transtornos de aprendizagem</span>
-            <span class="tag">Deficiência intelectual</span>
-            <span class="tag">Altas habilidades / Superdotação</span>
-            <span class="tag">Ansiedade</span>
-            <span class="tag">Depressão</span>
-            <span class="tag">Transtorno bipolar</span>
-            <span class="tag">Transtornos de personalidade</span>
-            <span class="tag">Alterações de memória</span>
-            <span class="tag">Funcionamento cognitivo</span>
+      <div>
+        <div class="mini-titulo" style="color:#d9b18e;">
+          Avaliação é investigação
         </div>
 
-        <p style="margin-top:35px;">
-            Atendimento presencial em São Paulo.
-        </p>
-    </div>
-
-</div>
-</section>
-
-
-<section id="psicoterapia">
-<div class="container terapia-grid">
-
-    <div class="bloco-visual">
-        Foto
-    </div>
-
-    <div>
-        <div class="eyebrow">Psicoterapia on-line</div>
-
-        <h2 class="titulo-secao">
-            Um espaço para compreender e construir mudanças possíveis
+        <h2>
+          Nem tudo precisa terminar em um diagnóstico.
         </h2>
+      </div>
+
+      <div class="investigacao-texto">
 
         <p>
-            A psicoterapia é um espaço de escuta, compreensão e construção
-            conjunta de estratégias para lidar com dificuldades emocionais,
-            comportamentais e situações da vida.
+          Desatenção, ansiedade, dificuldade para aprender, esquecer
+          coisas ou se sentir diferente das outras pessoas podem ter
+          muitas explicações.
         </p>
 
         <p>
-            Meu trabalho é baseado em evidências científicas, principalmente
-            na Terapia Cognitivo-Comportamental (TCC), sempre considerando
-            a individualidade, a história e o contexto de cada pessoa.
+          Às vezes existe um transtorno. Às vezes existem características
+          que precisam ser compreendidas, mas que não configuram um
+          diagnóstico. E algumas experiências fazem parte de ser humano.
+        </p>
+
+        <p class="destaque-investigacao">
+          Por isso, a avaliação não começa procurando um rótulo.
+          Ela começa com uma pergunta.
         </p>
 
         <p>
-            Os atendimentos são realizados on-line para adultos.
+          Durante o processo, investigamos hipóteses e reunimos diferentes
+          informações. Os testes são importantes, mas não respondem tudo
+          sozinhos. A história de vida, as entrevistas, a observação clínica
+          e informações de outros contextos também ajudam a entender o que
+          está acontecendo.
         </p>
 
-        <br>
-
-        <a class="botao" href="#contato">Quero saber mais</a>
+      </div>
     </div>
-
-</div>
-</section>
+  </section>
 
 
-<section class="sobre" id="sobre">
-<div class="container sobre-grid">
+  <!-- DETETIVE DO CÉREBRO -->
 
-    <div class="sobre-foto">
-        Foto
+  <section class="detetive">
+    <div class="container">
+
+      <div class="detetive-box">
+
+        <div class="detetive-chamada">
+          “Detetive<br>do cérebro”
+        </div>
+
+        <div class="detetive-texto">
+
+          <div class="mini-titulo">Quando explico para as crianças</div>
+
+          <h2>
+            A avaliação também pode fazer sentido para quem está sendo avaliado.
+          </h2>
+
+          <p>
+            Para as crianças, costumo explicar que durante a avaliação
+            viro uma espécie de <strong>“detetive do cérebro”</strong>.
+          </p>
+
+          <p>
+            Ao longo dos encontros fazemos atividades, conversamos e
+            resolvemos alguns desafios. Cada um deles me dá pistas sobre
+            como aquela criança aprende, presta atenção, lembra das coisas,
+            resolve problemas e lida com diferentes situações.
+          </p>
+
+          <p class="pista">
+            E, como em toda investigação, uma pista sozinha não conta
+            a história inteira.
+          </p>
+
+        </div>
+      </div>
+
     </div>
+  </section>
 
-    <div>
-        <div class="eyebrow">Sobre mim</div>
 
-        <h2 class="titulo-secao">
-            Nubia da Fonseca Fernandes
-        </h2>
+  <!-- SOBRE MIM -->
+
+  <section class="sobre" id="sobre">
+    <div class="container sobre-grid">
+
+      <div class="foto-placeholder">
+        Aqui entra outra foto sua.
+      </div>
+
+      <div>
+        <div class="mini-titulo">Sobre mim</div>
+
+        <h2>Oi, eu sou a Nubia.</h2>
 
         <p>
-            Sou psicóloga e neuropsicóloga e me dedico a estar presente com
-            meus pacientes, buscando unir conhecimento científico, raciocínio
-            clínico e uma escuta cuidadosa.
+          Sou psicóloga e neuropsicóloga. Trabalho com psicoterapia e
+          avaliação neuropsicológica de crianças, adolescentes, adultos
+          e idosos.
         </p>
 
         <p>
-            Tenho experiência na avaliação de crianças, adolescentes, adultos
-            e idosos, além da atuação em psicoterapia.
+          Na avaliação, gosto de olhar para os resultados sem perder
+          de vista a pessoa que está por trás deles. Um teste pode trazer
+          informações importantes, mas é o conjunto dos dados que permite
+          compreender um caso com cuidado.
         </p>
 
         <p>
-            Atualmente também atuo como neuropsicóloga voluntária no ambulatório
-            especializado em pessoas do espectro autista (TEA) da UNIFESP.
+          Também atuo como neuropsicóloga voluntária no ambulatório
+          especializado em pessoas do espectro autista (TEA) da UNIFESP.
         </p>
 
         <div class="formacao">
+          <strong>Formação</strong><br><br>
 
-            <p><strong>CRP:</strong> 06/162951</p>
-
-            <p>
-                Especialização em Neuropsicologia pela UNIFESP
-            </p>
-
-            <p>
-                Pós-graduação em Neurociências
-            </p>
-
-            <p>
-                Pós-graduação em Saúde Pública
-            </p>
-
-            <p>
-                Pós-graduanda em Terapias Baseadas em Evidências
-            </p>
-
-            <p>
-                Formação em Terapia Cognitivo-Comportamental
-            </p>
-
-            <p>
-                Formação em Psicopatologia
-            </p>
-
+          Psicóloga • Pós-graduada em Saúde Pública •
+          Pós-graduada em Neurociências • Especialista em
+          Neuropsicologia pela UNIFESP • Pós-graduanda em
+          Terapias Baseadas em Evidências • Formação em
+          Psicopatologia e Terapia Cognitivo-Comportamental.
         </div>
+
+      </div>
     </div>
-
-</div>
-</section>
+  </section>
 
 
-<section class="contato" id="contato">
-<div class="container">
+  <!-- ATENDIMENTO -->
 
-    <div class="contato-box">
+  <section class="atendimento" id="atendimento">
+    <div class="container">
 
-        <div class="eyebrow">Contato</div>
+      <div class="titulo-secao">
+        <div class="mini-titulo">Atendimento</div>
+        <h2>Onde acontecem os atendimentos?</h2>
+      </div>
 
-        <h2 class="titulo-secao">
-            Vamos conversar?
-        </h2>
+      <div class="atendimento-grid">
 
-        <p class="intro">
-            Para informações sobre psicoterapia ou avaliação neuropsicológica,
-            entre em contato para saber mais sobre o atendimento.
-        </p>
+        <div class="info">
+          <h3>Moema</h3>
+          <p>
+            Avaliação neuropsicológica presencial em São Paulo.
+          </p>
+        </div>
 
-        <a class="botao" href="https://wa.me/" target="_blank">
-            Falar pelo WhatsApp
-        </a>
+        <div class="info">
+          <h3>Tatuapé</h3>
+          <p>
+            Avaliação neuropsicológica presencial em São Paulo.
+          </p>
+        </div>
+
+        <div class="info">
+          <h3>On-line</h3>
+          <p>
+            Psicoterapia on-line para adultos.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTATO -->
+
+  <section class="contato" id="contato">
+    <div class="container">
+
+      <div class="mini-titulo" style="color:#f5ded1;">
+        Contato
+      </div>
+
+      <h2>Quer conversar sobre um atendimento?</h2>
+
+      <p>
+        Você pode entrar em contato para tirar dúvidas sobre
+        psicoterapia ou avaliação neuropsicológica e verificar
+        disponibilidade de horários.
+      </p>
+
+      <!-- Depois vamos colocar seu número real aqui -->
+      <a href="#" class="botao">
+        Falar comigo pelo WhatsApp
+      </a>
 
     </div>
-
-</div>
-</section>
+  </section>
 
 </main>
 
 
 <footer>
-<div class="container footer-grid">
+  <div class="container footer-grid">
 
     <div>
-        <strong>Nubia Fernandes</strong>
-        <p>Psicóloga e Neuropsicóloga • CRP 06/162951</p>
+      <strong>Nubia da Fonseca Fernandes</strong><br>
+      Psicóloga e Neuropsicóloga • CRP 06/162951
     </div>
 
     <div>
-        <p>Psicoterapia on-line para adultos</p>
-        <p>Avaliação neuropsicológica presencial em São Paulo</p>
+      Moema • Tatuapé • Psicoterapia on-line
     </div>
 
-</div>
+  </div>
 </footer>
 
 </body>
