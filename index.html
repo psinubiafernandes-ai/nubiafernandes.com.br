@@ -12,7 +12,7 @@
 <style>
 
 /* =========================================================
-   IDENTIDADE VISUAL
+   CONFIGURAÇÕES
 ========================================================= */
 
 *{
@@ -22,24 +22,22 @@
 }
 
 :root{
+    --verde:#3F7D55;
+    --verde-vivo:#65A66F;
+    --verde-escuro:#315B43;
+    --verde-claro:#EAF3EC;
+    --verde-muito-claro:#F7FAF7;
 
-    --verde:#347A52;
-    --verde-vivo:#55A267;
-    --verde-escuro:#244D3A;
-    --verde-claro:#EAF4EC;
-    --verde-suave:#F6FAF7;
+    --terracota:#C76A4B;
+    --terracota-claro:#F7E8E1;
 
-    --terracota:#C86245;
-    --terracota-escuro:#A94E35;
-    --terracota-claro:#F8E9E2;
-
-    --azul:#304B62;
+    --azul:#344F65;
     --azul-claro:#EEF3F6;
 
     --branco:#FFFFFF;
-    --texto:#303936;
-    --texto-suave:#626C68;
-    --linha:#E4EAE6;
+    --texto:#37413D;
+    --texto-suave:#66706C;
+    --linha:#E4E9E5;
 }
 
 html{
@@ -56,8 +54,9 @@ body{
 h1,
 h2,
 h3{
-    font-family:Arial, Helvetica, sans-serif;
-    line-height:1.08;
+    font-family:Georgia, "Times New Roman", serif;
+    font-weight:normal;
+    line-height:1.15;
 }
 
 a{
@@ -65,15 +64,15 @@ a{
 }
 
 .container{
-    width:min(1140px,90%);
-    margin:auto;
+    width:min(1120px,90%);
+    margin:0 auto;
 }
 
 section{
-    padding:100px 0;
+    padding:88px 0;
 }
 
-.sobretitulo{
+.mini-titulo{
     display:flex;
     align-items:center;
     gap:10px;
@@ -81,20 +80,20 @@ section{
     color:var(--verde);
 
     text-transform:uppercase;
-    letter-spacing:.14em;
+    letter-spacing:.15em;
 
-    font-size:.69rem;
-    font-weight:700;
+    font-size:.68rem;
+    font-weight:bold;
 
-    margin-bottom:16px;
+    margin-bottom:15px;
 }
 
-.sobretitulo::before{
+.mini-titulo::before{
     content:"";
-    width:25px;
+    width:20px;
     height:2px;
     background:var(--terracota);
-    border-radius:10px;
+    border-radius:20px;
 }
 
 
@@ -109,13 +108,11 @@ header{
 
     background:rgba(255,255,255,.97);
 
-    border-bottom:1px solid rgba(36,77,58,.08);
-
-    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--linha);
 }
 
 nav{
-    min-height:78px;
+    min-height:76px;
 
     display:flex;
     align-items:center;
@@ -127,35 +124,30 @@ nav{
 
 /* LOGO */
 
-.logo{
-    display:flex;
-    align-items:center;
-}
-
 .logo img{
-    max-height:58px;
+    display:block;
     max-width:260px;
+    max-height:56px;
     object-fit:contain;
 }
 
 .logo-fallback{
     color:var(--verde-escuro);
-    font-weight:700;
-    font-size:1.05rem;
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:1.25rem;
 }
 
 .logo-fallback small{
     display:block;
 
-    font-size:.58rem;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:.52rem;
 
-    font-weight:500;
-
-    letter-spacing:.13em;
+    letter-spacing:.15em;
 
     color:var(--texto-suave);
 
-    margin-top:1px;
+    margin-top:2px;
 }
 
 
@@ -164,13 +156,12 @@ nav{
 .menu{
     display:flex;
     align-items:center;
-    gap:25px;
+    gap:24px;
 }
 
 .menu a{
     color:var(--texto);
-    font-size:.86rem;
-    font-weight:500;
+    font-size:.85rem;
 }
 
 .menu a:hover{
@@ -178,27 +169,22 @@ nav{
 }
 
 .menu .agendar{
-    padding:11px 19px;
-
-    border-radius:100px;
+    padding:11px 18px;
 
     background:var(--terracota);
 
     color:white;
-}
 
-.menu .agendar:hover{
-    background:var(--terracota-escuro);
-    color:white;
+    border-radius:100px;
 }
 
 
 /* =========================================================
-   HERO
+   INÍCIO
 ========================================================= */
 
 .hero{
-    padding:80px 0 100px;
+    padding:78px 0 90px;
 
     background:#FFFFFF;
 
@@ -208,83 +194,74 @@ nav{
 .hero-grid{
     display:grid;
 
-    grid-template-columns:1.02fr .98fr;
+    grid-template-columns:1fr .92fr;
+
+    gap:75px;
 
     align-items:center;
-
-    gap:80px;
 }
 
 
 /* TEXTO */
 
-.hero-conteudo{
-    position:relative;
-    z-index:3;
-}
-
 .hero h1{
     color:var(--verde-escuro);
 
-    font-size:clamp(3.2rem,6vw,5.5rem);
+    font-size:clamp(2.9rem,5vw,4.6rem);
 
-    font-weight:600;
+    letter-spacing:-.035em;
 
-    letter-spacing:-.055em;
-
-    margin-bottom:12px;
+    margin-bottom:13px;
 }
 
 .hero-profissao{
     color:var(--azul);
 
-    font-size:1.15rem;
+    font-family:Georgia, "Times New Roman", serif;
 
-    font-weight:600;
+    font-size:1.25rem;
 
-    margin-bottom:2px;
+    margin-bottom:3px;
 }
 
 .hero-crp{
     color:var(--texto-suave);
 
-    font-size:.83rem;
+    font-size:.82rem;
 
     margin-bottom:27px;
 }
 
 .hero-frase{
-    max-width:590px;
-
     color:var(--verde);
 
-    font-size:clamp(1.35rem,2.3vw,1.8rem);
+    font-family:Georgia, "Times New Roman", serif;
 
-    line-height:1.35;
+    font-size:1.42rem;
 
-    font-weight:500;
+    line-height:1.45;
 
-    margin-bottom:21px;
+    max-width:550px;
+
+    margin-bottom:19px;
 }
 
 .hero-texto{
-    max-width:590px;
-
     color:var(--texto-suave);
 
-    font-size:1rem;
+    max-width:570px;
 
-    margin-bottom:16px;
+    margin-bottom:17px;
 }
 
 .hero-local{
     color:var(--azul);
 
-    font-size:.86rem;
+    font-size:.84rem;
 
-    font-weight:600;
+    font-weight:bold;
 
-    margin-bottom:29px;
+    margin-bottom:28px;
 }
 
 
@@ -292,43 +269,46 @@ nav{
 
 .hero-botoes{
     display:flex;
-    gap:12px;
     flex-wrap:wrap;
+    gap:11px;
 }
 
-.servico{
-    display:flex;
-    flex-direction:column;
+.botao-servico{
+    padding:14px 18px;
 
     min-width:225px;
 
-    padding:15px 20px;
-
-    border-radius:14px;
+    border-radius:13px;
 
     color:white;
 
-    transition:.2s ease;
+    transition:.2s;
 }
 
-.servico:hover{
+.botao-servico:hover{
     transform:translateY(-2px);
 }
 
-.servico strong{
-    font-size:.9rem;
+.botao-servico strong{
+    display:block;
+    font-size:.88rem;
 }
 
-.servico small{
-    font-size:.7rem;
+.botao-servico span{
+    display:block;
+
+    font-size:.69rem;
+
+    margin-top:1px;
+
     opacity:.92;
 }
 
-.terapia{
+.botao-terapia{
     background:var(--terracota);
 }
 
-.avaliacao-botao{
+.botao-avaliacao{
     background:var(--verde);
 }
 
@@ -337,67 +317,67 @@ nav{
    FOTO PRINCIPAL
 ========================================================= */
 
-.hero-visual{
-    min-height:555px;
+.hero-foto{
+    min-height:530px;
 
     position:relative;
 
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
 }
 
 
-/* MANCHA VERDE SUAVE */
+/* FUNDO SUAVE */
 
-.forma-verde{
+.foto-fundo{
     position:absolute;
 
-    width:82%;
-    height:88%;
-
-    right:-4%;
-    top:4%;
+    width:83%;
+    height:89%;
 
     background:var(--verde-claro);
 
     border-radius:
-    44% 56% 50% 50%
-    / 38% 43% 57% 62%;
+    48% 52% 44% 56%
+    / 42% 44% 56% 58%;
+
+    right:0;
+    top:3%;
 }
 
 
 /* DETALHE TERRACOTA */
 
-.forma-terracota{
+.foto-detalhe{
     position:absolute;
 
-    width:120px;
-    height:120px;
-
-    background:var(--terracota);
+    width:105px;
+    height:105px;
 
     border-radius:50%;
 
-    left:3%;
-    bottom:3%;
+    background:var(--terracota-claro);
+
+    left:4%;
+    bottom:6%;
 }
 
 
-/* DETALHE AZUL PEQUENO */
+/* LINHA AZUL */
 
-.forma-azul{
+.foto-linha{
     position:absolute;
 
-    width:95px;
-    height:34px;
+    width:75px;
+    height:7px;
 
     background:var(--azul);
 
-    border-radius:100px;
+    border-radius:30px;
 
-    right:1%;
-    top:17%;
+    right:2%;
+    top:21%;
 
     transform:rotate(-8deg);
 }
@@ -411,25 +391,25 @@ nav{
     z-index:2;
 
     width:76%;
-    height:505px;
+    height:475px;
 
-    background:#F1F4F2;
+    background:#F4F6F4;
 
-    border-radius:42% 42% 20px 20px;
+    border-radius:190px 190px 25px 25px;
 
     overflow:hidden;
 
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
 
     text-align:center;
 
+    padding:25px;
+
     color:var(--verde);
 
-    padding:30px;
-
-    box-shadow:0 20px 55px rgba(36,77,58,.11);
+    box-shadow:0 16px 40px rgba(49,91,67,.08);
 }
 
 .foto-principal img{
@@ -440,110 +420,115 @@ nav{
 
 
 /* =========================================================
-   FAIXA DE SERVIÇOS
+   SERVIÇOS RESUMIDOS
 ========================================================= */
 
 .resumo{
-    padding:0;
+    padding:25px 0 55px;
+
     background:#FFFFFF;
 }
 
-.resumo-caixa{
+.resumo-grid{
     display:grid;
 
     grid-template-columns:repeat(4,1fr);
 
-    border-top:1px solid var(--linha);
-    border-bottom:1px solid var(--linha);
+    gap:15px;
 }
 
-.resumo-item{
-    padding:35px 25px;
+.resumo-card{
+    padding:24px;
+
+    background:var(--verde-muito-claro);
+
+    border-radius:18px;
 }
 
-.resumo-item + .resumo-item{
-    border-left:1px solid var(--linha);
+.resumo-card:nth-child(2){
+    background:#FDF8F5;
 }
 
-.resumo-icone{
-    width:32px;
-    height:5px;
+.resumo-card:nth-child(3){
+    background:#F6FAF7;
+}
 
-    background:var(--verde);
+.resumo-card:nth-child(4){
+    background:#F5F8FA;
+}
+
+.resumo-marca{
+    width:25px;
+    height:4px;
 
     border-radius:20px;
 
-    margin-bottom:18px;
+    background:var(--verde);
+
+    margin-bottom:15px;
 }
 
-.resumo-item:nth-child(2) .resumo-icone{
+.resumo-card:nth-child(2) .resumo-marca{
     background:var(--terracota);
 }
 
-.resumo-item:nth-child(3) .resumo-icone{
+.resumo-card:nth-child(3) .resumo-marca{
     background:var(--verde-vivo);
 }
 
-.resumo-item:nth-child(4) .resumo-icone{
+.resumo-card:nth-child(4) .resumo-marca{
     background:var(--azul);
 }
 
-.resumo-item h3{
+.resumo-card h3{
     color:var(--verde-escuro);
 
-    font-size:1.05rem;
-
-    font-weight:600;
+    font-size:1.08rem;
 
     margin-bottom:8px;
 }
 
-.resumo-item p{
+.resumo-card p{
     color:var(--texto-suave);
 
-    font-size:.84rem;
+    font-size:.82rem;
 
     line-height:1.55;
 }
 
 
 /* =========================================================
-   FRASE CENTRAL
+   INTRODUÇÃO
 ========================================================= */
 
-.manifesto{
-    padding:110px 0;
+.introducao{
     background:#FFFFFF;
+
+    padding:85px 0 95px;
 }
 
-.manifesto-conteudo{
-    max-width:900px;
+.introducao-conteudo{
+    max-width:790px;
 }
 
-.manifesto h2{
+.introducao h2{
     color:var(--verde-escuro);
 
-    font-size:clamp(2.6rem,5vw,4.5rem);
+    font-size:clamp(2.2rem,4vw,3.35rem);
 
-    font-weight:500;
+    line-height:1.2;
 
-    letter-spacing:-.04em;
-
-    line-height:1.08;
+    margin-bottom:21px;
 }
 
-.manifesto h2 span{
+.introducao h2 span{
     color:var(--terracota);
 }
 
-.manifesto p{
-    max-width:670px;
-
+.introducao p{
     color:var(--texto-suave);
 
-    margin-top:25px;
-
-    font-size:1.02rem;
+    max-width:670px;
 }
 
 
@@ -552,15 +537,15 @@ nav{
 ========================================================= */
 
 .avaliacao{
-    background:var(--verde-suave);
+    background:var(--verde-muito-claro);
 }
 
 .avaliacao-grid{
     display:grid;
 
-    grid-template-columns:.82fr 1.18fr;
+    grid-template-columns:.85fr 1.15fr;
 
-    gap:75px;
+    gap:65px;
 
     align-items:start;
 }
@@ -568,64 +553,46 @@ nav{
 .avaliacao h2{
     color:var(--verde-escuro);
 
-    font-size:clamp(2.6rem,4.8vw,4rem);
+    font-size:clamp(2.3rem,4.5vw,3.6rem);
 
-    font-weight:500;
-
-    letter-spacing:-.04em;
-
-    margin-bottom:30px;
+    margin-bottom:29px;
 }
 
 
-/* BLOCO DA ESQUERDA */
+/* BLOCO ESQUERDO */
 
-.olhar-conjunto{
-    margin-top:40px;
-
-    padding:29px;
-
+.olhar{
     background:white;
 
-    border-radius:22px;
+    padding:27px;
 
-    box-shadow:0 12px 40px rgba(36,77,58,.06);
+    border-radius:18px;
 
-    position:relative;
+    border-left:4px solid var(--terracota);
+
+    box-shadow:0 10px 30px rgba(49,91,67,.05);
 }
 
-.olhar-conjunto::before{
-    content:"";
+.olhar small{
+    display:block;
 
-    position:absolute;
-
-    width:8px;
-    height:58px;
-
-    background:var(--terracota);
-
-    border-radius:20px;
-
-    left:-4px;
-    top:30px;
-}
-
-.olhar-conjunto small{
     color:var(--verde);
 
     text-transform:uppercase;
 
-    letter-spacing:.12em;
+    letter-spacing:.13em;
 
-    font-size:.64rem;
+    font-size:.62rem;
 
-    font-weight:700;
+    font-weight:bold;
+
+    margin-bottom:10px;
 }
 
-.olhar-conjunto p{
-    margin-top:12px;
-
+.olhar p{
     color:var(--verde-escuro);
+
+    font-family:Georgia, "Times New Roman", serif;
 
     font-size:1.08rem;
 
@@ -633,34 +600,35 @@ nav{
 }
 
 
-/* TEXTO DIREITA */
+/* TEXTO */
 
 .avaliacao-texto p{
     color:var(--texto-suave);
-    margin-bottom:18px;
+
+    margin-bottom:17px;
 }
 
 .avaliacao-destaque{
-    margin:30px 0;
+    padding:20px 23px;
 
-    padding:23px 25px;
-
-    border-radius:18px;
+    margin:26px 0;
 
     background:var(--verde-claro);
 
+    border-radius:15px;
+
     color:var(--verde-escuro);
 
-    font-size:1.08rem;
+    font-family:Georgia, "Times New Roman", serif;
 
-    font-weight:600;
+    font-size:1.08rem;
 }
 
 
-/* TAGS */
+/* CONDIÇÕES */
 
 .condicoes{
-    margin-top:37px;
+    margin-top:32px;
 }
 
 .condicoes h3{
@@ -668,51 +636,49 @@ nav{
 
     font-size:1.08rem;
 
-    font-weight:600;
-
     line-height:1.45;
 
-    margin-bottom:17px;
+    margin-bottom:15px;
 }
 
 .tags{
     display:flex;
+
     flex-wrap:wrap;
-    gap:9px;
+
+    gap:8px;
 }
 
 .tag{
-    padding:8px 13px;
+    padding:7px 12px;
 
     border-radius:100px;
 
-    font-size:.78rem;
-
-    font-weight:600;
-
     background:white;
 
-    border:1px solid var(--linha);
+    border:1px solid #DCE6DE;
 
     color:var(--verde-escuro);
+
+    font-size:.76rem;
 }
 
-.tag.verde{
+.tag-destaque-verde{
     background:var(--verde);
+    color:white;
     border-color:var(--verde);
-    color:white;
 }
 
-.tag.terracota{
+.tag-destaque-terra{
     background:var(--terracota);
-    border-color:var(--terracota);
     color:white;
+    border-color:var(--terracota);
 }
 
-.tag.azul{
+.tag-destaque-azul{
     background:var(--azul);
-    border-color:var(--azul);
     color:white;
+    border-color:var(--azul);
 }
 
 
@@ -721,60 +687,52 @@ nav{
 ========================================================= */
 
 .processo{
-    background:#FFFFFF;
+    background:white;
 }
 
 .secao-intro{
-    max-width:760px;
-    margin-bottom:55px;
+    max-width:720px;
+
+    margin-bottom:45px;
 }
 
 .secao-intro h2{
     color:var(--verde-escuro);
 
-    font-size:clamp(2.5rem,5vw,4rem);
+    font-size:clamp(2.2rem,4.5vw,3.45rem);
 
-    font-weight:500;
-
-    letter-spacing:-.04em;
-
-    margin-bottom:18px;
+    margin-bottom:16px;
 }
 
 .secao-intro p{
     color:var(--texto-suave);
 }
 
-
-/* CARDS */
-
 .etapas{
     display:grid;
 
     grid-template-columns:repeat(2,1fr);
 
-    gap:18px;
+    gap:16px;
 }
 
 .etapa{
-    padding:30px;
+    padding:27px;
 
     border:1px solid var(--linha);
 
-    border-radius:20px;
+    border-radius:18px;
 
     background:white;
-
-    position:relative;
 }
 
-.etapa-numero{
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.numero{
+    width:38px;
+    height:38px;
 
-    width:43px;
-    height:43px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
     border-radius:50%;
 
@@ -782,22 +740,24 @@ nav{
 
     color:var(--verde);
 
-    font-weight:700;
+    font-size:.78rem;
 
-    margin-bottom:21px;
+    font-weight:bold;
+
+    margin-bottom:18px;
 }
 
-.etapa:nth-child(2) .etapa-numero{
+.etapa:nth-child(2) .numero{
     background:var(--terracota-claro);
     color:var(--terracota);
 }
 
-.etapa:nth-child(3) .etapa-numero{
+.etapa:nth-child(3) .numero{
     background:var(--azul-claro);
     color:var(--azul);
 }
 
-.etapa:nth-child(4) .etapa-numero{
+.etapa:nth-child(4) .numero{
     background:var(--verde-claro);
     color:var(--verde-vivo);
 }
@@ -805,17 +765,15 @@ nav{
 .etapa h3{
     color:var(--verde-escuro);
 
-    font-size:1.25rem;
+    font-size:1.22rem;
 
-    font-weight:600;
-
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
 .etapa p{
     color:var(--texto-suave);
 
-    font-size:.9rem;
+    font-size:.88rem;
 }
 
 
@@ -824,31 +782,31 @@ nav{
 ========================================================= */
 
 .detetive{
-    background:#FFFFFF;
+    background:white;
 }
 
-.detetive-card{
+.detetive-box{
     background:var(--verde-claro);
 
-    border-radius:35px;
+    border-radius:30px;
 
-    padding:65px;
+    padding:55px;
 
     display:grid;
 
-    grid-template-columns:.65fr 1.35fr;
+    grid-template-columns:.68fr 1.32fr;
 
-    gap:65px;
+    gap:55px;
 
     align-items:center;
 
-    position:relative;
-
     overflow:hidden;
+
+    position:relative;
 }
 
 
-/* ELEMENTOS LÚDICOS */
+/* ILUSTRAÇÃO */
 
 .ilustracao{
     min-height:330px;
@@ -856,46 +814,30 @@ nav{
     position:relative;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 }
 
 
-/* LUPA MAIS LEVE */
+/* GRANDE LUPA */
 
 .lupa{
     position:relative;
 
-    width:190px;
-    height:190px;
+    width:175px;
+    height:175px;
 
-    border:11px solid var(--verde);
+    border:9px solid var(--terracota);
 
     border-radius:50%;
 
-    background:rgba(255,255,255,.78);
+    background:rgba(255,255,255,.75);
 
-    transform:rotate(-12deg);
+    transform:rotate(-13deg);
 
-    box-shadow:0 13px 30px rgba(36,77,58,.10);
-}
-
-.lupa::before{
-    content:"";
-
-    position:absolute;
-
-    width:120px;
-    height:27px;
-
-    background:var(--terracota);
-
-    border-radius:30px;
-
-    right:-92px;
-    bottom:-48px;
-
-    transform:rotate(49deg);
+    box-shadow:0 10px 25px rgba(49,91,67,.08);
 }
 
 .lupa::after{
@@ -903,125 +845,153 @@ nav{
 
     position:absolute;
 
-    width:46px;
-    height:18px;
+    width:112px;
+    height:24px;
 
-    border-top:5px solid white;
+    background:var(--verde);
 
-    border-radius:50%;
+    border-radius:30px;
 
-    left:28px;
-    top:29px;
+    right:-87px;
+    bottom:-43px;
 
-    transform:rotate(-28deg);
+    transform:rotate(49deg);
 }
 
 
-/* PISTAS */
+/* BRILHO */
 
-.pista{
+.lupa::before{
+    content:"";
+
     position:absolute;
 
-    font-weight:700;
+    width:45px;
+    height:17px;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.pista1{
-    width:42px;
-    height:42px;
+    border-top:4px solid white;
 
     border-radius:50%;
 
-    background:var(--terracota);
+    top:25px;
+    left:27px;
 
-    color:white;
+    transform:rotate(-30deg);
+}
 
-    top:20px;
-    right:28px;
+
+/* ELEMENTOS DIVERTIDOS */
+
+.desenho{
+    position:absolute;
+
+    font-family:Georgia, "Times New Roman", serif;
+
+    font-weight:bold;
+}
+
+.interrogacao{
+    color:var(--azul);
+
+    font-size:2.8rem;
+
+    top:17px;
+    left:34px;
+
+    transform:rotate(-10deg);
+}
+
+.estrela1{
+    color:var(--terracota);
+
+    font-size:2rem;
+
+    right:31px;
+    top:43px;
 
     transform:rotate(10deg);
 }
 
-.pista2{
-    width:48px;
-    height:48px;
-
-    color:var(--azul);
-
-    font-size:2.2rem;
-
-    left:20px;
-    top:45px;
-
-    transform:rotate(-15deg);
-}
-
-.pista3{
+.estrela2{
     color:var(--verde-vivo);
 
-    font-size:2.2rem;
+    font-size:2.6rem;
 
-    bottom:32px;
-    left:25px;
+    bottom:24px;
+    left:28px;
+}
 
-    transform:rotate(12deg);
+.traco1{
+    width:35px;
+    height:5px;
+
+    background:var(--azul);
+
+    border-radius:20px;
+
+    right:13px;
+    bottom:68px;
+
+    transform:rotate(-18deg);
+}
+
+.traco2{
+    width:24px;
+    height:5px;
+
+    background:var(--terracota);
+
+    border-radius:20px;
+
+    left:8px;
+    top:110px;
+
+    transform:rotate(22deg);
 }
 
 
 /* TEXTO */
 
-.detetive-conteudo{
-    position:relative;
-    z-index:2;
-}
-
-.detetive-conteudo .sobretitulo{
+.detetive-texto .mini-titulo{
     color:var(--terracota);
 }
 
-.detetive-conteudo h2{
+.detetive-texto h2{
     color:var(--verde-escuro);
 
-    font-size:clamp(2.6rem,5vw,4.1rem);
+    font-size:clamp(2.4rem,4.5vw,3.6rem);
 
-    font-weight:500;
-
-    letter-spacing:-.04em;
-
-    margin-bottom:25px;
+    margin-bottom:22px;
 }
 
-.detetive-conteudo p{
+.detetive-texto p{
     color:var(--texto-suave);
 
-    margin-bottom:15px;
+    margin-bottom:14px;
 }
 
-.detetive-conteudo strong{
+.detetive-texto strong{
     color:var(--verde-escuro);
 }
 
 .equipe{
+    margin:21px 0 !important;
+
+    padding:17px 19px;
+
     background:white;
 
-    padding:18px 21px;
-
-    border-radius:16px;
-
-    margin:23px 0 !important;
-
-    box-shadow:0 8px 25px rgba(36,77,58,.05);
+    border-radius:15px;
 }
 
-.pista-final{
+.frase-final{
     color:var(--terracota) !important;
 
-    font-weight:600;
+    font-family:Georgia, "Times New Roman", serif;
 
-    margin-top:24px !important;
+    font-size:1.08rem;
+
+    margin-top:21px !important;
 }
 
 
@@ -1030,15 +1000,15 @@ nav{
 ========================================================= */
 
 .psicoterapia{
-    background:#FFFFFF;
+    background:white;
 }
 
 .psico-grid{
     display:grid;
 
-    grid-template-columns:1.08fr .92fr;
+    grid-template-columns:1.1fr .9fr;
 
-    gap:80px;
+    gap:70px;
 
     align-items:center;
 }
@@ -1046,43 +1016,35 @@ nav{
 .psico-texto h2{
     color:var(--verde-escuro);
 
-    font-size:clamp(2.6rem,5vw,4.1rem);
+    font-size:clamp(2.3rem,4.5vw,3.55rem);
 
-    font-weight:500;
-
-    letter-spacing:-.04em;
-
-    margin-bottom:25px;
+    margin-bottom:23px;
 }
 
 .psico-texto p{
     color:var(--texto-suave);
 
-    margin-bottom:17px;
+    margin-bottom:16px;
 }
-
-
-/* PENSAMENTO EMOÇÃO COMPORTAMENTO */
 
 .modelo{
     display:flex;
+
     flex-wrap:wrap;
+
+    gap:7px;
 
     align-items:center;
 
-    gap:8px;
-
-    margin-top:28px;
+    margin-top:25px;
 }
 
 .modelo span{
-    padding:8px 13px;
+    padding:7px 12px;
 
     border-radius:100px;
 
-    font-size:.78rem;
-
-    font-weight:600;
+    font-size:.76rem;
 }
 
 .pensamento{
@@ -1100,117 +1062,70 @@ nav{
     color:var(--azul);
 }
 
-.seta{
-    padding:0 !important;
-    background:none !important;
-    color:#9BA49F !important;
+.modelo .seta{
+    background:none;
+    padding:0;
+    color:#A0A8A3;
 }
 
 
-/* CARD SESSÕES */
+/* CARD */
 
 .sessoes{
-    background:var(--verde);
+    padding:37px;
 
-    padding:45px;
+    background:var(--verde-claro);
 
-    border-radius:30px;
-
-    color:white;
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-.sessoes::before{
-    content:"";
-
-    position:absolute;
-
-    width:170px;
-    height:170px;
-
-    background:var(--verde-vivo);
-
-    border-radius:50%;
-
-    right:-90px;
-    top:-90px;
-}
-
-.sessoes::after{
-    content:"";
-
-    position:absolute;
-
-    width:85px;
-    height:85px;
-
-    background:var(--terracota);
-
-    border-radius:50%;
-
-    left:-40px;
-    bottom:-40px;
+    border-radius:25px;
 }
 
 .sessoes h3{
-    font-size:1.8rem;
+    color:var(--verde-escuro);
 
-    font-weight:600;
+    font-size:1.7rem;
 
-    margin-bottom:20px;
-
-    position:relative;
-    z-index:2;
+    margin-bottom:18px;
 }
 
 .sessoes p{
-    color:#F0F7F2;
+    color:var(--texto-suave);
 
-    margin-bottom:14px;
-
-    position:relative;
-    z-index:2;
+    margin-bottom:13px;
 }
 
 .sessoes a{
     display:inline-block;
 
-    margin-top:13px;
+    margin-top:10px;
 
     padding:11px 18px;
 
-    background:white;
+    background:var(--verde);
 
-    color:var(--verde);
+    color:white;
 
     border-radius:100px;
 
-    font-size:.84rem;
+    font-size:.82rem;
 
-    font-weight:700;
-
-    position:relative;
-    z-index:2;
+    font-weight:bold;
 }
 
 
 /* =========================================================
-   SOBRE
+   SOBRE MIM
 ========================================================= */
 
 .sobre{
-    background:var(--verde-suave);
+    background:var(--verde-muito-claro);
 }
 
 .sobre-grid{
     display:grid;
 
-    grid-template-columns:.82fr 1.18fr;
+    grid-template-columns:.8fr 1.2fr;
 
-    gap:75px;
+    gap:70px;
 
     align-items:center;
 }
@@ -1219,26 +1134,28 @@ nav{
 /* FOTO */
 
 .sobre-visual{
+    min-height:500px;
+
     position:relative;
 
-    min-height:520px;
-
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 }
 
-.sobre-forma{
+.sobre-fundo{
     position:absolute;
 
     width:90%;
-    height:88%;
+    height:90%;
 
     background:var(--terracota-claro);
 
     border-radius:
-    55% 45% 35% 65%
-    / 45% 35% 65% 55%;
+    52% 48% 42% 58%
+    / 44% 42% 58% 56%;
 }
 
 .sobre-foto{
@@ -1247,15 +1164,19 @@ nav{
     z-index:2;
 
     width:78%;
-    height:470px;
+    height:445px;
 
     background:white;
 
-    border-radius:150px 150px 20px 20px;
+    border-radius:170px 170px 22px 22px;
+
+    overflow:hidden;
 
     display:flex;
-    align-items:center;
+
     justify-content:center;
+
+    align-items:center;
 
     text-align:center;
 
@@ -1263,9 +1184,7 @@ nav{
 
     color:var(--terracota);
 
-    overflow:hidden;
-
-    box-shadow:0 15px 45px rgba(50,65,58,.08);
+    box-shadow:0 13px 35px rgba(49,91,67,.07);
 }
 
 .sobre-foto img{
@@ -1277,26 +1196,24 @@ nav{
 
 /* TEXTO */
 
-.sobre-conteudo h2{
+.sobre-texto h2{
     color:var(--verde-escuro);
 
-    font-size:clamp(2.6rem,5vw,4rem);
+    font-size:clamp(2.3rem,4.5vw,3.5rem);
 
-    font-weight:500;
-
-    letter-spacing:-.04em;
-
-    margin-bottom:25px;
+    margin-bottom:22px;
 }
 
-.sobre-conteudo p{
+.sobre-texto p{
     color:var(--texto-suave);
 
-    margin-bottom:16px;
+    margin-bottom:15px;
 }
 
 .sobre-frase{
     color:var(--verde-escuro) !important;
+
+    font-family:Georgia, "Times New Roman", serif;
 
     font-size:1.07rem;
 }
@@ -1309,15 +1226,15 @@ nav{
 /* TEAAM */
 
 .teaam{
-    margin-top:24px;
+    margin-top:23px;
 
-    padding:16px 18px;
+    padding:15px 17px;
 
     background:white;
 
-    border-radius:15px;
-
     border-left:4px solid var(--verde);
+
+    border-radius:12px;
 }
 
 .teaam strong{
@@ -1325,13 +1242,13 @@ nav{
 
     color:var(--verde-escuro);
 
-    font-size:.88rem;
+    font-size:.86rem;
 }
 
 .teaam p{
     margin:4px 0 0;
 
-    font-size:.82rem;
+    font-size:.8rem;
 }
 
 
@@ -1340,19 +1257,19 @@ nav{
 .formacao{
     margin-top:16px;
 
-    padding:23px;
-
     background:white;
 
-    border-radius:15px;
+    padding:21px;
+
+    border-radius:14px;
 }
 
 .formacao-titulo{
     color:var(--azul);
 
-    font-weight:700;
+    font-weight:bold;
 
-    margin-bottom:14px;
+    margin-bottom:11px;
 }
 
 .formacao ul{
@@ -1362,11 +1279,11 @@ nav{
 .formacao li{
     color:var(--texto-suave);
 
-    padding:8px 0;
+    font-size:.84rem;
 
-    border-bottom:1px solid #EDF0EE;
+    padding:7px 0;
 
-    font-size:.87rem;
+    border-bottom:1px solid #EEF1EF;
 }
 
 .formacao li:last-child{
@@ -1375,11 +1292,11 @@ nav{
 
 
 /* =========================================================
-   ONDE ATENDO
+   ATENDIMENTO
 ========================================================= */
 
 .atendimento{
-    background:#FFFFFF;
+    background:white;
 }
 
 .locais{
@@ -1387,36 +1304,26 @@ nav{
 
     grid-template-columns:repeat(3,1fr);
 
-    gap:18px;
+    gap:15px;
 }
 
 .local{
-    padding:30px;
+    padding:27px;
 
-    border-radius:20px;
-
-    background:white;
+    border-radius:18px;
 
     border:1px solid var(--linha);
-
-    transition:.2s;
-}
-
-.local:hover{
-    transform:translateY(-3px);
-
-    box-shadow:0 12px 35px rgba(36,77,58,.07);
 }
 
 .local-marca{
-    width:35px;
-    height:6px;
+    width:28px;
+    height:4px;
 
     border-radius:20px;
 
     background:var(--verde);
 
-    margin-bottom:20px;
+    margin-bottom:16px;
 }
 
 .local:nth-child(2) .local-marca{
@@ -1430,17 +1337,15 @@ nav{
 .local h3{
     color:var(--verde-escuro);
 
-    font-size:1.35rem;
+    font-size:1.3rem;
 
-    font-weight:600;
-
-    margin-bottom:9px;
+    margin-bottom:8px;
 }
 
 .local p{
     color:var(--texto-suave);
 
-    font-size:.88rem;
+    font-size:.86rem;
 }
 
 
@@ -1449,89 +1354,51 @@ nav{
 ========================================================= */
 
 .contato{
-    background:var(--verde-escuro);
-
-    color:white;
+    background:var(--verde);
 
     text-align:center;
 
-    position:relative;
-
-    overflow:hidden;
+    color:white;
 }
 
-.contato::before{
-    content:"";
-
-    position:absolute;
-
-    width:280px;
-    height:280px;
-
-    background:var(--verde);
-
-    border-radius:50%;
-
-    left:-150px;
-    top:-130px;
-}
-
-.contato::after{
-    content:"";
-
-    position:absolute;
-
-    width:180px;
-    height:180px;
-
-    background:var(--terracota);
-
-    border-radius:50%;
-
-    right:-100px;
-    bottom:-100px;
-}
-
-.contato .container{
-    position:relative;
-    z-index:2;
-}
-
-.contato .sobretitulo{
+.contato .mini-titulo{
     justify-content:center;
-    color:#D8E7DC;
+
+    color:#E3F0E6;
+}
+
+.contato .mini-titulo::before{
+    background:#F0C7B8;
 }
 
 .contato h2{
-    font-size:clamp(2.7rem,5vw,4.2rem);
+    font-size:clamp(2.4rem,4.5vw,3.5rem);
 
-    font-weight:500;
-
-    margin-bottom:17px;
+    margin-bottom:15px;
 }
 
 .contato p{
-    max-width:630px;
+    max-width:620px;
 
-    margin:0 auto 28px;
+    margin:0 auto 25px;
 
-    color:#E4ECE7;
+    color:#EEF6F0;
 }
 
 .whatsapp{
     display:inline-block;
 
-    padding:13px 22px;
-
-    border-radius:100px;
+    padding:12px 20px;
 
     background:white;
 
-    color:var(--verde-escuro);
+    color:var(--verde);
 
-    font-size:.88rem;
+    border-radius:100px;
 
-    font-weight:700;
+    font-size:.84rem;
+
+    font-weight:bold;
 }
 
 
@@ -1540,13 +1407,13 @@ nav{
 ========================================================= */
 
 footer{
-    background:#1F3E30;
+    padding:32px 0;
 
-    color:#DCE7DF;
+    background:var(--verde-escuro);
 
-    padding:35px 0;
+    color:#DFE9E2;
 
-    font-size:.83rem;
+    font-size:.82rem;
 }
 
 .footer-grid{
@@ -1554,9 +1421,9 @@ footer{
 
     justify-content:space-between;
 
-    flex-wrap:wrap;
-
     gap:25px;
+
+    flex-wrap:wrap;
 }
 
 
@@ -1575,65 +1442,49 @@ footer{
     }
 
     section{
-        padding:72px 0;
+        padding:68px 0;
     }
 
     .hero-grid,
     .avaliacao-grid,
-    .detetive-card,
+    .detetive-box,
     .psico-grid,
     .sobre-grid{
         grid-template-columns:1fr;
     }
 
     .hero-grid{
-        gap:45px;
+        gap:40px;
     }
 
     .hero h1{
-        font-size:3.6rem;
+        font-size:3.1rem;
     }
 
-    .hero-visual{
-        min-height:470px;
+    .hero-foto{
+        min-height:455px;
     }
 
     .foto-principal{
-        height:420px;
+        height:410px;
     }
 
-    .hero-botoes{
-        flex-direction:column;
-    }
-
-    .servico{
-        width:100%;
-    }
-
-    .resumo-caixa{
+    .resumo-grid{
         grid-template-columns:1fr 1fr;
-    }
-
-    .resumo-item:nth-child(3){
-        border-left:0;
-        border-top:1px solid var(--linha);
-    }
-
-    .resumo-item:nth-child(4){
-        border-top:1px solid var(--linha);
     }
 
     .etapas{
         grid-template-columns:1fr;
     }
 
-    .detetive-card{
-        padding:38px 25px 45px;
+    .detetive-box{
+        padding:38px 27px 45px;
+
         gap:25px;
     }
 
     .ilustracao{
-        min-height:285px;
+        min-height:275px;
     }
 
     .locais{
@@ -1654,40 +1505,42 @@ footer{
     }
 
     .hero h1{
-        font-size:3rem;
+        font-size:2.75rem;
     }
 
     .hero-frase{
         font-size:1.25rem;
     }
 
-    .resumo-caixa{
-        grid-template-columns:1fr;
+    .hero-botoes{
+        flex-direction:column;
     }
 
-    .resumo-item + .resumo-item{
-        border-left:0;
-        border-top:1px solid var(--linha);
+    .botao-servico{
+        width:100%;
+    }
+
+    .resumo-grid{
+        grid-template-columns:1fr;
     }
 
     .foto-principal{
         width:82%;
-        height:390px;
+        height:380px;
     }
 
-    .detetive-card{
-        border-radius:24px;
+    .detetive-box{
+        border-radius:22px;
     }
 
     .lupa{
-        width:160px;
-        height:160px;
+        width:150px;
+        height:150px;
     }
 
 }
 
 </style>
-
 </head>
 
 
@@ -1710,17 +1563,22 @@ footer{
 <img
 src="logo-nubia.png"
 alt="Nubia Fernandes Psicóloga e Neuropsicóloga"
-onerror="this.style.display='none';document.getElementById('logoTexto').style.display='block';"
+onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block';"
 >
 
 <a
 href="#inicio"
-id="logoTexto"
 class="logo-fallback"
+id="logoFallback"
 style="display:none;"
 >
+
 Nubia Fernandes
-<small>PSICOLOGIA • NEUROPSICOLOGIA</small>
+
+<small>
+PSICOLOGIA • NEUROPSICOLOGIA
+</small>
+
 </a>
 
 </div>
@@ -1728,15 +1586,25 @@ Nubia Fernandes
 
 <div class="menu">
 
-<a href="#avaliacao">Avaliação</a>
+<a href="#avaliacao">
+Avaliação
+</a>
 
-<a href="#psicoterapia">Psicoterapia</a>
+<a href="#psicoterapia">
+Psicoterapia
+</a>
 
-<a href="#sobre">Sobre mim</a>
+<a href="#sobre">
+Sobre mim
+</a>
 
-<a href="#atendimento">Atendimento</a>
+<a href="#atendimento">
+Atendimento
+</a>
 
-<a href="#contato">Contato</a>
+<a href="#contato">
+Contato
+</a>
 
 <a
 href="https://wa.me/5511953235907"
@@ -1769,16 +1637,16 @@ Agendar atendimento
 <div class="container hero-grid">
 
 
-<div class="hero-conteudo">
+<div>
 
 
-<div class="sobretitulo">
+<div class="mini-titulo">
 Psicologia • Neuropsicologia
 </div>
 
 
 <h1>
-Nubia Fernandes
+Oi, eu sou a Nubia.
 </h1>
 
 
@@ -1793,20 +1661,26 @@ CRP 06/162951
 
 
 <div class="hero-frase">
-Psicologia com conhecimento científico, cuidado e contexto.
+
+Psicologia com conhecimento científico,
+cuidado e contexto.
+
 </div>
 
 
 <p class="hero-texto">
 
-Psicoterapia on-line para adultos e avaliação neuropsicológica
-para crianças, adolescentes, adultos e idosos.
+Meu trabalho acontece por meio da psicoterapia on-line
+para adultos e da avaliação neuropsicológica para crianças,
+adolescentes, adultos e idosos.
 
 </p>
 
 
 <div class="hero-local">
+
 Avaliação presencial em Moema e Tatuapé • São Paulo
+
 </div>
 
 
@@ -1815,32 +1689,32 @@ Avaliação presencial em Moema e Tatuapé • São Paulo
 
 <a
 href="#psicoterapia"
-class="servico terapia"
+class="botao-servico botao-terapia"
 >
 
 <strong>
 Psicoterapia on-line
 </strong>
 
-<small>
+<span>
 para adultos
-</small>
+</span>
 
 </a>
 
 
 <a
 href="#avaliacao"
-class="servico avaliacao-botao"
+class="botao-servico botao-avaliacao"
 >
 
 <strong>
 Avaliação neuropsicológica
 </strong>
 
-<small>
+<span>
 crianças, adolescentes, adultos e idosos
-</small>
+</span>
 
 </a>
 
@@ -1852,14 +1726,14 @@ crianças, adolescentes, adultos e idosos
 
 
 
-<div class="hero-visual">
+<div class="hero-foto">
 
 
-<div class="forma-verde"></div>
+<div class="foto-fundo"></div>
 
-<div class="forma-terracota"></div>
+<div class="foto-detalhe"></div>
 
-<div class="forma-azul"></div>
+<div class="foto-linha"></div>
 
 
 <div class="foto-principal">
@@ -1884,68 +1758,79 @@ Aqui entra sua foto profissional.
 
 <section class="resumo">
 
-<div class="container resumo-caixa">
+<div class="container resumo-grid">
 
 
-<div class="resumo-item">
+<div class="resumo-card">
 
-<div class="resumo-icone"></div>
+<div class="resumo-marca"></div>
 
 <h3>
 Avaliação neuropsicológica
 </h3>
 
 <p>
+
 Compreensão do funcionamento cognitivo,
 emocional e comportamental de forma individualizada.
+
 </p>
 
 </div>
 
 
-<div class="resumo-item">
 
-<div class="resumo-icone"></div>
+<div class="resumo-card">
+
+<div class="resumo-marca"></div>
 
 <h3>
 Psicoterapia on-line
 </h3>
 
 <p>
+
 Atendimento para adultos, considerando
-as necessidades e o contexto de cada pessoa.
+a história, o contexto e as necessidades de cada pessoa.
+
 </p>
 
 </div>
 
 
-<div class="resumo-item">
 
-<div class="resumo-icone"></div>
+<div class="resumo-card">
+
+<div class="resumo-marca"></div>
 
 <h3>
 Diferentes fases da vida
 </h3>
 
 <p>
-Avaliação de crianças, adolescentes,
-adultos e idosos.
+
+Avaliação neuropsicológica de crianças,
+adolescentes, adultos e idosos.
+
 </p>
 
 </div>
 
 
-<div class="resumo-item">
 
-<div class="resumo-icone"></div>
+<div class="resumo-card">
+
+<div class="resumo-marca"></div>
 
 <h3>
-Baseada em evidências
+Prática baseada em evidências
 </h3>
 
 <p>
+
 Conhecimento científico integrado
 ao raciocínio clínico e à individualidade.
+
 </p>
 
 </div>
@@ -1958,15 +1843,15 @@ ao raciocínio clínico e à individualidade.
 
 
 <!-- =========================================================
-     IDENTIDADE
+     INTRODUÇÃO
 ========================================================= -->
 
-<section class="manifesto">
+<section class="introducao">
 
-<div class="container manifesto-conteudo">
+<div class="container introducao-conteudo">
 
 
-<div class="sobretitulo">
+<div class="mini-titulo">
 Meu trabalho
 </div>
 
@@ -1974,18 +1859,17 @@ Meu trabalho
 <h2>
 
 Conhecimento científico é importante.
-<span>Compreender quem está ali também.</span>
+<span>Mas cada pessoa também traz uma história.</span>
 
 </h2>
 
 
 <p>
 
-Meu trabalho acontece principalmente em duas frentes:
-avaliação neuropsicológica e psicoterapia.
-Em ambas, procuro compreender cada pessoa considerando
-não apenas sintomas, mas também sua história, seu contexto
-e a forma como vive suas experiências.
+Por isso, tanto na avaliação quanto na psicoterapia,
+procuro compreender cada pessoa considerando seus sintomas,
+mas também sua história, seu contexto, suas experiências
+e a forma como vive suas dificuldades.
 
 </p>
 
@@ -2008,23 +1892,21 @@ e a forma como vive suas experiências.
 <div>
 
 
-<div class="sobretitulo">
+<div class="mini-titulo">
 Avaliação neuropsicológica
 </div>
 
 
 <h2>
-Uma avaliação vai além dos resultados dos testes.
+Compreender como aquela pessoa funciona.
 </h2>
 
 
-<div class="olhar-conjunto">
-
+<div class="olhar">
 
 <small>
 Olhar para o conjunto
 </small>
-
 
 <p>
 
@@ -2034,7 +1916,6 @@ contexto e observação clínica que permite
 compreender cada caso.
 
 </p>
-
 
 </div>
 
@@ -2057,11 +1938,11 @@ emocional e comportamental.
 
 <p>
 
-A avaliação neuropsicológica possibilita investigar diferentes domínios
-do funcionamento, como atenção, memória, linguagem, aprendizagem,
-raciocínio, funções executivas e habilidades visuoespaciais,
-além de aspectos emocionais e comportamentais importantes
-para a compreensão da pessoa.
+A avaliação neuropsicológica possibilita investigar diferentes
+domínios do funcionamento, como atenção, memória, linguagem,
+aprendizagem, raciocínio, funções executivas e habilidades
+visuoespaciais, além de aspectos emocionais e comportamentais
+importantes para a compreensão da pessoa.
 
 </p>
 
@@ -2108,25 +1989,45 @@ Algumas condições e demandas que podem fazer parte da investigação:
 
 <div class="tags">
 
-<span class="tag verde">TDAH</span>
+<span class="tag tag-destaque-verde">
+TDAH
+</span>
 
-<span class="tag terracota">Autismo • TEA</span>
+<span class="tag tag-destaque-terra">
+Autismo • TEA
+</span>
 
-<span class="tag azul">Dificuldades de aprendizagem</span>
+<span class="tag tag-destaque-azul">
+Dificuldades de aprendizagem
+</span>
 
-<span class="tag">Transtornos de aprendizagem</span>
+<span class="tag">
+Transtornos de aprendizagem
+</span>
 
-<span class="tag verde">Altas habilidades / Superdotação</span>
+<span class="tag tag-destaque-verde">
+Altas habilidades / Superdotação
+</span>
 
-<span class="tag terracota">Desenvolvimento intelectual</span>
+<span class="tag">
+Desenvolvimento intelectual
+</span>
 
-<span class="tag azul">Alterações de memória</span>
+<span class="tag tag-destaque-terra">
+Alterações de memória
+</span>
 
-<span class="tag">Transtornos do humor</span>
+<span class="tag">
+Transtornos do humor
+</span>
 
-<span class="tag verde">Transtornos de personalidade</span>
+<span class="tag tag-destaque-azul">
+Transtornos de personalidade
+</span>
 
-<span class="tag terracota">Funcionamento cognitivo</span>
+<span class="tag">
+Funcionamento cognitivo
+</span>
 
 </div>
 
@@ -2144,7 +2045,7 @@ Algumas condições e demandas que podem fazer parte da investigação:
 
 
 <!-- =========================================================
-     COMO FUNCIONA
+     ETAPAS
 ========================================================= -->
 
 <section class="processo">
@@ -2155,7 +2056,7 @@ Algumas condições e demandas que podem fazer parte da investigação:
 <div class="secao-intro">
 
 
-<div class="sobretitulo">
+<div class="mini-titulo">
 Como funciona
 </div>
 
@@ -2183,7 +2084,7 @@ além da entrevista inicial e da devolutiva.
 
 <div class="etapa">
 
-<div class="etapa-numero">
+<div class="numero">
 01
 </div>
 
@@ -2207,7 +2108,7 @@ e o motivo que levou à busca pela avaliação.
 
 <div class="etapa">
 
-<div class="etapa-numero">
+<div class="numero">
 02
 </div>
 
@@ -2218,8 +2119,8 @@ Seguimos reunindo informações.
 <p>
 
 Ao longo dos encontros, são utilizados instrumentos padronizados,
-atividades clínicas e observação para investigar as habilidades
-relevantes para aquele caso.
+atividades clínicas e observação para investigar
+as habilidades relevantes para aquele caso.
 
 </p>
 
@@ -2229,7 +2130,7 @@ relevantes para aquele caso.
 
 <div class="etapa">
 
-<div class="etapa-numero">
+<div class="numero">
 03
 </div>
 
@@ -2240,9 +2141,9 @@ Integramos as informações.
 <p>
 
 Os resultados dos instrumentos são analisados em conjunto
-com a anamnese, a observação clínica, o comportamento ao longo
-da avaliação e, quando necessário, informações da família,
-da escola e de outros profissionais.
+com a anamnese, a observação clínica, o comportamento
+ao longo da avaliação e, quando necessário,
+informações da família, da escola e de outros profissionais.
 
 </p>
 
@@ -2252,7 +2153,7 @@ da escola e de outros profissionais.
 
 <div class="etapa">
 
-<div class="etapa-numero">
+<div class="numero">
 04
 </div>
 
@@ -2282,7 +2183,7 @@ também é realizada a entrega do laudo neuropsicológico.
 
 
 <!-- =========================================================
-     CRIANÇAS
+     DETETIVES DO CÉREBRO
 ========================================================= -->
 
 <section class="detetive">
@@ -2290,7 +2191,8 @@ também é realizada a entrega do laudo neuropsicológico.
 <div class="container">
 
 
-<div class="detetive-card">
+<div class="detetive-box">
+
 
 
 <div class="ilustracao">
@@ -2299,29 +2201,34 @@ também é realizada a entrega do laudo neuropsicológico.
 <div class="lupa"></div>
 
 
-<div class="pista pista1">
+<div class="desenho interrogacao">
 ?
 </div>
 
 
-<div class="pista pista2">
+<div class="desenho estrela1">
 ✦
 </div>
 
 
-<div class="pista pista3">
-~
+<div class="desenho estrela2">
+✧
 </div>
 
 
+<div class="desenho traco1"></div>
+
+<div class="desenho traco2"></div>
+
+
 </div>
 
 
 
-<div class="detetive-conteudo">
+<div class="detetive-texto">
 
 
-<div class="sobretitulo">
+<div class="mini-titulo">
 Com as crianças
 </div>
 
@@ -2346,7 +2253,8 @@ Só que essa investigação não é feita sozinha:
 Durante os encontros, fazemos atividades, conversamos
 e resolvemos alguns desafios. Cada um deles pode trazer
 uma pista sobre como a criança aprende, presta atenção,
-lembra das coisas, resolve problemas e lida com diferentes situações.
+lembra das coisas, resolve problemas e lida
+com diferentes situações.
 
 </p>
 
@@ -2354,10 +2262,10 @@ lembra das coisas, resolve problemas e lida com diferentes situações.
 <p class="equipe">
 
 <strong>Nosso trabalho acontece em equipe.</strong>
-A criança participa da investigação comigo, a família traz
-informações importantes e, quando necessário,
-professores e outros profissionais que a acompanham
-também ajudam a completar essa história.
+A criança participa da investigação comigo,
+a família traz informações importantes e,
+quando necessário, professores e outros profissionais
+que a acompanham também ajudam a completar essa história.
 
 </p>
 
@@ -2373,7 +2281,7 @@ também merece saber o que os detetives descobriram.
 </p>
 
 
-<p class="pista-final">
+<p class="frase-final">
 
 Porque, como em toda boa investigação,
 uma pista sozinha não conta a história inteira.
@@ -2405,7 +2313,7 @@ uma pista sozinha não conta a história inteira.
 <div class="psico-texto">
 
 
-<div class="sobretitulo">
+<div class="mini-titulo">
 Psicoterapia on-line
 </div>
 
@@ -2426,8 +2334,8 @@ considerando a história, o contexto e as necessidades de cada pessoa.
 
 <p>
 
-Na TCC, buscamos compreender como pensamentos, emoções e comportamentos
-se relacionam, mas o trabalho não se limita a isso.
+Na TCC, buscamos compreender como pensamentos, emoções
+e comportamentos se relacionam, mas o trabalho não se limita a isso.
 Também olhamos para padrões que foram sendo construídos ao longo da vida,
 para a forma como a pessoa lida com diferentes situações,
 seus relacionamentos, seu contexto e as dificuldades
@@ -2517,9 +2425,7 @@ ao longo do processo.
 
 
 <p>
-
 Os atendimentos são realizados on-line para adultos.
-
 </p>
 
 
@@ -2552,7 +2458,7 @@ Agendar psicoterapia
 <div class="sobre-visual">
 
 
-<div class="sobre-forma"></div>
+<div class="sobre-fundo"></div>
 
 
 <div class="sobre-foto">
@@ -2566,16 +2472,16 @@ Aqui entra outra foto sua.
 
 
 
-<div class="sobre-conteudo">
+<div class="sobre-texto">
 
 
-<div class="sobretitulo">
+<div class="mini-titulo">
 Sobre mim
 </div>
 
 
 <h2>
-Oi, eu sou a Nubia.
+Um pouco sobre a minha trajetória.
 </h2>
 
 
@@ -2617,8 +2523,8 @@ Neuropsicóloga voluntária no TEAAM • UNIFESP
 
 <p>
 
-Atuação no ambulatório especializado em Transtorno do Espectro Autista
-da Universidade Federal de São Paulo.
+Atuação no ambulatório especializado em Transtorno
+do Espectro Autista da Universidade Federal de São Paulo.
 
 </p>
 
@@ -2684,7 +2590,7 @@ Formação em Terapia Cognitivo-Comportamental e Psicopatologia
 <div class="secao-intro">
 
 
-<div class="sobretitulo">
+<div class="mini-titulo">
 Atendimento
 </div>
 
@@ -2772,7 +2678,7 @@ Psicoterapia on-line para adultos.
 <div class="container">
 
 
-<div class="sobretitulo">
+<div class="mini-titulo">
 Contato
 </div>
 
@@ -2808,10 +2714,6 @@ Falar comigo pelo WhatsApp
 </main>
 
 
-
-<!-- =========================================================
-     RODAPÉ
-========================================================= -->
 
 <footer>
 
