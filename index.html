@@ -24,12 +24,9 @@
     --verde-profundo:#103D2F;
     --verde-claro:#EAF2ED;
     --verde-suave:#F8FAF8;
-
     --marrom:#805331;
-
     --texto:#39423E;
     --texto-suave:#68716D;
-
     --branco:#FFFFFF;
     --linha:#E3E8E4;
 }
@@ -41,7 +38,7 @@ html{
 body{
     font-family:Arial, Helvetica, sans-serif;
     color:var(--texto);
-    background:white;
+    background:var(--branco);
     line-height:1.65;
     font-size:16px;
 }
@@ -58,13 +55,17 @@ a{
     text-decoration:none;
 }
 
+img{
+    max-width:100%;
+}
+
 .container{
     width:min(1120px, 88%);
     margin:auto;
 }
 
 section{
-    padding:70px 0;
+    padding:58px 0;
 }
 
 .mini-titulo{
@@ -73,7 +74,7 @@ section{
     font-size:.68rem;
     color:var(--verde);
     font-weight:600;
-    margin-bottom:13px;
+    margin-bottom:12px;
 }
 
 
@@ -85,53 +86,41 @@ header{
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(255,255,255,.97);
-    border-bottom:1px solid var(--linha);
-    backdrop-filter:blur(10px);
+    background:var(--verde-profundo);
+    border-bottom:1px solid rgba(255,255,255,.12);
 }
 
 nav{
-    min-height:92px;
+    min-height:72px;
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    gap:30px;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    flex-shrink:0;
-}
-
-.logo-imagem{
-    display:block;
-    width:360px;
-    height:82px;
-    object-fit:contain;
-    object-position:left center;
+    justify-content:flex-end;
 }
 
 .menu{
+    width:100%;
     display:flex;
     align-items:center;
-    gap:26px;
+    justify-content:flex-end;
+    gap:30px;
 }
 
 .menu a{
-    color:var(--texto);
-    font-size:.85rem;
+    color:var(--branco);
+    font-size:.87rem;
+    transition:.2s;
 }
 
 .menu a:hover{
-    color:var(--verde);
+    opacity:.75;
 }
 
 .menu .agendar{
-    padding:11px 18px;
+    padding:11px 19px;
     border-radius:100px;
     background:var(--marrom);
-    color:white;
+    color:var(--branco);
+    font-weight:600;
 }
 
 
@@ -140,22 +129,34 @@ nav{
 ===================================================== */
 
 .hero{
-    background:white;
+    background:var(--branco);
     padding:0;
 }
 
 .hero-grid{
-    min-height:650px;
     display:grid;
     grid-template-columns:.9fr 1.1fr;
-    gap:55px;
+    gap:45px;
     align-items:center;
-    padding:40px 0 45px;
+    padding:42px 0 45px;
 }
 
-.hero-conteudo{
-    align-self:center;
+
+/* LOGO ACIMA DO NOME */
+
+.hero-logo{
+    margin-bottom:20px;
 }
+
+.hero-logo img{
+    display:block;
+    width:270px;
+    max-width:75%;
+    height:auto;
+    object-fit:contain;
+    object-position:left center;
+}
+
 
 .hero h1{
     font-size:clamp(3rem,5.5vw,4.9rem);
@@ -168,7 +169,7 @@ nav{
 .subtitulo{
     font-size:1.02rem;
     color:var(--verde-escuro);
-    margin-bottom:20px;
+    margin-bottom:18px;
     font-weight:500;
 }
 
@@ -176,14 +177,14 @@ nav{
     max-width:590px;
     color:var(--texto-suave);
     font-size:.98rem;
-    margin-bottom:18px;
+    margin-bottom:16px;
 }
 
 .hero-local{
     color:var(--verde-escuro);
     font-size:.82rem;
     font-weight:600;
-    margin-bottom:23px;
+    margin-bottom:21px;
 }
 
 .botoes{
@@ -207,17 +208,16 @@ nav{
 
 .botao-terapia{
     background:var(--marrom);
-    color:white;
+    color:var(--branco);
 }
 
 .botao-avaliacao{
     background:var(--verde);
-    color:white;
+    color:var(--branco);
 }
 
 
-/* FOTO PRINCIPAL
-   MAIOR E SEM CORTAR */
+/* FOTO PRINCIPAL */
 
 .hero-visual{
     width:100%;
@@ -228,7 +228,7 @@ nav{
 
 .hero-visual img{
     display:block;
-    width:115%;
+    width:100%;
     max-width:650px;
     height:auto;
     object-fit:contain;
@@ -241,7 +241,7 @@ nav{
 
 .introducao{
     background:var(--verde-suave);
-    padding:55px 0;
+    padding:48px 0;
 }
 
 .introducao-conteudo{
@@ -251,7 +251,7 @@ nav{
 .introducao h2{
     font-size:clamp(2rem,4vw,3rem);
     color:var(--verde-escuro);
-    margin-bottom:15px;
+    margin-bottom:14px;
 }
 
 .introducao h2 span{
@@ -269,18 +269,19 @@ nav{
 ===================================================== */
 
 .servicos{
-    background:white;
+    background:var(--branco);
+    padding:55px 0;
 }
 
 .titulo-secao{
     max-width:720px;
-    margin-bottom:34px;
+    margin-bottom:28px;
 }
 
 .titulo-secao h2{
     color:var(--verde-escuro);
     font-size:clamp(2rem,4vw,3rem);
-    margin-bottom:14px;
+    margin-bottom:13px;
 }
 
 .titulo-secao p{
@@ -294,7 +295,7 @@ nav{
 }
 
 .card{
-    padding:35px;
+    padding:32px;
     border-radius:22px;
     background:var(--verde-suave);
     border-top:4px solid var(--verde);
@@ -308,24 +309,24 @@ nav{
     font-size:.75rem;
     color:var(--verde);
     font-weight:bold;
-    margin-bottom:14px;
+    margin-bottom:13px;
 }
 
 .card h3{
     color:var(--verde-escuro);
     font-size:1.65rem;
-    margin-bottom:14px;
+    margin-bottom:13px;
 }
 
 .card p{
     color:var(--texto-suave);
-    margin-bottom:13px;
+    margin-bottom:12px;
     font-size:.94rem;
 }
 
 .local{
-    margin-top:20px;
-    padding-top:16px;
+    margin-top:18px;
+    padding-top:15px;
     border-top:1px solid #D6E3D9;
     color:var(--verde);
     font-size:.84rem;
@@ -339,15 +340,15 @@ nav{
 
 .avaliacao{
     background:var(--verde-profundo);
-    color:white;
-    padding:70px 0;
+    color:var(--branco);
+    padding:58px 0;
 }
 
 .avaliacao-grid{
     display:grid;
-    grid-template-columns:.78fr 1.22fr;
-    gap:58px;
-    align-items:start;
+    grid-template-columns:.82fr 1.18fr;
+    gap:50px;
+    align-items:center;
 }
 
 .avaliacao .mini-titulo{
@@ -355,13 +356,13 @@ nav{
 }
 
 .avaliacao h2{
-    color:white;
+    color:var(--branco);
     font-size:clamp(2.2rem,4vw,3.3rem);
-    margin-bottom:23px;
+    margin-bottom:20px;
 }
 
 
-/* CENTRALIZA TÍTULO COM A FOTO */
+/* TÍTULO CENTRALIZADO COM A FOTO */
 
 .avaliacao-foto-coluna{
     text-align:center;
@@ -376,8 +377,7 @@ nav{
 }
 
 
-/* FOTO AVALIAÇÃO
-   INTEIRA E SEM BORDA */
+/* FOTO AVALIAÇÃO */
 
 .foto-avaliacao{
     width:100%;
@@ -390,38 +390,35 @@ nav{
     display:block;
     width:100%;
     height:auto;
-    max-height:570px;
+    max-height:560px;
     object-fit:contain;
 }
-
 
 .avaliacao-texto p{
     color:#E5EEE8;
     font-size:.96rem;
-    margin-bottom:15px;
+    margin-bottom:14px;
 }
 
 .avaliacao-destaque{
-    color:white !important;
+    color:var(--branco) !important;
     font-size:1.12rem !important;
     font-weight:600;
     line-height:1.5;
-
-    margin:22px 0 !important;
+    margin:20px 0 !important;
     padding-left:18px;
-
     border-left:3px solid #89C795;
 }
 
 .condicoes{
-    margin-top:23px;
+    margin-top:20px;
 }
 
 .condicoes h3{
-    color:white;
+    color:var(--branco);
     font-size:1rem;
     font-weight:600;
-    margin-bottom:14px;
+    margin-bottom:13px;
 }
 
 .tags{
@@ -433,11 +430,9 @@ nav{
 .tag{
     padding:7px 12px;
     border-radius:100px;
-
     background:rgba(255,255,255,.10);
     border:1px solid rgba(255,255,255,.25);
-
-    color:white;
+    color:var(--branco);
     font-size:.72rem;
 }
 
@@ -447,12 +442,12 @@ nav{
 ===================================================== */
 
 .processo{
-    background:white;
-    padding:65px 0;
+    background:var(--branco);
+    padding:55px 0;
 }
 
 .processo .titulo-secao{
-    margin-bottom:30px;
+    margin-bottom:27px;
 }
 
 .etapas{
@@ -464,13 +459,13 @@ nav{
 .etapa{
     border-radius:20px;
     padding:25px 22px;
-    min-height:300px;
+    min-height:285px;
 }
 
 .etapa:nth-child(1),
 .etapa:nth-child(3){
     background:var(--verde-profundo);
-    color:white;
+    color:var(--branco);
 }
 
 .etapa:nth-child(2),
@@ -482,40 +477,36 @@ nav{
 .etapa-numero{
     width:36px;
     height:36px;
-
     border-radius:50%;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     font-size:.7rem;
     font-weight:bold;
-
-    margin-bottom:18px;
+    margin-bottom:17px;
 }
 
 .etapa:nth-child(1) .etapa-numero,
 .etapa:nth-child(3) .etapa-numero{
     background:var(--verde-vivo);
-    color:white;
+    color:var(--branco);
 }
 
 .etapa:nth-child(2) .etapa-numero,
 .etapa:nth-child(4) .etapa-numero{
-    background:white;
+    background:var(--branco);
     color:var(--verde);
 }
 
 .etapa h3{
     font-size:1.2rem;
     font-weight:500;
-    margin-bottom:12px;
+    margin-bottom:11px;
 }
 
 .etapa:nth-child(1) h3,
 .etapa:nth-child(3) h3{
-    color:white;
+    color:var(--branco);
 }
 
 .etapa p{
@@ -535,31 +526,27 @@ nav{
 
 
 /* =====================================================
-   DETETIVE DO CÉREBRO
+   DETETIVES DO CÉREBRO
 ===================================================== */
 
 .detetive{
     background:var(--verde-suave);
-    padding:65px 0;
+    padding:55px 0;
 }
 
 .detetive-box{
-    background:white;
+    background:var(--branco);
     border-radius:28px;
-    padding:45px 50px;
-
+    padding:35px 40px;
     display:grid;
-    grid-template-columns:.48fr 1fr;
+    grid-template-columns:.8fr 1.2fr;
     gap:42px;
-
     align-items:center;
-
     box-shadow:0 12px 35px rgba(40,81,62,.06);
 }
 
 
-/* FOTO DETETIVE
-   INTEIRA E SEM BORDA */
+/* IMAGEM DETETIVE */
 
 .detetive-ilustracao{
     width:100%;
@@ -572,27 +559,23 @@ nav{
     display:block;
     width:100%;
     height:auto;
-    max-height:570px;
+    max-height:540px;
     object-fit:contain;
 }
 
-.pista-visual{
-    display:none;
-}
-
 .detetive-conteudo .mini-titulo{
-    margin-bottom:12px;
+    margin-bottom:11px;
 }
 
 .detetive-conteudo h2{
     color:var(--verde-escuro);
     font-size:clamp(2rem,4vw,2.9rem);
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
 .detetive-conteudo p{
     color:var(--texto-suave);
-    margin-bottom:14px;
+    margin-bottom:13px;
     font-size:.94rem;
 }
 
@@ -601,21 +584,17 @@ nav{
 }
 
 .equipe{
-    margin:21px 0;
-
+    margin:18px 0;
     background:var(--verde-claro);
-
     border-radius:16px;
-
-    padding:20px 22px;
-
+    padding:18px 20px;
     border-left:4px solid var(--verde);
 }
 
 .equipe strong{
     display:block;
     font-size:1rem;
-    margin-bottom:7px;
+    margin-bottom:6px;
 }
 
 .equipe p{
@@ -634,26 +613,26 @@ nav{
 ===================================================== */
 
 .psicoterapia{
-    background:white;
-    padding:70px 0;
+    background:var(--branco);
+    padding:58px 0;
 }
 
 .psicoterapia-grid{
     display:grid;
     grid-template-columns:1.15fr .85fr;
-    gap:55px;
+    gap:50px;
     align-items:center;
 }
 
 .psicoterapia h2{
     color:var(--verde-escuro);
     font-size:clamp(2.1rem,4vw,3.1rem);
-    margin-bottom:19px;
+    margin-bottom:18px;
 }
 
 .psicoterapia-texto p{
     color:var(--texto-suave);
-    margin-bottom:14px;
+    margin-bottom:13px;
     font-size:.95rem;
 }
 
@@ -661,7 +640,7 @@ nav{
     display:flex;
     flex-wrap:wrap;
     gap:7px;
-    margin-top:20px;
+    margin-top:18px;
 }
 
 .demanda{
@@ -673,7 +652,7 @@ nav{
 }
 
 .psico-info{
-    padding:32px;
+    padding:30px;
     background:var(--verde-suave);
     border-radius:22px;
 }
@@ -681,18 +660,18 @@ nav{
 .psico-info h3{
     color:var(--verde-escuro);
     font-size:1.4rem;
-    margin-bottom:16px;
+    margin-bottom:15px;
 }
 
 .psico-info p{
     color:var(--texto-suave);
-    margin-bottom:11px;
+    margin-bottom:10px;
     font-size:.9rem;
 }
 
 .psico-info .botao{
     background:var(--marrom);
-    color:white;
+    color:var(--branco);
     margin-top:8px;
 }
 
@@ -703,24 +682,20 @@ nav{
 
 .sobre{
     background:var(--verde-suave);
-    padding:65px 0;
+    padding:55px 0;
 }
 
 .sobre-grid{
     display:grid;
     grid-template-columns:.82fr 1.18fr;
-    gap:58px;
-    align-items:start;
+    gap:50px;
+    align-items:center;
 }
-
-
-/* FOTO SOBRE
-   INTEIRA E SEM BORDA */
 
 .foto-placeholder{
     width:100%;
     display:flex;
-    align-items:flex-start;
+    align-items:center;
     justify-content:center;
 }
 
@@ -728,20 +703,19 @@ nav{
     display:block;
     width:100%;
     height:auto;
-    max-height:650px;
+    max-height:620px;
     object-fit:contain;
 }
-
 
 .sobre h2{
     color:var(--verde-escuro);
     font-size:clamp(2.1rem,4vw,3rem);
-    margin-bottom:18px;
+    margin-bottom:17px;
 }
 
 .sobre p{
     color:var(--texto-suave);
-    margin-bottom:14px;
+    margin-bottom:13px;
     font-size:.94rem;
 }
 
@@ -750,9 +724,9 @@ nav{
 }
 
 .teaam{
-    margin-top:20px;
-    padding:17px 19px;
-    background:white;
+    margin-top:18px;
+    padding:16px 18px;
+    background:var(--branco);
     border-radius:13px;
     border-left:4px solid var(--verde);
 }
@@ -770,9 +744,9 @@ nav{
 }
 
 .formacao{
-    margin-top:16px;
-    padding:20px;
-    background:white;
+    margin-top:15px;
+    padding:19px;
+    background:var(--branco);
     border-radius:16px;
 }
 
@@ -782,7 +756,7 @@ nav{
 
 .formacao ul{
     list-style:none;
-    margin-top:10px;
+    margin-top:9px;
 }
 
 .formacao li{
@@ -802,8 +776,8 @@ nav{
 ===================================================== */
 
 .atendimento{
-    background:white;
-    padding:65px 0;
+    background:var(--branco);
+    padding:55px 0;
 }
 
 .atendimento-grid{
@@ -842,9 +816,9 @@ nav{
 
 .contato{
     background:var(--verde);
-    color:white;
+    color:var(--branco);
     text-align:center;
-    padding:65px 0;
+    padding:58px 0;
 }
 
 .contato .mini-titulo{
@@ -852,20 +826,20 @@ nav{
 }
 
 .contato h2{
-    color:white;
+    color:var(--branco);
     font-size:clamp(2.1rem,4vw,3rem);
-    margin-bottom:16px;
+    margin-bottom:15px;
 }
 
 .contato p{
     max-width:630px;
-    margin:0 auto 25px;
+    margin:0 auto 23px;
     color:#EDF6EF;
 }
 
 .contato .botao{
     background:var(--marrom);
-    color:white;
+    color:var(--branco);
 }
 
 
@@ -876,7 +850,7 @@ nav{
 footer{
     background:var(--verde-escuro);
     color:#DBE6DF;
-    padding:32px 0;
+    padding:30px 0;
     font-size:.85rem;
 }
 
@@ -894,18 +868,19 @@ footer{
 
 @media(max-width:900px){
 
-    .menu{
-        display:none;
+    header{
+        position:relative;
     }
 
     nav{
-        min-height:80px;
+        min-height:auto;
+        padding:16px 0;
     }
 
-    .logo-imagem{
-        width:280px;
-        height:68px;
-        max-width:75vw;
+    .menu{
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:14px 20px;
     }
 
     .hero-grid,
@@ -917,22 +892,21 @@ footer{
     }
 
     .hero-grid{
-        min-height:auto;
-        gap:35px;
-        padding:42px 0;
+        gap:30px;
+        padding:35px 0 40px;
     }
 
     .hero h1{
         font-size:3.25rem;
     }
 
+    .hero-logo img{
+        width:240px;
+    }
+
     .hero-visual img{
         width:100%;
         max-width:600px;
-    }
-
-    section{
-        padding:58px 0;
     }
 
     .cards,
@@ -945,12 +919,20 @@ footer{
     }
 
     .detetive-box{
-        padding:30px;
+        padding:28px;
     }
 
 }
 
 @media(max-width:600px){
+
+    .menu a{
+        font-size:.76rem;
+    }
+
+    .menu .agendar{
+        padding:9px 14px;
+    }
 
     .etapas{
         grid-template-columns:1fr;
@@ -961,12 +943,12 @@ footer{
     }
 
     .detetive-box{
-        gap:30px;
+        gap:25px;
+        padding:24px;
     }
 
-    .logo-imagem{
-        width:240px;
-        height:62px;
+    .hero-logo img{
+        width:220px;
     }
 
 }
@@ -985,16 +967,6 @@ footer{
 
 <nav>
 
-<a class="logo" href="#inicio">
-
-<img
-class="logo-imagem"
-src="logo-nubia-horizontal.png"
-alt="Nubia Fernandes | Psicologia e Neuropsicologia">
-
-</a>
-
-
 <div class="menu">
 
 <a href="#avaliacao">Avaliação</a>
@@ -1010,8 +982,7 @@ alt="Nubia Fernandes | Psicologia e Neuropsicologia">
 <a
 href="https://wa.me/5511953235907"
 target="_blank"
-class="agendar"
->
+class="agendar">
 Agendar atendimento
 </a>
 
@@ -1036,6 +1007,16 @@ Agendar atendimento
 
 
 <div class="hero-conteudo">
+
+
+<div class="hero-logo">
+
+<img
+src="logo-nubia-horizontal.png"
+alt="Nubia Fernandes | Psicologia e Neuropsicologia">
+
+</div>
+
 
 <div class="mini-titulo">
 Psicologia • Neuropsicologia
@@ -1450,12 +1431,11 @@ laudo com enfoque na avaliação neuropsicológica.
 
 
 
-<!-- DETETIVE -->
+<!-- DETETIVES DO CÉREBRO -->
 
 <section class="detetive">
 
 <div class="container">
-
 
 <div class="detetive-box">
 
@@ -1463,7 +1443,7 @@ laudo com enfoque na avaliação neuropsicológica.
 <div class="detetive-ilustracao">
 
 <img
-src="calibradocerebro.png"
+src="./calibradocerebro.png"
 alt="Nubia Fernandes com uma lupa">
 
 </div>
@@ -1542,9 +1522,7 @@ uma pista sozinha não conta a história inteira.
 
 </div>
 
-
 </div>
-
 
 </div>
 
@@ -1662,8 +1640,7 @@ O atendimento é realizado
 <a
 href="https://wa.me/5511953235907"
 target="_blank"
-class="botao"
->
+class="botao">
 Agendar psicoterapia
 </a>
 
@@ -1877,8 +1854,7 @@ e verificar a disponibilidade de horários.
 <a
 href="https://wa.me/5511953235907"
 target="_blank"
-class="botao"
->
+class="botao">
 Falar comigo pelo WhatsApp
 </a>
 
